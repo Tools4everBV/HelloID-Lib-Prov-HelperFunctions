@@ -5,8 +5,10 @@ function formatInitials() {
     if(Person.Name.Initials && Person.Name.Initials !== "")
     {
         return Person.Name.Initials
+            // Remove all dots
             .replace(/([.])/g, '')
-            .substring(0, 6);
+            // Take the first three characters
+            .substring(0, 3);
     }
      
     return initials;
