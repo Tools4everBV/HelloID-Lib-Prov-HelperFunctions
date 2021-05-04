@@ -20,12 +20,10 @@ function generateUserPrincipalName() {
     //Remove diacritical chars
     userPrincipalName = deleteDiacriticalMarks(userPrincipalName);
 
-	//Remove specific chars    
+    //Remove specific chars    
     userPrincipalName = userPrincipalName.replace(/[^0-9a-zA-Z.']/g, '');
 
-	userPrincipalName = userPrincipalName + suffix + '@' + domain;
-    
-    return userPrincipalName;
+    return userPrincipalName + suffix + '@' + domain;
 }
 
 generateUserPrincipalName();
