@@ -24,27 +24,27 @@ function generateMailAddress(firstName, middleName, lastName) {
 function getValue() {
     const domain = 'yourdomainhere';
     
-    const familyNameMailAddress = generateMailAddress(
+    let mailAddress = generateMailAddress(
         Person.Name.NickName,
         Person.Name.FamilyNamePrefix,
         Person.Name.FamilyName
     );
     
     if (["P", "PB"].indexOf(Person.Name.Convention) >= 0) {
-        const partnerNameMailAddress = generateMailAddress(
+        const primaryMailAddress = generateMailAddress(
             Person.Name.NickName,
             Person.Name.FamilyNamePartnerPrefix,
             Person.Name.FamilyNamePartner
         );
         
         return [
-            'SMTP:' + partnerNameMailAddress + '@' + domain,
-            'smtp:' + familyNameMailAddress + '@' + domain
+            'SMTP:' + primaryMailAddress + '@' + domain,
+            'smtp:' + mailAddress + '@' + domain
         ]
     }
 
     return [
-        'SMTP:' + familyNameMailAddress + '@' + domain
+        'SMTP:' + mailAddress + '@' + domain
     ]
 }
 
