@@ -7,8 +7,8 @@ function formatInitials() {
         return Person.Name.Initials
             // Remove all dots
             .replace(/([.])/g, '')
-            // Take the first six characters
-            .substring(0, 6);
+            // Take the first three characters
+            .substring(0, 3);
     }
      
     return initials;
