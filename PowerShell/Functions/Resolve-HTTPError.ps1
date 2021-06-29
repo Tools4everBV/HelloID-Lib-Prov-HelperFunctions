@@ -13,8 +13,8 @@ function Resolve-HTTPError {
     process {
         $HttpErrorObj = @{
             FullyQualifiedErrorId = $ErrorObject.FullyQualifiedErrorId
-            InvocationInfo        = $ErrorObject.InvocationInfo.MyCommand
-            TargetObject          = $ErrorObject.TargetObject.RequestUri
+            MyCommand             = $ErrorObject.InvocationInfo.MyCommand
+            RequestUri            = $ErrorObject.TargetObject.RequestUri
             StackTrace            = $ErrorObject.ScriptStackTrace
         }
         if ($ErrorObject.Exception.GetType().FullName -eq 'Microsoft.PowerShell.Commands.HttpResponseException') {
