@@ -56,7 +56,7 @@ function Write-ToXmlDocument {
         $ParameterList = $Properties
     }
     foreach ($param in $ParameterList.GetEnumerator()) {
-        if (($param.Value) -is [PSCustomObject] -or ($param.Value) -is [Hashtable]) {
+        if ((($param.Value) -is [PSCustomObject] -or ($param.Value) -is [Hashtable]) -and $null -ne $param.Value) {
             $parent = $XmlDocument.CreateElement($param.Name)
             $ParameterList[$param.Name] | Write-ToXmlDocument -XmlDocument  $XmlDocument -XmlParentDocument $parent
             $null = $XmlParentDocument.AppendChild($parent)
