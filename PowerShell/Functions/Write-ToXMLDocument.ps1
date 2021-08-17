@@ -1,33 +1,34 @@
 <#
 .SYNOPSIS
-    Add Hashtable or PScustomObject values to existing XMLdocument
+    Add Hashtable or PSCustomObject values recursive to a XMLdocument
 .DESCRIPTION
-    Add Hashtable or PScustomObject values to existing XMLdocument
+    Add Hashtable or PSCustomObject values recursive to a XMLdocument
 .EXAMPLE
     [xml]$xmlDoc = New-Object System.Xml.XmlDocument
     $parentXmlDoc = $xmlDoc.AppendChild($xmlDoc.CreateElement("User"))
     @{
-        FirstName = "Rudolf";
-        LastName  = "Amersfoort"
+        FirstName = "John";
+        LastName  = "Doe"
         Gender    = "M"
-        Email     = "Test@email.com"
+        Email     = "JDoe@email.com"
     } | Write-ToXmlDocument -XmlDocument $xmlDoc -XmlParentDocument $parentXmlDoc
 .EXAMPLE
     [xml]$xmlDoc = New-Object System.Xml.XmlDocument
     $parentXmlDoc = $xmlDoc.AppendChild($xmlDoc.CreateElement("User"))
-    $user = @{
-        FirstName = "Rudolf";
-        LastName  = "Amersfoort"
+    @{
+        FirstName = "John";
+        LastName  = "Doe"
         Gender    = "M"
-        Email     = "Test@email.com"
-    }
-    Write-ToXmlDocument -Properties $user -XmlDocument $xmlDoc -XmlParentDocument $parentXmlDoc
+        Email     = @{
+            Private = "JDoe@email.com"
+            Work    = "JDoe@tools.com"
+        }
+    } | Write-ToXmlDocument -XmlDocument $xmlDoc -XmlParentDocument $parentXmlDoc
 .OUTPUTS
-    [xml]$xmlDoc
     $xmlDoc.InnerXml
-    <User><email>Test@email.com</email><firstname>Rudolf</firstname><gender>M</gender><lastname>Amersfoort</lastname></User>
+    <User><Email><Private>JDoe@email.com</Private><Work>JDoe@tools.com</Work></Email><FirstName>John</FirstName><Gender>M</Gender><LastName>Doe</LastName></User>
 .NOTES
-   Complex function to update a existing Xml Docuemnt with the values of a Hastable or PSCustomObject
+   Complex function to update an existing XML document with the values of a Hashtable or PSCustomObject. The values must be strings.
 #>
 function Write-ToXmlDocument {
     [Cmdletbinding()]
@@ -56,7 +57,7 @@ function Write-ToXmlDocument {
     }
     foreach ($param in $ParameterList.GetEnumerator()) {
         if (($param.Value) -is [PSCustomObject] -or ($param.Value) -is [Hashtable]) {
-            $parent = $ioImportXmlDoc.AppendChild($xmlDoc.CreateElement($param.Name))
+            $parent = $XmlDocument.CreateElement($param.Name)
             $ParameterList[$param.Name] | Write-ToXmlDocument -XmlDocument  $XmlDocument -XmlParentDocument $parent
             $null = $XmlParentDocument.AppendChild($parent)
         } else {
