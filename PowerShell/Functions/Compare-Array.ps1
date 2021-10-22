@@ -21,6 +21,11 @@
 
 .NOTES
     Always test your outcome after the comparison to avoid unpredicted outcomes
+    
+    Todo:
+      Compare values always with the same casing (ToLower)
+    
+    
 #>
 function Compare-Array {
     [OutputType([array], [array], [array])] # $Left , $Right, $common
