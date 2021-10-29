@@ -11,7 +11,7 @@ function Resolve-HTTPError {
         [object]$ErrorObject
     )
     process {
-        $HttpErrorObj = [PSCustomObject]@{
+        $httpErrorObj = [PSCustomObject]@{
             FullyQualifiedErrorId = $ErrorObject.FullyQualifiedErrorId
             MyCommand             = $ErrorObject.InvocationInfo.MyCommand
             RequestUri            = $ErrorObject.TargetObject.RequestUri
@@ -19,15 +19,11 @@ function Resolve-HTTPError {
             ErrorMessage          = ''
         }
         if ($ErrorObject.Exception.GetType().FullName -eq 'Microsoft.PowerShell.Commands.HttpResponseException') {
-            $HttpErrorObj.ErrorMessage = $ErrorObject.ErrorDetails.Message
+            $httpErrorObj.ErrorMessage = $ErrorObject.ErrorDetails.Message
         } elseif ($ErrorObject.Exception.GetType().FullName -eq 'System.Net.WebException') {
-            $stream = $ErrorObject.Exception.Response.GetResponseStream()
-            $stream.Position = 0
-            $streamReader = New-Object System.IO.StreamReader $Stream
-            $errorResponse = $StreamReader.ReadToEnd()
-            $HttpErrorObj.ErrorMessage = $errorResponse
+            $httpErrorObj.ErrorMessage = [System.IO.StreamReader]::new($ErrorObject.Exception.Response.GetResponseStream()).ReadToEnd()
         }
-        Write-Output $HttpErrorObj
+        Write-Output $httpErrorObj
     }
 }
 
