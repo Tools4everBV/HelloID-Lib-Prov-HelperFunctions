@@ -38,7 +38,7 @@ function generateUserPrincipalName() {
     userPrincipalName = deleteDiacriticalMarks(userPrincipalName);
 
 	//Remove specific chars    
-    userPrincipalName = userPrincipalName.trim().replace(/[^0-9a-zA-Z.']/g, '');
+    userPrincipalName = userPrincipalName.replace(/[^0-9a-zA-Z.']/g, '');
 
 	userPrincipalName = userPrincipalName + suffix + '@' + domain;
     
