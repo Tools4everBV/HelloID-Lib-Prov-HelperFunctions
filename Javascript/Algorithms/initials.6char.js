@@ -2,9 +2,13 @@ function formatInitials() {
  
     let initials;
      
-    if((!Person.Name.Initials === "") || (Person.Name.Initials != null))
+    if(Person.Name.Initials && Person.Name.Initials !== "")
     {
-        initials = Person.Name.Initials.replace(/([.])/g, '').substring(0, 6);
+        return Person.Name.Initials
+            // Remove all dots
+            .replace(/([.])/g, '')
+            // Take the first three characters
+            .substring(0, 3);
     }
      
     return initials;
