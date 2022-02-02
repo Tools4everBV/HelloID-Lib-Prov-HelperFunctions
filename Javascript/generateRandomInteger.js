@@ -1,5 +1,5 @@
 function generateRandomInteger(min, max) {
-  return Math.floor(Math.random() * (max - min) ) + min;
+  return Math.floor((Math.random() + Iteration) * (max - min) ) + min;
 }
 generateRandomInteger(1000, 9999);
 
