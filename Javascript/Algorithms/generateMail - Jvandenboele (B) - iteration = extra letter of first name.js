@@ -14,16 +14,16 @@ function generateMailNickname() {
 
     //  Eerste keuze	        B	Jvandenboele
     // 	                        BP	Jvandenboele
-    // 	                        P	Jdevies
-    // 	                        PB  Jdevies
+    // 	                        P	Jvandenboele
+    // 	                        PB  Jvandenboele
     //  Indien in gebruik	    B	Javandenboele
     // 	                        BP	Javandenboele
-    // 	                        P	Jadevies
-    // 	                        PB	Jadevies
+    // 	                        P	Javandenboele
+    // 	                        PB	Javandenboele
     //  Indien ook in gebruik	B	Janvandenboele
     // 	                        BP	Janvandenboele
-    // 	                        P	Jandevies
-    // 	                        PB	Jandevies
+    // 	                        P	Janvandenboele
+    // 	                        PB	Janvandenboele
 
     let mailNickname = '';
     if (Iteration === 0) {
