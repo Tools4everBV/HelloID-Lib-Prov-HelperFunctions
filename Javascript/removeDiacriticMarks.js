@@ -1,4 +1,7 @@
-function removeDiacriticMarks(str) {
-  //Replace Diacritic Marks and Curly Quotes
-  return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[\u2018\u2019]/g, "'");
+function deleteDiacriticalMarksAdditional(inputString) {
+    const map = {'A': '[ÀÁÂÃÄÅÆĀĂĄ]', 'a': '[àáâãäåæāăą]', 'C': '[ÇĆĈĊČ]', 'c': '[çćĉċč]', 'D': '[ĎĐ]', 'd': '[ďđ]', 'E': '[ÈÉÊËÐĒĔĖĘĚ]', 'e': '[èéêëðēĕėęě]', 'G': '[ĜĞĠĢ]', 'g': '[ĝğġģ]', 'H': '[ĤĦ]', 'h': '[ĥħ]', 'i': '[ìíîïĩīĭįıĳ]', 'I': '[ÌÍÎÏĨĪĬĮİĲ]', 'J': '[Ĵ]', 'j': '[ĵ]', 'K': '[Ķ]', 'k': '[ķĸ]', 'L': '[ĹĻĽĿŁ]', 'l': '[ĺļľŀł]', 'n': '[ñńņňŉŋ]', 'N': '[ÑŃŅŇŊ]', 'O': '[ÒÓÔÕÖØŌŎŐŒ]', 'o': '[òóôõöøōŏőœ]', 'P': '[Þ]', 'p': '[þ]', 'R': '[ŔŖŘ]', 'r': '[ŕŗř]', 'S': '[ŚŜŞŠ]', 's': '[ßśŝşšſ]', 'T': '[ŢŤŦ]', 't': '[ţťŧ]', 'U': '[ÙÚÛÜŨŪŬŮŰŲ]', 'u': '[ùúûüũūŭůűų]', 'W': '[Ŵ]', 'w': '[ŵ]', 'Y': '[ÝŶŸ]', 'y': '[ýÿŷ]', 'z': '[źżž]', 'Z': '[ŹŻŽ]'};
+    for (let pattern in map) {
+        inputString = inputString.replace(new RegExp(map[pattern], 'g'), pattern);
+    };
+    return inputString;
 }
