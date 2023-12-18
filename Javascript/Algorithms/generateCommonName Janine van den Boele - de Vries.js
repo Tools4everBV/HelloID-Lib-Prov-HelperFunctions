@@ -7,7 +7,7 @@ function generatecommonName() {
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    const suffix = Iteration === 0 ? '' : ' 0' + (Iteration);
+    let suffix = Iteration === 0 ? '' : ' 0' + (Iteration);
 
     // B	    Janine van den Boele
     // BP	    Janine van den Boele - de Vries
@@ -51,7 +51,7 @@ function generatecommonName() {
             nameFormatted = nameFormatted + ' ' + lastName;
             break;
     }
-    const commonName = nameFormatted.trim();
+    let commonName = nameFormatted.trim();
 
     commonName = commonName + suffix;
 

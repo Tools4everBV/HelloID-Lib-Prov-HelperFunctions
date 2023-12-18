@@ -10,7 +10,7 @@ function generateMailNickname() {
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    const suffix = Iteration <= (firstName.length - 1) ? '' : (Iteration - (firstName.length - 2));
+    let suffix = Iteration <= (firstName.length - 1) ? '' : (Iteration - (firstName.length - 2));
 
     //  Eerste keuze	        B	Jvandenboele
     // 	                        BP	Jvandenboele
@@ -62,9 +62,9 @@ function generateMailNickname() {
 }
 
 function getValue() {
-    const nickName = generateMailNickname();
+    let nickName = generateMailNickname();
 
-    const domain = 'enyoi.org';
+    let domain = 'enyoi.org';
     return nickName + '@' + domain;
 }
 

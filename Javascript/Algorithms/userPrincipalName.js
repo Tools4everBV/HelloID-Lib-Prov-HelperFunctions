@@ -1,7 +1,7 @@
 function generateUserPrincipalName() {
 
-    const domain = 'yourdomainhere';
-    const suffix = Iteration === 0 ? '' : Iteration;
+    let domain = 'yourdomainhere';
+    let suffix = Iteration === 0 ? '' : Iteration;
     
     let firstName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;

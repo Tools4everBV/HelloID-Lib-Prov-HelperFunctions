@@ -7,7 +7,7 @@ function generateSamAccountName() {
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    const suffix = Iteration <= (firstName.length - 1) ? '' : (Iteration - (firstName.length - 2));
+    let suffix = Iteration <= (firstName.length - 1) ? '' : (Iteration - (firstName.length - 2));
     let maxAttributeLength = (20 - suffix.toString().length);
 
     //  Eerste keuze	        B	Jvandenboele
@@ -66,7 +66,7 @@ function generateSamAccountName() {
 }
 
 function getValue() {
-    const samAccountName = generateSamAccountName();
+    let samAccountName = generateSamAccountName();
     return samAccountName;
 }
 

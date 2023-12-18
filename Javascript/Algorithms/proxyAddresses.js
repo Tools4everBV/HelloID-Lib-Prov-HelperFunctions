@@ -1,6 +1,6 @@
 // Please enter the mapping logic to generate the primaryMailAddress.
 function generateMailAddress(firstName, middleName, lastName) {
-    const suffix = Iteration === 0 ? '' : Iteration;
+    let suffix = Iteration === 0 ? '' : Iteration;
     
     let mailAddress = [firstName, middleName, lastName]
         // Filter empty values
@@ -22,7 +22,7 @@ function generateMailAddress(firstName, middleName, lastName) {
 }
 
 function getValue() {
-    const domain = 'yourdomainhere';
+    let domain = 'yourdomainhere';
     
     let mailAddress = generateMailAddress(
         Person.Name.NickName,
@@ -31,7 +31,7 @@ function getValue() {
     );
     
     if (["P", "PB"].indexOf(Person.Name.Convention) >= 0) {
-        const primaryMailAddress = generateMailAddress(
+        let primaryMailAddress = generateMailAddress(
             Person.Name.NickName,
             Person.Name.FamilyNamePartnerPrefix,
             Person.Name.FamilyNamePartner
