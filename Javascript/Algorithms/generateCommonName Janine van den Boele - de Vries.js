@@ -51,7 +51,7 @@ function generatecommonName() {
             nameFormatted = nameFormatted + ' ' + lastName;
             break;
     }
-    const commonName = nameFormatted.trim();
+    commonName = nameFormatted.trim();
 
     commonName = commonName + suffix;
 
