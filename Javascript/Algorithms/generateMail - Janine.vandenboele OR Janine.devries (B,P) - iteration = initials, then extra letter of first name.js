@@ -11,7 +11,7 @@ function generateMailNickname() {
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    const suffix = Iteration <= (firstName.length - 1) ? '' : (Iteration - (firstName.length - 2));
+    let suffix = Iteration <= (firstName.length - 1) ? '' : (Iteration - (firstName.length - 2));
 
     //  Eerste keuze	        B	Janine.vandenboele
     // 	                        BP	Janine.vandenboele
@@ -74,8 +74,8 @@ function generateMailNickname() {
 }
 
 function getValue() {
-	const nickName = generateMailNickname();
-	const domain = 'domein.nl';
+	let nickName = generateMailNickname();
+	let domain = 'domein.nl';
 	return nickName + '@' + domain;
 }
 

@@ -5,4 +5,5 @@ function generateFirstLetters(myString) {
     if (typeof firstLettersString !== 'undefined' && firstLettersString) { firstLettersString = firstLettersString.match(/\b(\w)/g).join('') }
     return firstLettersString;
 }
-generateFirstLetters(Person.Name.FamilyNamePrefix)
+
+generateFirstLetters(Person.Name.FamilyName)

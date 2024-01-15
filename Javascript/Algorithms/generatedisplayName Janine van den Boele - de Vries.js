@@ -49,7 +49,7 @@ function generatedisplayName() {
             nameFormatted = nameFormatted + ' ' + lastName;
             break;
     }
-    const displayName = nameFormatted.trim();
+    let displayName = nameFormatted.trim();
 
     return displayName;
 }

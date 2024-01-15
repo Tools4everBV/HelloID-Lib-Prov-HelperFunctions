@@ -1,21 +1,21 @@
 function generatePassword(){
      
     // Initialize these variables for the algorithm to meet your password complexity rules
-    const passwordLength = 8;
-    const minUpper = 1;
-    const maxUpper = 3;
-    const minNumeric = 0;
-    const maxNumeric = 2;
-    const minSpecial = 1;
-    const maxSpecial = 1;
+    let passwordLength = 8;
+    let minUpper = 1;
+    let maxUpper = 3;
+    let minNumeric = 0;
+    let maxNumeric = 2;
+    let minSpecial = 1;
+    let maxSpecial = 1;
      
      
     // Do not change any code below this line !!!
      
-    const numberUpper = Math.floor((Math.random() * maxUpper) + minUpper);
-    const numberNumeric = Math.floor((Math.random() * maxNumeric) + minNumeric);
-    const numberSpecial = Math.floor((Math.random() * maxSpecial) + minSpecial);
-    const numberLower = passwordLength - (numberUpper + numberNumeric + numberSpecial);
+    let numberUpper = Math.floor((Math.random() * maxUpper) + minUpper);
+    let numberNumeric = Math.floor((Math.random() * maxNumeric) + minNumeric);
+    let numberSpecial = Math.floor((Math.random() * maxSpecial) + minSpecial);
+    let numberLower = passwordLength - (numberUpper + numberNumeric + numberSpecial);
                  
     let upperChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     let lowerChars = 'abcdefghijklmnopqrstuvwxyz';

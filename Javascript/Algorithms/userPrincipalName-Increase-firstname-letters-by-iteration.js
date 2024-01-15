@@ -10,8 +10,9 @@
 
 function generateUserPrincipalName() {
 	
-    const domain = 'domain.com';
-       
+    let domain = 'domain.com';
+
+    let userPrincipalName = '';   
     let firstName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;

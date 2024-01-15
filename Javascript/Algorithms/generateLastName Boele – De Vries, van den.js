@@ -45,7 +45,7 @@ function generateLastName() {
             if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
             break;
     }
-    const lastNameFormatted = nameFormatted.trim();
+    let lastNameFormatted = nameFormatted.trim();
 
     return lastNameFormatted;
 }

@@ -1,11 +1,11 @@
 function generateSamAccountName() {
 
-    const suffix = Iteration === 0 ? '' : Iteration;
+    let suffix = Iteration === 0 ? '' : Iteration;
     let maxAttributeLength = 20 - suffix.toString().length;
     
-    let firstName = Person.Name.NickName.trim();
-    let middleName = Person.Name.FamilyNamePrefix.trim();
-    let lastName = Person.Name.FamilyName.trim();
+    let firstName = Person.Name.NickName;
+    let middleName = Person.Name.FamilyNamePrefix;
+    let lastName = Person.Name.FamilyName;
 
     let sAMAccountName = [firstName, middleName, lastName]
         // Filter empty values
@@ -24,7 +24,7 @@ function generateSamAccountName() {
     sAMAccountName = sAMAccountName.replace(/[^0-9a-zA-Z.']/g, '');
 
     //Shorten string to maxAttributeLength minus iteration length
-    return sAMAccountName.substring(0, maxAttributeLength) + suffix;
+    return sAMAccountName.substring(0, maxAttributeLength).trim() + suffix;
 }
 
 generateSamAccountName();

@@ -1,5 +1,5 @@
 function generateSamAccountName() {
-    const suffix = Iteration === 0 ? '' : Iteration;
+    let suffix = Iteration === 0 ? '' : Iteration;
     let maxAttributeLength = 20 - suffix.toString().length;
     
     let firstNameChar = Person.Name.NickName.substring(0, 1);

@@ -51,7 +51,7 @@ function generatedisplayName() {
             if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
             break;
     }
-    const displayName = nameFormatted.trim();
+    let displayName = nameFormatted.trim();
 
     return displayName;
 }

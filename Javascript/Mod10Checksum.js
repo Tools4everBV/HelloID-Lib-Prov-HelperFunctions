@@ -7,11 +7,11 @@
  * Return the check digit.
  */
 function luhn_checksum(code) {
-    var len = code.length
-    var parity = len % 2
-    var sum = 0
-    for (var i = len-1; i >= 0; i--) {
-        var d = parseInt(code.charAt(i))
+    let len = code.length
+    let parity = len % 2
+    let sum = 0
+    for (let i = len-1; i >= 0; i--) {
+        let d = parseInt(code.charAt(i))
         if (i % 2 == parity) { d *= 2 }
         if (d > 9) { d -= 9 }
         sum += d
@@ -23,7 +23,7 @@ function luhn_checksum(code) {
  * Return a full code (including check digit), from the specified partial code (without check digit).
  */
 function luhn_caclulate(partcode) {
-    var checksum = luhn_checksum(partcode + "0")
+    let checksum = luhn_checksum(partcode + "0")
     return checksum == 0 ? 0 : 10 - checksum
 }
 

@@ -9,7 +9,7 @@ function generateSamAccountName() {
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
     let maxAttributeLength = 20;
 
@@ -55,7 +55,7 @@ function generateSamAccountName() {
 }
 
 function getValue() {
-    const samAccountName = generateSamAccountName();
+    let samAccountName = generateSamAccountName();
     return samAccountName;
 }
 

@@ -48,7 +48,7 @@ function generatelastName() {
             nameFormatted = nameFormatted + ' ' + lastName;
             break;
     }
-    const lastNameFormatted = nameFormatted.trim();
+    let lastNameFormatted = nameFormatted.trim();
 
     return lastNameFormatted;
 }

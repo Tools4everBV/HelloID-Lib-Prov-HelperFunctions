@@ -1,15 +1,15 @@
 function generateDisplayName() {
 
-    let firstName = Person.Name.NickName.trim();
+    let firstName = Person.Name.NickName;
     
-    let middleName = Person.Name.FamilyNamePrefix.trim();
-    let lastName = Person.Name.FamilyName.trim();
+    let middleName = Person.Name.FamilyNamePrefix;
+    let lastName = Person.Name.FamilyName;
     
-    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix.trim();
-    let lastNamePartner = Person.Name.FamilyNamePartner.trim();
+    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
+    let lastNamePartner = Person.Name.FamilyNamePartner;
     
-    let birthName = [middleName, lastName].join(' ').trim();
-    let partnerName = [middleNamePartner, lastNamePartner].join(' ').trim();
+    let birthName = [middleName, lastName].join(' ');
+    let partnerName = [middleNamePartner, lastNamePartner].join(' ');
 
     switch(Person.Name.Convention) {
         case 'B':
