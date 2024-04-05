@@ -13,10 +13,10 @@
 // 	                    BP	janine.vandenboele@domain.local
 // 	                    P	janine.devries@domain.local
 // 	                    PB  janine.devries@domain.local
-// If also in use   	B	janine.vandenboele1@domain.local
-// 	                    BP	janine.vandenboele1@domain.local
-// 	                    P	janine.devries1@domain.local
-// 	                    PB  janine.devries1@domain.local
+// If also in use   	B	janine.vandenboele2@domain.local
+// 	                    BP	janine.vandenboele2@domain.local
+// 	                    P	janine.devries2@domain.local
+// 	                    PB  janine.devries2@domain.local
 function generateMail() {
     let firstName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -37,7 +37,7 @@ function generateMail() {
         nameFormatted = firstName + '.';
     } else {
         nameFormatted = firstName + '.';
-        suffix = Iteration - 2;
+        suffix = Iteration - 1;
     }
 
     let maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);

@@ -13,24 +13,20 @@ function generateDisplayName() {
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
+    let nameFormatted = '';
     let maxAttributeLength = 256;
 
-    let nameFormatted = nameFormatted + firstName + ' ';
+    nameFormatted = nameFormatted + firstName + ' ';
     switch (convention) {
         case "BP":
             if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
-
-            nameFormatted = nameFormatted + ' - ';
-
+            nameFormatted = nameFormatted + lastName + ' - ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
             nameFormatted = nameFormatted + lastNamePartner;
             break;
         case "PB":
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
-
-            nameFormatted = nameFormatted + ' - ';
+            nameFormatted = nameFormatted + lastNamePartner + ' - ';
             if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
             nameFormatted = nameFormatted + lastName;
             break;
@@ -45,7 +41,7 @@ function generateDisplayName() {
             break;
     }
     // Trim spaces at start and end
-    let displayName = displayName.trim();
+    let displayName = nameFormatted.trim();
 
     // Shorten string to maxAttributeLength minus iteration length
     displayName = displayName.substring(0, maxAttributeLength);

@@ -15,32 +15,28 @@ function generateDisplayName() {
 
     let maxAttributeLength = 256;
 
-    let nameFormatted = nameFormatted + firstName + ' ';
+    let nameFormatted = '';
     switch (convention) {
         case "BP":
-            nameFormatted = lastName;
-            nameFormatted = nameFormatted + ' - ';
+            nameFormatted = lastName + ' - ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner + ',';
-            nameFormatted = nameFormatted + ' ' + firstName;
+            nameFormatted = nameFormatted + lastNamePartner + ', ' + firstName;
             if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
             break;
         case "PB":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
-
-            nameFormatted = nameFormatted + ' - ';
+            nameFormatted = lastNamePartner + ' - ';
             if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
+            nameFormatted = nameFormatted + lastName + ', ' + firstName;
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + ' ' + middleNamePartner }
             break;
         case "P":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
+            nameFormatted = nameFormatted + lastNamePartner + ', ' + firstName;
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + ' ' + middleNamePartner }
             break;
         case "B":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
+            nameFormatted = nameFormatted + lastName + ', ' + firstName;
+            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
             break;
     }
     // Trim spaces at start and end

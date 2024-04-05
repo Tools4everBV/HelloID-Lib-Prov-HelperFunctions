@@ -5,14 +5,14 @@
 // 	                    BP	Janine van den Boele – de Vries
 // 	                    P	Janine de Vries
 // 	                    PB  Janine de Vries – van den Boele
-// If in use	        B	Janine van den Boele 01
-// 	                    BP	Janine van den Boele – de Vries 01
-// 	                    P	Janine de Vries 01 
-// 	                    PB  Janine de Vries – van den Boele 01
-// If also in use   	B	Janine van den Boele 02
+// If in use	        B	Janine van den Boele 02
 // 	                    BP	Janine van den Boele – de Vries 02
-// 	                    P	Janine de Vries 02
+// 	                    P	Janine de Vries 02 
 // 	                    PB  Janine de Vries – van den Boele 02
+// If also in use   	B	Janine van den Boele 03
+// 	                    BP	Janine van den Boele – de Vries 03
+// 	                    P	Janine de Vries 03
+// 	                    PB  Janine de Vries – van den Boele 03
 function generateCommonName() {
     let firstName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -22,17 +22,19 @@ function generateCommonName() {
     let convention = Person.Name.Convention;
 
     let suffix = '';
+    let nameFormatted = '';
+
     if (Iteration === 0) {
         suffix = '';
-    } else if (Iteration < 10) {
-        suffix = ' 0' + Iteration;
+    } else if (Iteration < 9) {
+        suffix = ' 0' + (Iteration + 1);
     } else {
-        suffix = ' ' + Iteration;
+        suffix = ' ' + (Iteration + 1);
     }
 
     let maxAttributeLength = (64 - suffix.toString().length);
 
-    let nameFormatted = nameFormatted + firstName + ' ';
+    nameFormatted = nameFormatted + firstName + ' ';
     switch (convention) {
         case "BP":
             if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
