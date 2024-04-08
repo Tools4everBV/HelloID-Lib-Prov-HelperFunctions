@@ -13,10 +13,10 @@
 // 	                    BP	j.vandenboele
 // 	                    P	j.vandenboele
 // 	                    PB  j.vandenboele
-// If also in use   	B	j.vandenboele1
-// 	                    BP	j.vandenboele1
-// 	                    P	j.vandenboele1
-// 	                    PB  j.vandenboele1
+// If also in use   	B	j.vandenboele2
+// 	                    BP	j.vandenboele2
+// 	                    P	j.vandenboele2
+// 	                    PB  j.vandenboele2
 function generateSamAccountName() {
     let firstName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -33,7 +33,7 @@ function generateSamAccountName() {
         nameFormatted = firstName.substring(0, 1) + '.';
     } else {
         nameFormatted = firstName.substring(0, 1) + '.';
-        suffix = Iteration - 2;
+        suffix = Iteration - 1;
     }
 
     let maxAttributeLength = (20 - suffix.toString().length);

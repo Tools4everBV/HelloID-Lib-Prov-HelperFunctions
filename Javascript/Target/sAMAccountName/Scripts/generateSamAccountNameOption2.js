@@ -5,27 +5,27 @@
 // 	                    BP	janine.van.den.boele
 // 	                    P	janine.van.den.boele
 // 	                    PB  janine.van.den.boele
-// If in use	        B	janine.van.den.boel1 (20 char long)
-// 	                    BP	janine.van.den.boel1
-// 	                    P	janine.van.den.boel1
-// 	                    PB  janine.van.den.boel1
-// If also in use   	B	janine.van.den.boel2
+// If in use	        B	janine.van.den.boel2 (20 char long)
 // 	                    BP	janine.van.den.boel2
 // 	                    P	janine.van.den.boel2
 // 	                    PB  janine.van.den.boel2
+// If also in use   	B	janine.van.den.boel3
+// 	                    BP	janine.van.den.boel3
+// 	                    P	janine.van.den.boel3
+// 	                    PB  janine.van.den.boel3
 function generateSamAccountName() {
     let firstName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let convention = Person.Name.Convention;
-
+    
     let suffix = ''
     let nameFormatted = '';
     if (Iteration === 0) {
         nameFormatted = firstName + '.';
     } else {
         nameFormatted = firstName + '.';
-        suffix = Iteration;
+        suffix = Iteration + 1;
     }
 
     let maxAttributeLength = (20 - suffix.toString().length);

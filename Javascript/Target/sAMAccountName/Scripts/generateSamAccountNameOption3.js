@@ -9,10 +9,10 @@
 // 	                    BP	j.van.den.boel
 // 	                    P	j.van.den.boel
 // 	                    PB  j.van.den.boel
-// If also in use   	B	j.van.den.boel1
-// 	                    BP	j.van.den.boel1
-// 	                    P	j.van.den.boel1
-// 	                    PB  j.van.den.boel1
+// If also in use   	B	j.van.den.boel2
+// 	                    BP	j.van.den.boel2
+// 	                    P	j.van.den.boel2
+// 	                    PB  j.van.den.boel2
 function generateSamAccountName() {
     let firstName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -27,7 +27,7 @@ function generateSamAccountName() {
         nameFormatted = firstName.substring(0, 1) + '.';
     } else {
         nameFormatted = firstName.substring(0, 1) + '.';
-        suffix = Iteration - 1;
+        suffix = Iteration;
     }
 
     let maxAttributeLength = (20 - suffix.toString().length);

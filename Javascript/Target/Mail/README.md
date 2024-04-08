@@ -60,17 +60,17 @@
 |           | BP         | janin.vandenboele@domain.local   |                                            |
 |           | P          | janin.devries@domain.local       |                                            |
 |           | PB         | janin.devries@domain.local       |                                            |
-| Eighth    | B          | janine.vandenboele1@domain.local |                                            |
-|           | BP         | janine.vandenboele1@domain.local |                                            |
-|           | P          | janine.devries1@domain.local     |                                            |
-|           | PB         | janine.devries1@domain.local     |                                            |
+| Eighth    | B          | janine.vandenboele2@domain.local |                                            |
+|           | BP         | janine.vandenboele2@domain.local |                                            |
+|           | P          | janine.devries2@domain.local     |                                            |
+|           | PB         | janine.devries2@domain.local     |                                            |
 
 ## [Option 4: jvandenboele@domain.local](./Scripts/generateMailOption4.js)
 
 | Iteration | Convention | Value                           | Remark                                   |
 | --------- | ---------- | ------------------------------- | ---------------------------------------- |
 | First     | B          | jvandenboele@domain.local       | The first character of the nickname      |
-|           | BP         | jvandenboele@domain.local       |                                          |
+|           | BP         | jvandenboele@domain.local       | FamilyName                               |
 |           | P          | jvandenboele@domain.local       |                                          |
 |           | PB         | jvandenboele@domain.local       |                                          |
 | Second    | B          | javandenboele@domain.local      | The first two characters of the nickname |
@@ -82,10 +82,10 @@
 |           | BP         | janinevandenboele@domain.local  |                                          |
 |           | P          | janinevandenboele@domain.local  |                                          |
 |           | PB         | janinevandenboele@domain.local  |                                          |
-| Eighth    | B          | janinevandenboele1@domain.local |                                          |
-|           | BP         | janinevandenboele1@domain.local |                                          |
-|           | P          | janinevandenboele1@domain.local |                                          |
-|           | PB         | janinevandenboele1@domain.local |                                          |
+| Eighth    | B          | janinevandenboele2@domain.local |                                          |
+|           | BP         | janinevandenboele2@domain.local |                                          |
+|           | P          | janinevandenboele2@domain.local |                                          |
+|           | PB         | janinevandenboele2@domain.local |                                          |
 
 ## [Option 5: jvandenboele@domain.local](./Scripts/generateMailOption5.js)
 
@@ -104,10 +104,10 @@
 |           | BP         | janinevandenboele@domain.local  |                                          |
 |           | P          | janinedevries@domain.local      |                                          |
 |           | PB         | janinedevries@domain.local      |                                          |
-| Eighth    | B          | janinevandenboele1@domain.local |                                          |
-|           | BP         | janinevandenboele1@domain.local |                                          |
-|           | P          | janinedevries1@domain.local     |                                          |
-|           | PB         | janinedevries1@domain.local     |                                          |
+| Eighth    | B          | janinevandenboele2@domain.local |                                          |
+|           | BP         | janinevandenboele2@domain.local |                                          |
+|           | P          | janinedevries2@domain.local     |                                          |
+|           | PB         | janinedevries2@domain.local     |                                          |
 
 ## [Option 6: janine.vandenboele@domain.local](./Scripts/generateMailOption6.js)
 
@@ -125,7 +125,7 @@
 |           | BP         | j.vandenboele@domain.local      |                                     |
 |           | P          | j.vandenboele@domain.local      |                                     |
 |           | PB         | j.vandenboele@domain.local      |                                     |
-| Fourth    | B          | j.vandenboele1@domain.local     |                                     |
-|           | BP         | j.vandenboele1@domain.local     |                                     |
-|           | P          | j.vandenboele1@domain.local     |                                     |
-|           | PB         | j.vandenboele1@domain.local     |                                     |
+| Fourth    | B          | j.vandenboele2@domain.local     |                                     |
+|           | BP         | j.vandenboele2@domain.local     |                                     |
+|           | P          | j.vandenboele2@domain.local     |                                     |
+|           | PB         | j.vandenboele2@domain.local     |                                     |

@@ -26,7 +26,7 @@ function generateMail() {
     let suffix = '';
     let nameFormatted = firstName.substring(0, (Iteration + 1));
     if (Iteration > (firstName.length - 1)) {
-        suffix = (Iteration - (firstName.length - 1));
+        suffix = (Iteration - (firstName.length - 2));
     }
 
     let maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);

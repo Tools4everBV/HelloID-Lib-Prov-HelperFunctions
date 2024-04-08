@@ -37,7 +37,6 @@ function generateMail() {
         initialsWithoutDots = initials.trim().replace(/\./g, "");
     }
 
-
     if (Iteration === 0) {
         nameFormatted = firstName + '.';
     } else {
@@ -45,7 +44,7 @@ function generateMail() {
         if ((initialsWithoutDots.length) <= 1) {
             nameFormatted = firstName.substring(0, (Iteration)) + '.';
             if (Iteration >= (firstName.length)) {
-                suffix = (Iteration - (firstName.length - 1));
+                suffix = (Iteration - (firstName.length - 2));
             }
         } else {
             if (Iteration === 1) {
@@ -54,7 +53,7 @@ function generateMail() {
             } else {
                 nameFormatted = firstName.substring(0, (Iteration - 1)) + '.';
                 if (Iteration > (firstName.length)) {
-                    suffix = (Iteration - (firstName.length));
+                    suffix = (Iteration - (firstName.length - 1));
                 }
             }
         }
