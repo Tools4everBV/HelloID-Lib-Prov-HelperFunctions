@@ -7,10 +7,16 @@ function convertDate(date) {
     return day + "-" + month + "-" + year;
 }
 
-let endDate = sourceContract.iz_einddatum_P01126;
-if (endDate != "") {
-    const date = new Date(endDate);
-    newDate = convertDate(date);
-} else {
-    newDate = ""
+function convertDate(date) {
+    // Get day, month, and year components
+    const day = date.getDate().toString().padStart(2, '0');
+    const month = (date.getMonth() + 1).toString().padStart(2, '0');
+    const year = date.getFullYear();
+
+    // Format the date as "dd-mm-yyyy"
+    return `${day}-${month}-${year}`;
 }
+
+// Example usage:
+let inputDate = new Date('2024-04-30'); // Replace with your actual input date
+inputDate ? convertDate(new Date(inputDate)) : null;

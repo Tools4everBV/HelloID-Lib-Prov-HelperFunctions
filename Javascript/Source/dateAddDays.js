@@ -1,13 +1,13 @@
 function addDays(date, days) {
-    let copy = new Date(Number(date));
+    // Create a copy of the input date
+    let copy = new Date(date.getTime());
+
+    // Add the specified number of days
     copy.setDate(date.getDate() + days);
+
     return copy;
 }
 
-let endDate = sourceContract.iz_einddatum_P01126;
-if (endDate != "") {
-    const date = new Date(endDate);
-    newDate = addDays(date, 1);
-} else {
-    newDate = new Date('2099-12-31');
-}
+// Example usage:
+let inputDate = new Date('2024-04-30'); // Replace with your actual input date
+addDays(inputDate, 1);
