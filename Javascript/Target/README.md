@@ -6,34 +6,14 @@
 
 ## [Mail](./Mail)
 
-## [sAMAccountName](./sAMAccountName)
+## [SamAccountName](./SamAccountName)
 
 ## [Surname/Lastname](./Surname_Lastname)
 
 ## [UserPrincipalName](./UserPrincipalName)
 
-## [proxyAddresses.js](./proxyAddresses.js)
-Copy your Mail script and replace:
+## [ProxyAddresses.js](./ProxyAddresses.js)
 
-```JavaScript
-return mailNickName + '@' + domain;
-```
+## [Initials.js](./Initials.js)
 
-With the value:
-
-```JavaScript
-return [
-    'SMTP:' + mailNickName + '@' + domain
-];
-```
-
-When an alias is required, you can use the example below:
-
-```JavaScript
-let secondDomain = "domain.mail.onmicrosoft.com";
-return [
-    'SMTP:' + mailNickName + '@' + domain,
-    'smtp:' + mailNickName + '@' + secondDomain
-    
-];
-```
+## [Password.js](./Password.js)
