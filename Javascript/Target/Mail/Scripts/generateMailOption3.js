@@ -23,7 +23,6 @@
 // 	                                    P	janine.devries2@domain.local
 // 	                                    PB  janine.devries2@domain.local    
 // etc.
-Iteration = 3
 function generateMail() {
     let initials = Person.Name.Initials;
     let nickName = Person.Name.NickName;
