@@ -9,7 +9,7 @@ function addDays(date, days) {
 }
 
 function getEndDate(endDate) {
-    let newDate;
+    let newDate = null;
 
     if (endDate) {
         // If an end date is provided, calculate the new date by adding 1 day
