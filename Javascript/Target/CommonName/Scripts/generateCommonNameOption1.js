@@ -13,57 +13,60 @@
 // 	                    BP	Janine van den Boele – de Vries 03
 // 	                    P	Janine de Vries 03
 // 	                    PB  Janine de Vries – van den Boele 03
+// etc.
 function generateCommonName() {
-    let firstName = Person.Name.NickName;
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let suffix = '';
-    let nameFormatted = '';
-
-    if (Iteration === 0) {
-        suffix = '';
-    } else if (Iteration < 9) {
-        suffix = ' 0' + (Iteration + 1);
-    } else {
-        suffix = ' ' + (Iteration + 1);
-    }
-
-    let maxAttributeLength = (64 - suffix.toString().length);
-
-    nameFormatted = nameFormatted + firstName + ' ';
+    let commonName = '';
     switch (convention) {
         case "BP":
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
-            nameFormatted = nameFormatted + ' - ';
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
+            commonName = commonName + nickName + ' ';
+            if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
+            commonName = commonName + lastName;
+
+            commonName = commonName + ' - ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
+            commonName = commonName + lastNamePartner;
             break;
         case "PB":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
-            nameFormatted = nameFormatted + ' - ';
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
+            commonName = commonName + nickName + ' ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
+            commonName = commonName + lastNamePartner;
+
+            commonName = commonName + ' - ';
+            if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
+            commonName = commonName + lastName;
             break;
         case "P":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
+            commonName = commonName + nickName + ' ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
+            commonName = commonName + lastNamePartner;
             break;
         case "B":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
+            commonName = commonName + nickName + ' ';
+            if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
+            commonName = commonName + lastName;
             break;
     }
     // Trim spaces at start and end
-    let commonName = nameFormatted.trim();
+    commonName = commonName.trim();
 
     // Shorten string to maxAttributeLength minus iteration length
+    let suffix = ''
+    let iterationToUse = Iteration + 1
+    if (iterationToUse.toString().length <= 1) {
+        suffix = Iteration === 0 ? '' : (' 0' + iterationToUse);
+    }
+    else {
+        suffix = Iteration === 0 ? '' : (' ' + iterationToUse);
+    }
+    const maxAttributeLength = (64 - suffix.toString().length);
     commonName = commonName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
