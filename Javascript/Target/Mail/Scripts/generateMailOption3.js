@@ -23,6 +23,7 @@
 // 	                                    P	janine.devries2@domain.local
 // 	                                    PB  janine.devries2@domain.local    
 // etc.
+Iteration = 3
 function generateMail() {
     let initials = Person.Name.Initials;
     let nickName = Person.Name.NickName;
@@ -38,21 +39,19 @@ function generateMail() {
         initialsWithoutDots = initials.trim().replace(/\./g, "");
     }
 
+    // If person has no or one initial, skip to next iteration (values must be unique every iteration)
+    if (initialsWithoutDots.length <= 1) {
+        Iteration = Iteration + 1
+    }
+
     let mailNickName = '';
     if (Iteration === 0) {
         mailNickName = nickName + '.';
+    } else if (Iteration === 1) {
+        // Add a dot to every initial
+        mailNickName = initialsWithoutDots.replace(/(.{1})/g, "$1.");
     } else {
-        // If person has no or one initial Iteration 1 needs to be skipped (values must be unique every iteration)
-        if (initialsWithoutDots.length <= 1) {
-            mailNickName = nickName.substring(0, (Iteration)) + '.';
-        } else {
-            if (Iteration === 1) {
-                // Add a dot to every initial
-                mailNickName = initialsWithoutDots.replace(/(.{1})/g, "$1.");
-            } else {
-                mailNickName = nickName.substring(0, (Iteration - 1)) + '.';
-            }
-        }
+        mailNickName = nickName.substring(0, (Iteration - 1)) + '.';
     }
 
     switch (convention) {
@@ -81,16 +80,14 @@ function generateMail() {
 
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
-    let iterationToUse = Iteration - (nickName.length - 1)
+    let iterationToUse = Iteration - (nickName.length - 1) <= 1 ? '' : (Iteration - (nickName.length - 1))
     suffix = Iteration === 0 ? '' : (iterationToUse);
     const domain = 'domain.local';
     const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    if (Iteration > (nickName.length)) {
-        mailNickName = mailNickName + suffix;
-    }
+    mailNickName = mailNickName + suffix;
 
     return mailNickName + '@' + domain;
 }
