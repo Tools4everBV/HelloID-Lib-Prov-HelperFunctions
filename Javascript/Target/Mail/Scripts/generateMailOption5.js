@@ -29,6 +29,7 @@ function generateMail() {
         case "PB":
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + middleNamePartner.replace(/ /g, '') }
             mailNickName = mailNickName + lastNamePartner;
+            break;
         case "B":
         case "BP":
         default:
