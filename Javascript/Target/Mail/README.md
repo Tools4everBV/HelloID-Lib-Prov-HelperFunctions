@@ -129,3 +129,24 @@
 |           | BP         | j.vandenboele2@domain.local     |                                     |
 |           | P          | j.vandenboele2@domain.local     |                                     |
 |           | PB         | j.vandenboele2@domain.local     |                                     |
+
+## [Option 7: janine.vandenboele@domain.local](./Scripts/generateMailOption7.js)
+
+| Iteration | Convention | Value                             | Remark                  |
+| --------- | ---------- | --------------------------------- | ----------------------- |
+| First     | B          | janine.vandenboele@domain.local   | FamilyName              |
+|           | BP         | janine.vandenboele@domain.local   |                         |
+|           | P          | janine.vandenboele@domain.local   |                         |
+|           | PB         | janine.vandenboele@domain.local   |                         |
+| Second    | B          | janine_vandenboele@domain.local   |                         |
+|           | BP         | janine_vandenboele@domain.local   |                         |
+|           | P          | janine_vandenboele@domain.local   |                         |
+|           | PB         | janine_vandenboele@domain.local   |                         |
+| Third     | B          | janine.vandenboele02@domain.local | Iterate, starting at 02 |
+|           | BP         | janine.vandenboele02@domain.local |                         |
+|           | P          | janine.vandenboele02@domain.local |                         |
+|           | PB         | janine.vandenboele02@domain.local |                         |
+| Fourth    | B          | janine.vandenboele03@domain.local |                         |
+|           | BP         | janine.vandenboele03@domain.local |                         |
+|           | P          | janine.vandenboele03@domain.local |                         |
+|           | PB         | v                                 |                         |
