@@ -6,44 +6,50 @@
 // P	Janine de Vries
 // PB   Janine de Vries – van den Boele
 function generateDisplayName() {
-    let firstName = Person.Name.NickName;
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let nameFormatted = '';
-    let maxAttributeLength = 256;
-
-    nameFormatted = nameFormatted + firstName + ' ';
+    let displayName = '';
     switch (convention) {
         case "BP":
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName + ' - ';
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
+            displayName = displayName + nickName + ' ';
+            if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
+            displayName = displayName + lastName;
+
+            displayName = displayName + ' - ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
+            displayName = displayName + lastNamePartner;
             break;
         case "PB":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner + ' - ';
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
+            displayName = displayName + nickName + ' ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
+            displayName = displayName + lastNamePartner;
+
+            displayName = displayName + ' - ';
+            if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
+            displayName = displayName + lastName;
             break;
         case "P":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner;
+            displayName = displayName + nickName + ' ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
+            displayName = displayName + lastNamePartner;
             break;
         case "B":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
+            displayName = displayName + nickName + ' ';
+            if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
+            displayName = displayName + lastName;
             break;
     }
     // Trim spaces at start and end
-    let displayName = nameFormatted.trim();
+    displayName = displayName.trim();
 
-    // Shorten string to maxAttributeLength minus iteration length
+    // Shorten string to maxAttributeLength 
+    const maxAttributeLength = 256;
     displayName = displayName.substring(0, maxAttributeLength);
 
     return displayName;

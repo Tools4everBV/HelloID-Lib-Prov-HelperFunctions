@@ -6,43 +6,58 @@
 // P	Vries, Janine de
 // PB	Vries – van den Boele, Janine de
 function generateDisplayName() {
-    let firstName = Person.Name.NickName;
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let maxAttributeLength = 256;
-
-    let nameFormatted = '';
+    let displayName = '';
     switch (convention) {
         case "BP":
-            nameFormatted = lastName + ' - ';
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner + ', ' + firstName;
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
+            displayName = displayName + lastName;
+
+            displayName = displayName + ' - ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
+            displayName = displayName + lastNamePartner;
+
+            displayName = displayName + ', ';
+            displayName = displayName + nickName;
+            if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + ' ' + middleName }
             break;
         case "PB":
-            nameFormatted = lastNamePartner + ' - ';
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName + ', ' + firstName;
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + ' ' + middleNamePartner }
+            displayName = displayName + lastNamePartner;
+
+            displayName = displayName + ' - ';
+            if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
+            displayName = displayName + lastName;
+
+            displayName = displayName + ', ';
+            displayName = displayName + nickName;
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + ' ' + middleNamePartner }
             break;
         case "P":
-            nameFormatted = nameFormatted + lastNamePartner + ', ' + firstName;
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + ' ' + middleNamePartner }
+            displayName = displayName + lastNamePartner;
+
+            displayName = displayName + ', ';
+            displayName = displayName + nickName;
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + ' ' + middleNamePartner }
             break;
         case "B":
         default:
-            nameFormatted = nameFormatted + lastName + ', ' + firstName;
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
+            displayName = displayName + lastName;
+
+            displayName = displayName + ', ';
+            displayName = displayName + nickName;
+            if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + ' ' + middleName }
             break;
     }
     // Trim spaces at start and end
-    let displayName = nameFormatted.trim();
+    displayName = displayName.trim();
 
-    // Shorten string to maxAttributeLength minus iteration length
+    // Shorten string to maxAttributeLength 
+    const maxAttributeLength = 256;
     displayName = displayName.substring(0, maxAttributeLength);
 
     return displayName;
