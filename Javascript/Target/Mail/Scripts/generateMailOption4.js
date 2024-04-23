@@ -1,4 +1,4 @@
-// generateMailOption4.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/README.md]
+// generateMailOption4.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateMailOption4.js]
 //
 // Mapping logic to generate the Mail according to the following convention.
 // Eerste keuze	            B	jvandenboele@domain.local
@@ -13,21 +13,14 @@
 // 	                        BP	janvandenboele@domain.local
 // 	                        P	janvandenboele@domain.local
 // 	                        PB	janvandenboele@domain.local
+// etc.
 function generateMail() {
-    let firstName = Person.Name.NickName;
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let convention = Person.Name.Convention;
 
-    const domain = 'domain.local';
-
-    let suffix = '';
-    let nameFormatted = firstName.substring(0, (Iteration + 1));
-    if (Iteration > (firstName.length - 1)) {
-        suffix = (Iteration - (firstName.length - 2));
-    }
-
-    let maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
+    let mailNickName = nickName.substring(0, (Iteration + 1));
 
     switch (convention) {
         case "P":
@@ -35,12 +28,12 @@ function generateMail() {
         case "B":
         case "BP":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName }
-            nameFormatted = nameFormatted + lastName;
+            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') }
+            mailNickName = mailNickName + lastName;
             break;
     }
     // Trim spaces at start and end
-    let mailNickName = nameFormatted.trim();
+    mailNickName = mailNickName.trim();
 
     // Convert to lower case
     mailNickName = mailNickName.toLowerCase();
@@ -49,13 +42,20 @@ function generateMail() {
     mailNickName = deleteDiacriticalMarks(mailNickName);
 
     // Remove blank chars and "'"
-    mailNickName = mailNickName.replace(/[^0-9a-zA-Z.-_]/g, '');
+    mailNickName = mailNickName.replace(/[^0-9a-zA-Z.\-_]/g, '');
 
     // Shorten string to maxAttributeLength minus iteration length
+    let suffix = ''
+    let iterationToUse = Iteration - (nickName.length - 2)
+    suffix = Iteration === 0 ? '' : (iterationToUse);
+    const domain = 'domain.local';
+    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    mailNickName = mailNickName + suffix;
+    if (Iteration > (nickName.length - 1)) {
+        mailNickName = mailNickName + suffix;
+    }
 
     return mailNickName + '@' + domain;
 }

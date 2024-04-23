@@ -1,4 +1,4 @@
-// generateMailOption5.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/feat-rework-javascript/Javascript/Target/Mail/Scripts/generateMailOption5.js]
+// generateMailOption5.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateMailOption5.js]
 //
 // Mapping logic to generate the Mail according to the following convention.
 // First choice	            B	jvandenboele@domain.local
