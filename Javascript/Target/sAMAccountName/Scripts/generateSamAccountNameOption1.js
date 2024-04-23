@@ -1,31 +1,31 @@
-// generateSamAccountNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/sAMAccountName/README.md]
+// generateSamAccountNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/sAMAccountName/Scripts/generateSamAccountNameOption1.js]
 //
-// Mapping logic to generate the sAMAccountName according to the following convention.
-// Eerste keuze	            B	jvandenboele
+// Mapping logic to generate the SamAccountName according to the following convention.
+// First choice	            B	jvandenboele
 // 	                        BP	jvandenboele
 // 	                        P	jvandenboele
 // 	                        PB  jvandenboele
-// Indien in gebruik	    B	javandenboele
+// If in use	            B	javandenboele
 // 	                        BP	javandenboele
 // 	                        P	javandenboele
 // 	                        PB	javandenboele
-// Indien ook in gebruik	B	janvandenboele
+// If also in use	        B	janvandenboele
 // 	                        BP	janvandenboele
 // 	                        P	janvandenboele
 // 	                        PB	janvandenboele
+// etc.
+// If full name used, use iterator  	B	janine.vandenboele2
+// 	                                    BP	janine.vandenboele2
+// 	                                    P	janine.vandenboele2
+// 	                                    PB  janine.vandenboele2
+// etc.
 function generateSamAccountName() {
-    let firstName = Person.Name.NickName;
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let convention = Person.Name.Convention;
 
-    let suffix = '';
-    let nameFormatted = firstName.substring(0, (Iteration + 1));
-    if (Iteration > (firstName.length - 1)) {
-        suffix = (Iteration - (firstName.length - 2));
-    }
-
-    let maxAttributeLength = (20 - suffix.toString().length);
+    let samAccountName = nickName.substring(0, (Iteration + 1)) + '.';
 
     switch (convention) {
         case "P":
@@ -33,29 +33,33 @@ function generateSamAccountName() {
         case "B":
         case "BP":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName }
-            nameFormatted = nameFormatted + lastName;
+            if (typeof middleName !== 'undefined' && middleName) { samAccountName = samAccountName + middleName.replace(/ /g, '') }
+            samAccountName = samAccountName + lastName;
             break;
     }
     // Trim spaces at start and end
-    let sAMAccountName = nameFormatted.trim();
+    samAccountName = samAccountName.trim();
 
     // Convert to lower case
-    sAMAccountName = sAMAccountName.toLowerCase();
+    samAccountName = samAccountName.toLowerCase();
 
     // Remove diacritical chars
-    sAMAccountName = deleteDiacriticalMarks(sAMAccountName);
+    samAccountName = deleteDiacriticalMarks(samAccountName);
 
     // Remove blank chars and "'"
-    sAMAccountName = sAMAccountName.replace(/[^0-9a-zA-Z.-_]/g, '');
+    samAccountName = samAccountName.replace(/[^0-9a-zA-Z.\-_]/g, '');
 
     // Shorten string to maxAttributeLength minus iteration length
-    sAMAccountName = sAMAccountName.substring(0, maxAttributeLength);
+    let suffix = ''
+    let iterationToUse = Iteration - (nickName.length - 2) <= 1 ? '' : (Iteration - (nickName.length - 2))
+    suffix = Iteration === 0 ? '' : (iterationToUse);
+    const maxAttributeLength = (20 - suffix.toString().length);
+    samAccountName = samAccountName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    sAMAccountName = sAMAccountName + suffix;
+    samAccountName = samAccountName + suffix;
 
-    return sAMAccountName;
+    return samAccountName;
 }
 
 generateSamAccountName();
