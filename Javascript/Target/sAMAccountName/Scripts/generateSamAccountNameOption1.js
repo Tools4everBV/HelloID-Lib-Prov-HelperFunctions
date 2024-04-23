@@ -14,10 +14,10 @@
 // 	                        P	janvandenboele
 // 	                        PB	janvandenboele
 // etc.
-// If full name used, use iterator  	B	janine.vandenboele2
-// 	                                    BP	janine.vandenboele2
-// 	                                    P	janine.vandenboele2
-// 	                                    PB  janine.vandenboele2
+// If full name used, use iterator  	B	janinevandenboele2
+// 	                                    BP	janinevandenboele2
+// 	                                    P	janinevandenboele2
+// 	                                    PB  janinevandenboele2
 // etc.
 function generateSamAccountName() {
     let nickName = Person.Name.NickName;
@@ -25,7 +25,7 @@ function generateSamAccountName() {
     let lastName = Person.Name.FamilyName;
     let convention = Person.Name.Convention;
 
-    let samAccountName = nickName.substring(0, (Iteration + 1)) + '.';
+    let samAccountName = nickName.substring(0, (Iteration + 1));
 
     switch (convention) {
         case "P":
