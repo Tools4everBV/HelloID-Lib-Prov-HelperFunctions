@@ -1,3 +1,5 @@
+// generateCommonNameOption2.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/CommonName/Scripts/generateCommonNameOption2.js]
+//
 // Mapping logic to generate the CommonName according to the following convention.
 // First choice	        B	Boele, Janine van den
 // 	                    BP	Boele – de Vries, Janine van den

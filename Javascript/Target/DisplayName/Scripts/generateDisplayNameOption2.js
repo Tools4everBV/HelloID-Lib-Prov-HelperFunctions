@@ -1,4 +1,4 @@
-// generateDisplayNameOption2.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/DisplayName/README.md]
+// generateDisplayNameOption2.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/DisplayName/Scripts/generateDisplayNameOption2.js]
 //
 // Mapping logic to generate the DisplayName according to the following convention.
 // B    Boele, Janine van den

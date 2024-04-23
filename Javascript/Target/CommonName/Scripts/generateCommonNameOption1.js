@@ -1,4 +1,4 @@
-// generateCommonNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/CommonName/README.md]
+// generateCommonNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/CommonName/Scripts/generateCommonNameOption1.js]
 //
 // Mapping logic to generate the CommonName according to the following convention.
 // First choice	        B	Janine van den Boele
