@@ -18,6 +18,8 @@ function generateMail() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
+    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
+    let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
     let mailNickName = nickName.substring(0, (Iteration + 1));
@@ -25,6 +27,8 @@ function generateMail() {
     switch (convention) {
         case "P":
         case "PB":
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + middleNamePartner.replace(/ /g, '') }
+            mailNickName = mailNickName + lastNamePartner;
         case "B":
         case "BP":
         default:
