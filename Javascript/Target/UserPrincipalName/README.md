@@ -20,24 +20,24 @@
 
 ## [Option 2: j.devries@domain.local](./Scripts/generateUserPrincipalNameOption2.js)
 
-| Iteration | Convention | Value                            | Remark                                   |
-| --------- | ---------- | -------------------------------- | ---------------------------------------- |
-| First     | B          | j.vandenboele@domain.local       | The first character of the nickname      |
-|           | BP         | j.vandenboele@domain.local       | FamilyName                               |
-|           | P          | j.devries@domain.local           | FamilyNamePartner                        |
-|           | PB         | j.devries@domain.local           |                                          |
-| Second    | B          | ja.vandenboele@domain.local      | The first two characters of the nickname |
-|           | BP         | ja.vandenboele@domain.local      |                                          |
-|           | P          | ja.devries@domain.local          |                                          |
-|           | PB         | ja.devries@domain.local          |                                          |
-| Third     | B          | janine.vandenboele@domain.local  |                                          |
-|           | BP         | janine.vandenboele@domain.local  |                                          |
-|           | P          | janine.devries@domain.local      |                                          |
-|           | PB         | janine.devries@domain.local      |                                          |
-| Fourth    | B          | janine.vandenboele2@domain.local |                                          |
-|           | BP         | janine.vandenboele2@domain.local |                                          |
-|           | P          | janine.devries2@domain.local     |                                          |
-|           | PB         | janine.devries2@domain.local     |                                          |
+| Iteration | Convention | Value                            | Remark                              |
+| --------- | ---------- | -------------------------------- | ----------------------------------- |
+| First     | B          | j.vandenboele@domain.local       | The first character of the nickname |
+|           | BP         | j.vandenboele@domain.local       | FamilyName                          |
+|           | P          | j.devries@domain.local           | FamilyNamePartner                   |
+|           | PB         | j.devries@domain.local           |                                     |
+| Second    | B          | ja.vandenboele@domain.local      |                                     |
+|           | BP         | ja.vandenboele@domain.local      |                                     |
+|           | P          | ja.devries@domain.local          |                                     |
+|           | PB         | ja.devries@domain.local          |                                     |
+| Third     | B          | janine.vandenboele@domain.local  |                                     |
+|           | BP         | janine.vandenboele@domain.local  |                                     |
+|           | P          | janine.devries@domain.local      |                                     |
+|           | PB         | janine.devries@domain.local      |                                     |
+| Fourth    | B          | janine.vandenboele2@domain.local |                                     |
+|           | BP         | janine.vandenboele2@domain.local |                                     |
+|           | P          | janine.devries2@domain.local     |                                     |
+|           | PB         | janine.devries2@domain.local     |                                     |
 
 ## [Option 3: janine.devries@domain.local](./Scripts/generateUserPrincipalNameOption3.js)
 
@@ -129,3 +129,24 @@
 |           | BP         | j.vandenboele2@domain.local     |                                     |
 |           | P          | j.vandenboele2@domain.local     |                                     |
 |           | PB         | j.vandenboele2@domain.local     |                                     |
+
+## [Option 7: janine.vandenboele@domain.local](./Scripts/generateUserPrincipalNameOption7.js)
+
+| Iteration | Convention | Value                             | Remark                  |
+| --------- | ---------- | --------------------------------- | ----------------------- |
+| First     | B          | janine.vandenboele@domain.local   | FamilyName              |
+|           | BP         | janine.vandenboele@domain.local   |                         |
+|           | P          | janine.vandenboele@domain.local   |                         |
+|           | PB         | janine.vandenboele@domain.local   |                         |
+| Second    | B          | janine_vandenboele@domain.local   |                         |
+|           | BP         | janine_vandenboele@domain.local   |                         |
+|           | P          | janine_vandenboele@domain.local   |                         |
+|           | PB         | janine_vandenboele@domain.local   |                         |
+| Third     | B          | janine.vandenboele02@domain.local | Iterate, starting at 02 |
+|           | BP         | janine.vandenboele02@domain.local |                         |
+|           | P          | janine.vandenboele02@domain.local |                         |
+|           | PB         | janine.vandenboele02@domain.local |                         |
+| Fourth    | B          | janine.vandenboele03@domain.local |                         |
+|           | BP         | janine.vandenboele03@domain.local |                         |
+|           | P          | janine.vandenboele03@domain.local |                         |
+|           | PB         | janine.vandenboele03@domain.local |                         |

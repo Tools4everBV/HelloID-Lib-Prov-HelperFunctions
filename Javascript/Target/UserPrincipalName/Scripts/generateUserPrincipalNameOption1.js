@@ -1,11 +1,11 @@
-// generateUserPrincipalNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/UserPrincipalName/README.md]
+// generateUserPrincipalNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/UserPrincipalName/Scripts/generateUserPrincipalNameOption1.js]
 //
 // Mapping logic to generate the UserPrincipalName according to the following convention.
 // First choice	        B	janine.vandenboele@domain.local
 // 	                    BP	janine.vandenboele@domain.local
 // 	                    P	janine.vandenboele@domain.local
 // 	                    PB  janine.vandenboele@domain.local
-// If in use          	B	j.vandenboele@domain.local
+// If in use   	        B	j.vandenboele@domain.local
 // 	                    BP	j.vandenboele@domain.local
 // 	                    P	j.vandenboele@domain.local
 // 	                    PB  j.vandenboele@domain.local
@@ -13,26 +13,21 @@
 // 	                    BP	janine.vandenboele2@domain.local
 // 	                    P	janine.vandenboele2@domain.local
 // 	                    PB  janine.vandenboele2@domain.local
+// etc.
 function generateUserPrincipalName() {
-    let firstName = Person.Name.NickName;
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let convention = Person.Name.Convention;
 
-    const domain = 'domain.local';
-
-    let suffix = '';
-    let nameFormatted = '';
+    let mailNickName = '';
     if (Iteration === 0) {
-        nameFormatted = firstName + '.';
+        mailNickName = nickName + '.';
     } else if (Iteration === 1) {
-        nameFormatted = firstName.substring(0, 1) + '.';
+        mailNickName = nickName.substring(0, 1) + '.';
     } else {
-        nameFormatted = firstName + '.';
-        suffix = Iteration;
+        mailNickName = nickName + '.';
     }
-
-    let maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
 
     switch (convention) {
         case "P":
@@ -40,29 +35,34 @@ function generateUserPrincipalName() {
         case "B":
         case "BP":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName }
-            nameFormatted = nameFormatted + lastName;
+            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') }
+            mailNickName = mailNickName + lastName;
             break;
     }
     // Trim spaces at start and end
-    let userPrincipalName = nameFormatted.trim();
+    mailNickName = mailNickName.trim();
 
     // Convert to lower case
-    userPrincipalName = userPrincipalName.toLowerCase();
+    mailNickName = mailNickName.toLowerCase();
 
     // Remove diacritical chars
-    userPrincipalName = deleteDiacriticalMarks(userPrincipalName);
+    mailNickName = deleteDiacriticalMarks(mailNickName);
 
     // Remove blank chars and "'"
-    userPrincipalName = userPrincipalName.replace(/[^0-9a-zA-Z.-_]/g, '');
+    mailNickName = mailNickName.replace(/[^0-9a-zA-Z.\-_]/g, '');
 
     // Shorten string to maxAttributeLength minus iteration length
-    userPrincipalName = userPrincipalName.substring(0, maxAttributeLength);
+    let suffix = ''
+    let iterationToUse = Iteration - 1 === 0 ? '' : (Iteration)
+    suffix = Iteration === 0 ? '' : (iterationToUse);
+    const domain = 'domain.local';
+    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
+    mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    userPrincipalName = userPrincipalName + suffix;
+    mailNickName = mailNickName + suffix;
 
-    return userPrincipalName + '@' + domain;
+    return mailNickName + '@' + domain;
 }
 
 generateUserPrincipalName();
