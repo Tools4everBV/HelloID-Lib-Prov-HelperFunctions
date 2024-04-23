@@ -6,47 +6,53 @@
 // P	Vries, de
 // PB	Vries – van den Boele, de
 function generateSurname() {
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let maxAttributeLength = 64;
-
-    let nameFormatted = '';
+    let surName = '';
     switch (convention) {
         case "BP":
-            nameFormatted = lastName + ' - ';;
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner + ',';
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
+            surName = surName + lastName;
+
+            surName = surName + ' - ';
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + middleNamePartner + ' ' }
+            surName = surName + lastNamePartner;
+
+            if (typeof middleName !== 'undefined' && middleName) { surName = surName + ', ' + middleName }
             break;
         case "PB":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + middleNamePartner + ' ' }
-            nameFormatted = nameFormatted + lastNamePartner + ' - ';
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName;
+            surName = surName + lastNamePartner;
+
+            surName = surName + ' - ';
+            if (typeof middleName !== 'undefined' && middleName) { surName = surName + middleName + ' ' }
+            surName = surName + lastName;
+
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + ', ' + middleNamePartner }
             break;
         case "P":
-            nameFormatted = lastNamePartner + ' - ';
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + middleName + ' ' }
-            nameFormatted = nameFormatted + lastName + ',';
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { nameFormatted = nameFormatted + ' ' + middleNamePartner }
+            surName = surName + lastNamePartner;
+
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + ', ' + middleNamePartner }
             break;
         case "B":
         default:
-            nameFormatted = lastName + ',';
-            if (typeof middleName !== 'undefined' && middleName) { nameFormatted = nameFormatted + ' ' + middleName }
+            surName = surName + lastName;
+
+            if (typeof middleName !== 'undefined' && middleName) { surName = surName + ', ' + middleName }
             break;
     }
     // Trim spaces at start and end
-    let surname = nameFormatted.trim();
+    surName = surName.trim();
 
-    // Shorten string to maxAttributeLength minus iteration length
-    surname = surname.substring(0, maxAttributeLength);
+    // Shorten string to maxAttributeLength 
+    const maxAttributeLength = 64;
+    surName = surName.substring(0, maxAttributeLength);
 
-    return surname;
+    return surName;
 }
 
 generateSurname();
