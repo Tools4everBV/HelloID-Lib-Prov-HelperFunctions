@@ -12,7 +12,7 @@ This function generates a random password based on specified complexity rules. I
 
 Feel free to customize the complexity rules or adjust the usage according to your specific requirements.
 
-## [Option 1: generate password based on birth date](./Scripts/generatePasswordOption2.js)
+## [Option2: generate password based on birth date](./Scripts/generatePasswordOption2.js)
 
 This function generates a password based the birth date of the person and formats it as “yyyyMMdd”. It ensures that the day and month components are zero-padded if necessary.
 
