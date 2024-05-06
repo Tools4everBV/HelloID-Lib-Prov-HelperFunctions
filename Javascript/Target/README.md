@@ -12,8 +12,8 @@
 
 ## [UserPrincipalName](./UserPrincipalName)
 
-## [ProxyAddresses.js](./ProxyAddresses.js)
+## [ProxyAddresses](./ProxyAddresses)
 
-## [Initials.js](./Initials.js)
+## [Initials](./Initials)
 
-## [Password.js](./Password.js)
+## [Password](./Password)
