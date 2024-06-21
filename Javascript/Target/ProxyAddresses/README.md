@@ -150,3 +150,25 @@
 |           | BP         | [SMTP:janine.vandenboele03@domain.local] |                         |
 |           | P          | [SMTP:janine.vandenboele03@domain.local] |                         |
 |           | PB         | [SMTP:janine.vandenboele03@domain.local] |                         |
+
+
+## [Option 8: jvandenboele@domain.local](./Scripts/generateUserPrincipalNameOption8.js)
+
+| Iteration | Convention | Value                             | Remark                                     |
+| --------- | ---------- | --------------------------------- | ------------------------------------------ |
+| First     | B          | [SMTP:jvandenboele@domain.local]  | FamilyName or partnername, no combinations |
+|           | BP         | [SMTP:jvandenboele@domain.local]  |                                            |
+|           | P          | [SMTP:jdevries@domain.local]      |                                            |
+|           | PB         | [SMTP:jdevries@domain.local]      |                                            |
+| Second    | B          | [SMTP:jvandenboele1@domain.local] | Iterate, starting at 1                     |
+|           | BP         | [SMTP:jvandenboele1@domain.local] |                                            |
+|           | P          | [SMTP:jdevries1@domain.local]     |                                            |
+|           | PB         | [SMTP:jdevries1@domain.local]     |                                            |
+| Third     | B          | [SMTP:jvandenboele2@domain.local] |                                            |
+|           | BP         | [SMTP:jvandenboele2@domain.local] |                                            |
+|           | P          | [SMTP:jdevries2@domain.local]     |                                            |
+|           | PB         | [SMTP:jdevries2@domain.local]     |                                            |
+| Fourth    | B          | [SMTP:jvandenboele3@domain.local] |                                            |
+|           | BP         | [SMTP:jvandenboele3@domain.local] |                                            |
+|           | P          | [SMTP:jdevries3@domain.local]     |                                            |
+|           | PB         | [SMTP:jdevries3@domain.local]     |                                            |

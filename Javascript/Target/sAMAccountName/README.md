@@ -77,7 +77,7 @@
 |           | P          | j.vandenboele2     |                                     |
 |           | PB         | j.vandenboele2     |                                     |
 
-## [Option 5: jdevries](./Scripts/generateSamAccountNameOption3.js)
+## [Option 5: jdevries](./Scripts/generateSamAccountNameOption5.js)
 
 | Iteration | Convention | Value              | Remark                                   |
 | --------- | ---------- | ------------------ | ---------------------------------------- |
@@ -98,3 +98,24 @@
 |           | BP         | janinevandenboele2 |                                          |
 |           | P          | janinedevries2     |                                          |
 |           | PB         | janinedevries2     |                                          |
+
+## [Option 6: jvandenboele](./Scripts/generateSamAccountNameOption6.js)
+
+| Iteration | Convention | Value         | Remark                                     |
+| --------- | ---------- | ------------- | ------------------------------------------ |
+| First     | B          | jvandenboele  | FamilyName or partnername, no combinations |
+|           | BP         | jvandenboele  |                                            |
+|           | P          | jvandenboele  |                                            |
+|           | PB         | jvandenboele  |                                            |
+| Second    | B          | jvandenboele1 | Iterate, starting at 1                     |
+|           | BP         | jvandenboele1 |                                            |
+|           | P          | jvandenboele1 |                                            |
+|           | PB         | jvandenboele1 |                                            |
+| Third     | B          | jvandenboele2 |                                            |
+|           | BP         | jvandenboele2 |                                            |
+|           | P          | jvandenboele2 |                                            |
+|           | PB         | jvandenboele2 |                                            |
+| Fourth    | B          | jvandenboele3 |                                            |
+|           | BP         | jvandenboele3 |                                            |
+|           | P          | jvandenboele3 |                                            |
+|           | PB         | jvandenboele3 |                                            |

@@ -150,3 +150,24 @@
 |           | BP         | janine.vandenboele03@domain.local |                         |
 |           | P          | janine.vandenboele03@domain.local |                         |
 |           | PB         | janine.vandenboele03@domain.local |                         |
+
+## [Option 8: jvandenboele@domain.local](./Scripts/generateUserPrincipalNameOption8.js)
+
+| Iteration | Convention | Value                      | Remark                                     |
+| --------- | ---------- | -------------------------- | ------------------------------------------ |
+| First     | B          | jvandenboele@domain.local  | FamilyName or partnername, no combinations |
+|           | BP         | jvandenboele@domain.local  |                                            |
+|           | P          | jdevries@domain.local      |                                            |
+|           | PB         | jdevries@domain.local      |                                            |
+| Second    | B          | jvandenboele1@domain.local | Iterate, starting at 1                     |
+|           | BP         | jvandenboele1@domain.local |                                            |
+|           | P          | jdevries1@domain.local     |                                            |
+|           | PB         | jdevries1@domain.local     |                                            |
+| Third     | B          | jvandenboele2@domain.local |                                            |
+|           | BP         | jvandenboele2@domain.local |                                            |
+|           | P          | jdevries2@domain.local     |                                            |
+|           | PB         | jdevries2@domain.local     |                                            |
+| Fourth    | B          | jvandenboele3@domain.local |                                            |
+|           | BP         | jvandenboele3@domain.local |                                            |
+|           | P          | jdevries3@domain.local     |                                            |
+|           | PB         | jdevries3@domain.local     |                                            |
