@@ -120,7 +120,7 @@
 |           | P          | jvandenboele3 |                                            |
 |           | PB         | jvandenboele3 |                                            |
 
-## [Option 9: j.vandenboele](./Scripts/generateSamAccountNameOption7.js)
+## [Option 7: j.vandenboele](./Scripts/generateSamAccountNameOption7.js)
 
 | Iteration | Convention | Value              | Remark                                   |
 | --------- | ---------- | ------------------ | ---------------------------------------- |
