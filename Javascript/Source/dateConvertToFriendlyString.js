@@ -5,12 +5,12 @@ function convertDate(date) {
     const year = date.getFullYear();
 
     // Format the date as "dd-mm-yyyy"
-    return `${day}-${month}-${year}`;
+    return day + '-' + month + '-' + year;
 }
 
 // Example usage:
 function getValue(){
-    let inputDate = new Date('2024-04-30'); // Replace with your actual input date
+    let inputDate = new Date('2024-04-30'); // Replace with your actual input date. For example: sourceContract.<yourRawDataField>
     let returnDate = inputDate ? convertDate(new Date(inputDate)) : null;
 
     return returnDate;
