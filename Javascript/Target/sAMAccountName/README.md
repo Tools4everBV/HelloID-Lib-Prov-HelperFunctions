@@ -119,3 +119,29 @@
 |           | BP         | jvandenboele3 |                                            |
 |           | P          | jvandenboele3 |                                            |
 |           | PB         | jvandenboele3 |                                            |
+
+## [Option 9: j.vandenboele](./Scripts/generateSamAccountNameOption7.js)
+
+| Iteration | Convention | Value              | Remark                                   |
+| --------- | ---------- | ------------------ | ---------------------------------------- |
+| First     | B          | j.vandenboele      | The first character of the nickname      |
+|           | BP         | j.vandenboele      | FamilyName                               |
+|           | P          | j.vandenboele      |                                          |
+|           | PB         | j.vandenboele      |                                          |
+| Second    | B          | janine.vandenboele | Start with the full nickname             |
+|           | BP         | janine.vandenboele |                                          |
+|           | P          | janine.vandenboele |                                          |
+|           | PB         | janine.vandenboele |                                          |
+| Third     | B          | ja.vandenboele     | The first two characters of the nickname |
+|           | BP         | ja.vandenboele     |                                          |
+|           | P          | ja.vandenboele     |                                          |
+|           | PB         | ja.vandenboele     |                                          |
+| ......... | .........  | .........          | .........                                |
+| Seventh   | B          | janin.vandenboele  |                                          |
+|           | BP         | janin.vandenboele  |                                          |
+|           | P          | janin.vandenboele  |                                          |
+|           | PB         | janin.vandenboele  |                                          |
+| Eighth    | B          | j.vandenboele2     |                                          |
+|           | BP         | j.vandenboele2     |                                          |
+|           | P          | j.vandenboele2     |                                          |
+|           | PB         | j.vandenboele2     |                                          |
