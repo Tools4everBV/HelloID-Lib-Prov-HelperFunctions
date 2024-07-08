@@ -1,4 +1,4 @@
-// generateSamAccountNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/sAMAccountName/Scripts/generateSamAccountNameOption1.js]
+// generateSamAccountNameOption7.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/sAMAccountName/Scripts/generateSamAccountNameOption7.js]
 //
 // Mapping logic to generate the SamAccountName according to the following convention.
 // Eerste keuze	            B	j.vandenboele
