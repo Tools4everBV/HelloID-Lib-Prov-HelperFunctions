@@ -152,7 +152,7 @@
 |           | PB         | [SMTP:janine.vandenboele03@domain.local] |                         |
 
 
-## [Option 8: jvandenboele@domain.local](./Scripts/generateUserPrincipalNameOption8.js)
+## [Option 8: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption8.js)
 
 | Iteration | Convention | Value                             | Remark                                     |
 | --------- | ---------- | --------------------------------- | ------------------------------------------ |
@@ -172,3 +172,29 @@
 |           | BP         | [SMTP:jvandenboele3@domain.local] |                                            |
 |           | P          | [SMTP:jdevries3@domain.local]     |                                            |
 |           | PB         | [SMTP:jdevries3@domain.local]     |                                            |
+
+## [Option 9: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption9.js)
+
+| Iteration | Convention | Value                                  | Remark                                   |
+| --------- | ---------- | -------------------------------------- | ---------------------------------------- |
+| First     | B          | [SMTP:j.vandenboele@domain.local]      | The first character of the nickname      |
+|           | BP         | [SMTP:j.vandenboele@domain.local]      | FamilyName                               |
+|           | P          | [SMTP:j.vandenboele@domain.local]      |                                          |
+|           | PB         | [SMTP:j.vandenboele@domain.local]      |                                          |
+| Second    | B          | [SMTP:janine.vandenboele@domain.local] | Start with the full nickname             |
+|           | BP         | [SMTP:janine.vandenboele@domain.local] |                                          |
+|           | P          | [SMTP:janine.vandenboele@domain.local] |                                          |
+|           | PB         | [SMTP:janine.vandenboele@domain.local] |                                          |
+| Third     | B          | [SMTP:ja.vandenboele@domain.local]     | The first two characters of the nickname |
+|           | BP         | [SMTP:ja.vandenboele@domain.local]     |                                          |
+|           | P          | [SMTP:ja.vandenboele@domain.local]     |                                          |
+|           | PB         | [SMTP:ja.vandenboele@domain.local]     |                                          |
+| ......... | .........  | .........                              | .........                                |
+| Seventh   | B          | [SMTP:janin.vandenboele@domain.local]  |                                          |
+|           | BP         | [SMTP:janin.vandenboele@domain.local]  |                                          |
+|           | P          | [SMTP:janin.vandenboele@domain.local]  |                                          |
+|           | PB         | [SMTP:janin.vandenboele@domain.local]  |                                          |
+| Eighth    | B          | [SMTP:j.vandenboele2@domain.local]     |                                          |
+|           | BP         | [SMTP:j.vandenboele2@domain.local]     |                                          |
+|           | P          | [SMTP:j.vandenboele2@domain.local]     |                                          |
+|           | PB         | [SMTP:j.vandenboele2@domain.local]     |                                          |
