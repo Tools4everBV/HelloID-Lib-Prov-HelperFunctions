@@ -9,7 +9,7 @@
 | P          | Janine de Vries                 | FamilyNamePartner                |
 | PB         | Janine de Vries – van den Boele | FamilyNamePartner and FamilyName |
 
-## [Option 2: Janine van den Boele - de Vries](./Scripts/generateDisplayNameOption2.js)
+## [Option 2: Boele – de Vries, Janine van den](./Scripts/generateDisplayNameOption2.js)
 
 | Convention | Value                            | Remark                           |
 | ---------- | -------------------------------- | -------------------------------- |
