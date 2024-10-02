@@ -33,7 +33,13 @@ function generateSamAccountName() {
         case "B":
         case "BP":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { samAccountName = samAccountName + middleName.replace(/ /g, '') }
+            if (typeof middleName !== 'undefined' && middleName) {
+                // Split the string into an array of words
+                middleName = middleName.split(" ");
+                // Join the words with dots in between
+                samAccountName = samAccountName + middleName.join(".");
+                samAccountName = samAccountName + '.';
+            }
             samAccountName = samAccountName + lastName;
             break;
     }
