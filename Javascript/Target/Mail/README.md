@@ -214,3 +214,25 @@
 |           | BP         | janine.van.den.boele3@domain.local |                                         |
 |           | P          | janine.de.vries3@domain.local      |                                         |
 |           | PB         | janine.de.vries3@domain.local      |                                         |
+
+## [Option 11: j.vandenboele@domain.local](./Scripts/generateMailOption11.js)
+
+| Iteration | Convention | Value                            | Remark                                   |
+| --------- | ---------- | -------------------------------= | ---------------------------------------- |
+| First     | B          | janine.vandenboele@domain.local  | The full nickname                        |
+|           | BP         | janine.vandenboele@domain.local  | FamilyName                               |
+|           | P          | janine.devries@domain.local      | FamilyNamePartner                        |
+|           | PB         | janine.devries@domain.local      |                                          |
+| Second    | B          | j.vandenboele@domain.local       | The first character of the nickname      |
+|           | BP         | j.vandenboele@domain.local       |                                          |
+|           | P          | j.devries@domain.local           |                                          |
+|           | PB         | j.devries@domain.local           |                                          |
+| Third     | B          | ja.vandenboele@domain.local      | The first two characters of the nickname |
+|           | BP         | ja.vandenboele@domain.local      |                                          |
+|           | P          | ja.devries@domain.local          |                                          |
+|           | PB         | ja.devries@domain.local          |                                          |
+| ......... | .........  | .........                        | .........                                |
+| Sixth     | B          | janin.vandenboele@domain.local   |                                          |
+|           | BP         | janin.vandenboele@domain.local   |                                          |
+|           | P          | janin.devries@domain.local       |                                          |
+|           | PB         | janin.devries@domain.local       |                                          |
