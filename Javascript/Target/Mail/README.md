@@ -197,3 +197,42 @@
 |           | BP         | j.vandenboele2@domain.local     |                                          |
 |           | P          | j.vandenboele2@domain.local     |                                          |
 |           | PB         | j.vandenboele2@domain.local     |                                          |
+
+## [Option 10: j.vandenboele@domain.local](./Scripts/generateMailOption10.js)
+
+| Iteration | Convention | Value                              | Remark                                  |
+| --------- | ---------- | ---------------------------------- | --------------------------------------- |
+| First     | B          | janine.van.den.boele@domain.local  | Full nickname                           |
+|           | BP         | janine.van.den.boele@domain.local  | FamilyName prefix, spaces replaced by . |
+|           | P          | janine.de.vries@domain.local       | FamilyName                              |
+|           | PB         | janine.de.vries@domain.local       |                                         |
+| Second    | B          | janine.van.den.boele2@domain.local | Iterate, starting at 2                  |
+|           | BP         | janine.van.den.boele2@domain.local |                                         |
+|           | P          | janine.de.vries2@domain.local      |                                         |
+|           | PB         | janine.de.vries2@domain.local      |                                         |
+| Third     | B          | janine.van.den.boele3@domain.local |                                         |
+|           | BP         | janine.van.den.boele3@domain.local |                                         |
+|           | P          | janine.de.vries3@domain.local      |                                         |
+|           | PB         | janine.de.vries3@domain.local      |                                         |
+
+## [Option 11: j.vandenboele@domain.local](./Scripts/generateMailOption11.js)
+
+| Iteration | Convention | Value                            | Remark                                   |
+| --------- | ---------- | -------------------------------= | ---------------------------------------- |
+| First     | B          | janine.vandenboele@domain.local  | The full nickname                        |
+|           | BP         | janine.vandenboele@domain.local  | FamilyName                               |
+|           | P          | janine.devries@domain.local      | FamilyNamePartner                        |
+|           | PB         | janine.devries@domain.local      |                                          |
+| Second    | B          | j.vandenboele@domain.local       | The first character of the nickname      |
+|           | BP         | j.vandenboele@domain.local       |                                          |
+|           | P          | j.devries@domain.local           |                                          |
+|           | PB         | j.devries@domain.local           |                                          |
+| Third     | B          | ja.vandenboele@domain.local      | The first two characters of the nickname |
+|           | BP         | ja.vandenboele@domain.local      |                                          |
+|           | P          | ja.devries@domain.local          |                                          |
+|           | PB         | ja.devries@domain.local          |                                          |
+| ......... | .........  | .........                        | .........                                |
+| Sixth     | B          | janin.vandenboele@domain.local   |                                          |
+|           | BP         | janin.vandenboele@domain.local   |                                          |
+|           | P          | janin.devries@domain.local       |                                          |
+|           | PB         | janin.devries@domain.local       |                                          |
