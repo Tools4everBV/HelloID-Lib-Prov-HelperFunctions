@@ -252,4 +252,4 @@
 | Third     | B          | j.vandenboele2@domain.local |                                   |
 |           | BP         | j.vandenboele2@domain.local |                                   |
 |           | P          | j.vandenboele2@domain.local |                                   |
-|           | PB         | j.vandenboele2@domain.loca  |                                   |
+|           | PB         | j.vandenboele2@domain.local  |                                   |
