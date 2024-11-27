@@ -198,3 +198,20 @@
 |           | BP         | [SMTP:j.vandenboele2@domain.local]     |                                          |
 |           | P          | [SMTP:j.vandenboele2@domain.local]     |                                          |
 |           | PB         | [SMTP:j.vandenboele2@domain.local]     |                                          |
+
+## [Option 10: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption10.js)
+
+| Iteration | Convention | Value                       | Remark                            |
+| --------- | ---------- | --------------------------- | --------------------------------- |
+| First     | B          | [SMTP:j.vandenboele@domain.local]  | The first character of nickname   |
+|           | BP         | [SMTP:j.vandenboele@domain.local]  | FamilyName prefix, spaces removed |
+|           | P          | [SMTP:j.vandenboele@domain.local]  | FamilyName                        |
+|           | PB         | [SMTP:j.vandenboele@domain.local]  |                                   |
+| Second    | B          | [SMTP:j.vandenboele1@domain.local] | Iterate, starting at 1            |
+|           | BP         | [SMTP:j.vandenboele1@domain.local] |                                   |
+|           | P          | [SMTP:j.vandenboele1@domain.local] |                                   |
+|           | PB         | [SMTP:j.vandenboele1@domain.local] |                                   |
+| Third     | B          | [SMTP:j.vandenboele2@domain.local] |                                   |
+|           | BP         | [SMTP:j.vandenboele2@domain.local] |                                   |
+|           | P          | [SMTP:j.vandenboele2@domain.local] |                                   |
+|           | PB         | [SMTP:j.vandenboele2@domain.local] |                                   |
