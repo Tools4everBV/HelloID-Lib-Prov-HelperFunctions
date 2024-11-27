@@ -218,7 +218,7 @@
 ## [Option 11: j.vandenboele@domain.local](./Scripts/generateMailOption11.js)
 
 | Iteration | Convention | Value                            | Remark                                   |
-| --------- | ---------- | -------------------------------= | ---------------------------------------- |
+| --------- | ---------- | -------------------------------- | ---------------------------------------- |
 | First     | B          | janine.vandenboele@domain.local  | The full nickname                        |
 |           | BP         | janine.vandenboele@domain.local  | FamilyName                               |
 |           | P          | janine.devries@domain.local      | FamilyNamePartner                        |
