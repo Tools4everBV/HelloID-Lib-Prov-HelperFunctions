@@ -1,0 +1,82 @@
+function ConvertFrom-Xml {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory)]
+        [System.Xml.XmlNode]$Node
+    )
+    process {
+        $ht = [ordered]@{}
+        $arrKeys = [System.Collections.Generic.List[string]]::new()
+
+        foreach ($attr in $Node.Attributes) {
+            $ht[$attr.Name] = $attr.Value
+        }
+
+        foreach ($child in $Node.ChildNodes) {
+            $key = $child.LocalName
+            if ($child -isnot [xml.XmlElement]) { continue }
+
+            $value = if ($child.FirstChild -is [xml.XmlText]) {
+                $child.FirstChild.InnerText
+            }
+            else {
+                ConvertFrom-Xml -Node $child
+            }
+
+            if ($ht.Contains($key)) {
+                $curValue = $ht[$key]
+                if ($curValue.count -eq $null) {
+                    $curValue = [System.Collections.Generic.List[object]]@($curValue)
+                    $arrKeys.Add($key)
+                    $ht[$key] = $curValue
+                }
+                $curValue.Add($value)
+            }
+            else {
+                $ht[$key] = $value
+            }
+        }
+
+        foreach ($key in $arrKeys) {
+            $ht[$key] = [object[]]$ht[$key]
+        }
+
+        [PSCustomObject]$ht
+    }
+}
+
+# Define the XML string
+$xmlString = @"
+<bookstore>
+    <book genre="autobiography" publicationdate="1981" ISBN="1-861003-11-0">
+        <title>The Autobiography of Benjamin Franklin</title>
+        <author>
+            <first-name>Benjamin</first-name>
+            <last-name>Franklin</last-name>
+        </author>
+        <price>8.99</price>
+    </book>
+    <book genre="novel" publicationdate="1967" ISBN="0-201-63361-2">
+        <title>The Confidence-Man</title>
+        <author>
+            <first-name>Herman</first-name>
+            <last-name>Melville</last-name>
+        </author>
+        <price>11.99</price>
+    </book>
+</bookstore>
+"@
+
+# Load the XML string into an XmlDocument
+[xml]$xmlDoc = $xmlString
+
+# Convert the XML to a PowerShell object
+$psObject = ConvertFrom-Xml -Node $xmlDoc.bookstore
+
+# Note: When available, you should use the Newtonsoft.Json.JsonConvert to serialize the XML document into a JSON string.
+# This is only available in PowerShell 7+.
+# Example:
+$json = [Newtonsoft.Json.JsonConvert]::SerializeXmlNode($xmlDoc, 'indent')
+
+# Convert the JSON to a PowerShell object
+$psObjectFromJson = $json | ConvertFrom-Json
