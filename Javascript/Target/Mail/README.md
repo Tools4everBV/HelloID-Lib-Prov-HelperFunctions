@@ -252,4 +252,21 @@
 | Third     | B          | j.vandenboele2@domain.local |                                   |
 |           | BP         | j.vandenboele2@domain.local |                                   |
 |           | P          | j.vandenboele2@domain.local |                                   |
-|           | PB         | j.vandenboele2@domain.local  |                                   |
+|           | PB         | j.vandenboele2@domain.local |                                   |
+
+## [Option 13: hc.vanden.boele@domain.local](./Scripts/generateMailOption13.js)
+
+| Iteration | Convention | Value                                  | Remark                                                                    |
+| --------- | ---------- | -------------------------------------- | ------------------------------------------------------------------------- |
+| First     | B          | hc.vanden.boele@domain.local           | Initials, dots removed                                                    |
+|           | BP         | hc.vanden.boele-de.vries@domain.local  | FamilyName and or partnername prefix based on convention , spaces removed |
+|           | P          | hc.de.vries@domain.local               | FamilyName and or partnername based on convention                         |
+|           | PB         | hc.de.vries-vanden.boele@domain.local  |                                                                           |
+| Second    | B          | hc.vanden.boele2@domain.local          | Iterate, starting at 2                                                    |
+|           | BP         | hc.vanden.boele-de.vries2@domain.local |                                                                           |
+|           | P          | hc.de.vries2@domain.local              |                                                                           |
+|           | PB         | hc.de.vries-vanden.boele2@domain.local |                                                                           |
+| Third     | B          | hc.vanden.boele3@domain.local          |                                                                           |
+|           | BP         | hc.vanden.boele-de.vries3@domain.local |                                                                           |
+|           | P          | hc.de.vries3@domain.local              |                                                                           |
+|           | PB         | hc.de.vries-vanden.boele3@domain.local |                                                                           |

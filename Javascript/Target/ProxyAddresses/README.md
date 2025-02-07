@@ -201,8 +201,8 @@
 
 ## [Option 10: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption10.js)
 
-| Iteration | Convention | Value                       | Remark                            |
-| --------- | ---------- | --------------------------- | --------------------------------- |
+| Iteration | Convention | Value                              | Remark                            |
+| --------- | ---------- | ---------------------------------- | --------------------------------- |
 | First     | B          | [SMTP:j.vandenboele@domain.local]  | The first character of nickname   |
 |           | BP         | [SMTP:j.vandenboele@domain.local]  | FamilyName prefix, spaces removed |
 |           | P          | [SMTP:j.vandenboele@domain.local]  | FamilyName                        |
@@ -215,3 +215,20 @@
 |           | BP         | [SMTP:j.vandenboele2@domain.local] |                                   |
 |           | P          | [SMTP:j.vandenboele2@domain.local] |                                   |
 |           | PB         | [SMTP:j.vandenboele2@domain.local] |                                   |
+
+## [Option 11: hc.vanden.boele@domain.local](./Scripts/generateProxyAddressesOption11.js)
+
+| Iteration | Convention | Value                                         | Remark                                                                    |
+| --------- | ---------- | --------------------------------------------- | ------------------------------------------------------------------------- |
+| First     | B          | [SMTP:hc.vanden.boele@domain.local]           | Initials, dots removed                                                    |
+|           | BP         | [SMTP:hc.vanden.boele-de.vries@domain.local]  | FamilyName and or partnername prefix based on convention , spaces removed |
+|           | P          | [SMTP:hc.de.vries@domain.local]               | FamilyName and or partnername based on convention                         |
+|           | PB         | [SMTP:hc.de.vries-vanden.boele@domain.local]  |                                                                           |
+| Second    | B          | [SMTP:hc.vanden.boele2@domain.local]          | Iterate, starting at 2                                                    |
+|           | BP         | [SMTP:hc.vanden.boele-de.vries2@domain.local] |                                                                           |
+|           | P          | [SMTP:hc.de.vries2@domain.local]              |                                                                           |
+|           | PB         | [SMTP:hc.de.vries-vanden.boele2@domain.local] |                                                                           |
+| Third     | B          | [SMTP:hc.vanden.boele3@domain.local]          |                                                                           |
+|           | BP         | [SMTP:hc.vanden.boele-de.vries3@domain.local] |                                                                           |
+|           | P          | [SMTP:hc.de.vries3@domain.local]              |                                                                           |
+|           | PB         | [SMTP:hc.de.vries-vanden.boele3@domain.local] |                                                                           |
