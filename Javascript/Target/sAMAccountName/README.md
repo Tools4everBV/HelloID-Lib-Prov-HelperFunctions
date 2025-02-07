@@ -145,3 +145,29 @@
 |           | BP         | j.vandenboele2     |                                          |
 |           | P          | j.vandenboele2     |                                          |
 |           | PB         | j.vandenboele2     |                                          |
+
+## [Option 8: j.vandenboele](./Scripts/generateSamAccountNameOption8.js)
+
+| Iteration | Convention | Value     | Remark                                   |
+| --------- | ---------- | --------- | ---------------------------------------- |
+| First     | B          | hboel     | The first character of the initials      |
+|           | BP         | hboel     | FamilyName                               |
+|           | P          | hboel     |                                          |
+|           | PB         | hboel     |                                          |
+| Second    | B          | hboel2    | Start with the full nickname             |
+|           | BP         | hboel2    |                                          |
+|           | P          | hboel2    |                                          |
+|           | PB         | hboel2    |                                          |
+| Third     | B          | hboel3    | The first two characters of the nickname |
+|           | BP         | hboel3    |                                          |
+|           | P          | hboel3    |                                          |
+|           | PB         | hboel3    |                                          |
+| ......... | .........  | ......... | .........                                |
+| Tenth     | B          | hboe10    |                                          |
+|           | BP         | hboe10    |                                          |
+|           | P          | hboe10    |                                          |
+|           | PB         | hboe10    |                                          |
+| Eleventh  | B          | hboe11    |                                          |
+|           | BP         | hboe11    |                                          |
+|           | P          | hboe11    |                                          |
+|           | PB         | hboe11    |                                          |
