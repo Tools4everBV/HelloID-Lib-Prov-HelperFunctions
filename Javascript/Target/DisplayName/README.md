@@ -17,3 +17,13 @@
 | BP         | Boele – de Vries, Janine van den | FamilyName and FamilyNamePartner |
 | P          | Vries, Janine de                 | FamilyNamePartner                |
 | PB         | Vries – van den Boele, Janine de | FamilyNamePartner and FamilyName |
+
+## [Option 3: Boele–de Vries H.C. van den (Janine)](./Scripts/generateDisplayNameOption3.js)
+
+| Convention | Value                                 | Remark                           |
+| ---------- | ------------------------------------- | -------------------------------- |
+| B          | Boele H.C. van den (Janine)           | FamilyName                       |
+| BP         | Boele–de Vries H.C. van den (Janine)  | FamilyName and FamilyNamePartner |
+| P          | Vries H.C. de (Janine)                | FamilyNamePartner                |
+| PB         | Vries–van den Boele, H.C. de (Janine) | FamilyNamePartner and FamilyName |
+|            |                                       | Note: No commas are used         |

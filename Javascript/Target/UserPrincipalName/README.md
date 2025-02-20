@@ -197,3 +197,37 @@
 |           | BP         | j.vandenboele2@domain.local     |                                          |
 |           | P          | j.vandenboele2@domain.local     |                                          |
 |           | PB         | j.vandenboele2@domain.local     |                                          |
+
+## [Option 10: j.vandenboele@domain.local](./Scripts/generateUserPrincipalNameOption10.js)
+
+| Iteration | Convention | Value                       | Remark                            |
+| --------- | ---------- | --------------------------- | --------------------------------- |
+| First     | B          | j.vandenboele@domain.local  | The first character of nickname   |
+|           | BP         | j.vandenboele@domain.local  | FamilyName prefix, spaces removed |
+|           | P          | j.vandenboele@domain.local  | FamilyName                        |
+|           | PB         | j.vandenboele@domain.local  |                                   |
+| Second    | B          | j.vandenboele1@domain.local | Iterate, starting at 1            |
+|           | BP         | j.vandenboele1@domain.local |                                   |
+|           | P          | j.vandenboele1@domain.local |                                   |
+|           | PB         | j.vandenboele1@domain.local |                                   |
+| Third     | B          | j.vandenboele2@domain.local |                                   |
+|           | BP         | j.vandenboele2@domain.local |                                   |
+|           | P          | j.vandenboele2@domain.local |                                   |
+|           | PB         | j.vandenboele2@domain.local |                                   |
+
+## [Option 11: hc.vanden.boele@domain.local](./Scripts/generateUserPrincipalNameOption11.js)
+
+| Iteration | Convention | Value                                  | Remark                                                                    |
+| --------- | ---------- | -------------------------------------- | ------------------------------------------------------------------------- |
+| First     | B          | hc.vanden.boele@domain.local           | Initials, dots removed                                                    |
+|           | BP         | hc.vanden.boele-de.vries@domain.local  | FamilyName and or partnername prefix based on convention , spaces removed |
+|           | P          | hc.de.vries@domain.local               | FamilyName and or partnername based on convention                         |
+|           | PB         | hc.de.vries-vanden.boele@domain.local  |                                                                           |
+| Second    | B          | hc.vanden.boele2@domain.local          | Iterate, starting at 2                                                    |
+|           | BP         | hc.vanden.boele-de.vries2@domain.local |                                                                           |
+|           | P          | hc.de.vries2@domain.local              |                                                                           |
+|           | PB         | hc.de.vries-vanden.boele2@domain.local |                                                                           |
+| Third     | B          | hc.vanden.boele3@domain.local          |                                                                           |
+|           | BP         | hc.vanden.boele-de.vries3@domain.local |                                                                           |
+|           | P          | hc.de.vries3@domain.local              |                                                                           |
+|           | PB         | hc.de.vries-vanden.boele3@domain.local |                                                                           |
