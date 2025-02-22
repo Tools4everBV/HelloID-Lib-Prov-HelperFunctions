@@ -1,5 +1,5 @@
 ###############################################################
-# HelloID-Conn-Prov-Target-ExampleAPI-EntitlementImport-Account
+# HelloID-Conn-Prov-Target-{connectorName]-EntitlementImport-Account
 # PowerShell V2
 ###############################################################
 
