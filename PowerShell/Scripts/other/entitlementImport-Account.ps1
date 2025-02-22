@@ -12,7 +12,7 @@
 try {
     Write-Information 'Starting target account import'
     $splatGetAllAccountParams = @{
-        Uri     = ''
+        Uri     = '<URL to API>'
         Method  = 'GET'
     }
     $existingAccounts = Invoke-RestMethod @splatGetAllAccountParams
@@ -22,13 +22,13 @@ try {
             AccountReference = @{
                 Identification = $account.id
             }
-            # DisplayName is only visible within the account import report
-            DisplayName = $account.firstName + $account.lastName
-            UserName    = $account.email
+            # DisplayName is only visible within the entitlement import report
+            DisplayName = $account.displayName
+            UserName    = $account.userName
             Enabled     = $account.active
 
             # Make sure the account data is filtered to match the $actionContext.Data
-            Data        = $account
+            Data = $account
         }
     }
     Write-Information 'Target account import completed'
