@@ -100,21 +100,21 @@ function Get-PrimaryContract {
             $currentDate = (Get-Date).Date
             $primaryContract = $null
             $primaryContract = $sortedContracts | Where-Object {
-                $_.$StartDateProperty -as [datetime] -le $currentDate -and
-                    ($_.$EndDateProperty -as [datetime] -ge $currentDate -or [string]::IsNullOrEmpty($_.$EndDateProperty))
+                ($_.$StartDateProperty -as [datetime]).Date -le $currentDate -and
+                (($_.$EndDateProperty -as [datetime]).Date -ge $currentDate -or [string]::IsNullOrEmpty($_.$EndDateProperty))
             } | Select-Object -First 1
 
             # If no primary contract found in active contracts, get primary contract from future contracts
             if ($null -eq $primaryContract) {
                 $primaryContract = $sortedContracts | Where-Object {
-                    $_.$StartDateProperty -as [datetime] -gt $currentDate
+                    ($_.$StartDateProperty -as [datetime]).Date -gt $currentDate
                 } | Select-Object -First 1
             }
 
             # If no primary contract found in future contracts, get primary contract from past contracts
             if ($null -eq $primaryContract) {
                 $primaryContract = $sortedContracts | Where-Object {
-                    $_.$EndDateProperty -as [datetime] -lt $currentDate
+                    ($_.$EndDateProperty -as [datetime]).Date -lt $currentDate
                 } | Select-Object -First 1
             }
 
