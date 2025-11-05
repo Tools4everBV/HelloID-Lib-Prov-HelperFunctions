@@ -1,5 +1,18 @@
 # HelloID Provisioning Target generate ProxyAddresses
 
+## [Option 1: janine.vandenboele@domain.local](./Scripts/generateUserPrincipalNameOption1.js)
+
+| Iteration      | Convention    | Value                            | Remark                                                             |
+| -------------- | ------------- | -------------------------------- | ------------------------------------------------------------------ |
+| First          | B, BP, P & PB | janine.vandenboele@domain.local  | FamilyName                                                         |
+| If in use      | B, BP, P & PB | j.vandenboele@domain.local       | First character of  nickname                                       |
+| If also in use | B, BP, P & PB | ja.vandenboele@domain.local      | First two characters of nickname                                   |
+| .........      | .........     | .........                        | .........                                                          |
+| If also in use | B, BP, P & PB | janin.vandenboele@domain.local   | Use extra character of nickname until full nickname is reached     |
+| If also in use | B, BP, P & PB | janine.vandenboele2@domain.local | If full nickname is reached, append with iterator, starting with 2 |
+
+
+
 ## [Option 1: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption1.js)
 
 | Iteration | Convention | Value                                   | Remark                              |

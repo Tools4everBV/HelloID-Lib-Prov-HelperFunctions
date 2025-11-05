@@ -1,43 +1,35 @@
 // generateUserPrincipalNameOption6.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/UserPrincipalName/Scripts/generateUserPrincipalNameOption6.js]
 //
 // Mapping logic to generate the UserPrincipalName according to the following convention.
-// First choice	        B	janine.vandenboele@domain.local
-// 	                    BP	janine.vandenboele@domain.local
-// 	                    P	janine.vandenboele@domain.local
-// 	                    PB  janine.vandenboele@domain.local
-// If in use	        B	janine_vandenboele@domain.local
-// 	                    BP	janine_vandenboele@domain.local
-// 	                    P	janine_vandenboele@domain.local
-// 	                    PB  janine_vandenboele@domain.local
-// If also in use   	B	j.vandenboele@domain.local
-// 	                    BP	j.vandenboele@domain.local
-// 	                    P	j.vandenboele@domain.local
-// 	                    PB  j.vandenboele@domain.local
-// If also in use   	B	j.vandenboele2@domain.local
-// 	                    BP	j.vandenboele2@domain.local
-// 	                    P	j.vandenboele2@domain.local
-// 	                    PB  j.vandenboele2@domain.local
+// First choice	            B	jvandenboele@domain.local
+// 	                        BP	jvandenboele@domain.local
+// 	                        P	jdevries@domain.local
+// 	                        PB  jdevries@domain.local
+// If in use	            B	javandenboele@domain.local
+// 	                        BP	javandenboele@domain.local
+// 	                        P	jadevries@domain.local
+// 	                        PB	jadevries@domain.local
+// If also in use	        B	janvandenboele@domain.local
+// 	                        BP	janvandenboele@domain.local
+// 	                        P	jandevries@domain.local
+// 	                        PB	jandevries@domain.local
 // etc.
 function generateUserPrincipalName() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
+    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
+    let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let mailNickName = '';
-    if (Iteration === 0) {
-        mailNickName = nickName + '.';
-    } else if (Iteration === 1) {
-        mailNickName = nickName + '_';
-    } else if (Iteration === 2) {
-        mailNickName = nickName.substring(0, 1) + '.';
-    } else {
-        mailNickName = nickName.substring(0, 1) + '.';
-    }
+    let mailNickName = nickName.substring(0, (Iteration + 1));
 
     switch (convention) {
         case "P":
         case "PB":
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + middleNamePartner.replace(/ /g, '') }
+            mailNickName = mailNickName + lastNamePartner;
+            break;
         case "B":
         case "BP":
         default:
@@ -59,14 +51,16 @@ function generateUserPrincipalName() {
 
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
-    let iterationToUse = Iteration - 1
+    let iterationToUse = Iteration - (nickName.length - 2)
     suffix = Iteration === 0 ? '' : (iterationToUse);
     const domain = 'domain.local';
     const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    mailNickName = mailNickName + suffix;
+    if (Iteration > (nickName.length - 1)) {
+        mailNickName = mailNickName + suffix;
+    }
 
     return mailNickName + '@' + domain;
 }
