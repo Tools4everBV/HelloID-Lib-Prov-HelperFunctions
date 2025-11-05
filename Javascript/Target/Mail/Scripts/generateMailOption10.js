@@ -1,41 +1,44 @@
 // generateMailOption10.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateMailOption10.js]
 //
 // Mapping logic to generate the Mail according to the following convention.
-// First choice	        B	janine.van.den.boele@domain.local
-// 	                    BP	janine.van.den.boele@domain.local
-// 	                    P	janine.de.vries@domain.local
-// 	                    PB  janine.de.vries@domain.local
-// If in use	        B	janine.van.den.boele2@domain.local
-// 	                    BP	janine.van.den.boele2@domain.local
-// 	                    P	janine.de.vries2@domain.local
-// 	                    PB  janine.de.vries2@domain.local
-// If also in use   	B	janine.van.den.boele3@domain.local
-// 	                    BP	janine.van.den.boele3@domain.local
-// 	                    P	janine.de.vries3@domain.local
-// 	                    PB  janine.de.vries3@domain.local
+// Eerste keuze	            B	j.vandenboele@domain.local
+// 	                        BP	j.vandenboele@domain.local
+// 	                        P	j.vandenboele@domain.local
+// 	                        PB  j.vandenboele@domain.local
+// Indien in gebruik	    B	janine.vandenboele@domain.local
+// 	                        BP	janine.vandenboele@domain.local
+// 	                        P	janine.vandenboele@domain.local
+// 	                        PB	janine.vandenboele@domain.local
+// Indien ook in gebruik	B	ja.vandenboele@domain.local
+// 	                        BP	ja.vandenboele@domain.local
+// 	                        P	ja.vandenboele@domain.local
+// 	                        PB	ja.vandenboele@domain.local
 // etc.
 function generateMail() {
-    const domain = 'domain.local';
-
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
-    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
-    let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let mailNickName = nickName + '.';
+    let mailNickName = '';
+
+    if (Iteration === 0) {
+        mailNickName = nickName.substring(0, 1) + '.';
+    } else if (Iteration === 1) {
+        mailNickName = nickName + '.';
+    } else if (Iteration < (nickName.length)) {
+        mailNickName = nickName.substring(0, (Iteration)) + '.';
+    } else {
+        mailNickName = nickName.substring(0, 1) + '.';
+    }
 
     switch (convention) {
         case "P":
         case "PB":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + middleNamePartner.replace(/ /g, '.') + '.' }
-            mailNickName = mailNickName + lastNamePartner;
-            break;
         case "B":
         case "BP":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '.') + '.' }
+            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') }
             mailNickName = mailNickName + lastName;
             break;
     }
@@ -53,13 +56,16 @@ function generateMail() {
 
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
-    let iterationToUse = Iteration < 1 ? '' : (Iteration + 1)
+    let iterationToUse = Iteration - (nickName.length - 2)
     suffix = Iteration === 0 ? '' : (iterationToUse);
+    const domain = 'domain.local';
     const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    mailNickName = mailNickName + suffix;
+    if (Iteration > (nickName.length - 1)) {
+        mailNickName = mailNickName + suffix;
+    }
 
     return mailNickName + '@' + domain;
 }
