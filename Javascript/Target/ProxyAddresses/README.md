@@ -1,19 +1,18 @@
 # HelloID Provisioning Target generate ProxyAddresses
 
-## [Option 1: janine.vandenboele@domain.local](./Scripts/generateUserPrincipalNameOption1.js)
-
-| Iteration      | Convention    | Value                            | Remark                                                             |
-| -------------- | ------------- | -------------------------------- | ------------------------------------------------------------------ |
-| First          | B, BP, P & PB | janine.vandenboele@domain.local  | FamilyName                                                         |
-| If in use      | B, BP, P & PB | j.vandenboele@domain.local       | First character of  nickname                                       |
-| If also in use | B, BP, P & PB | ja.vandenboele@domain.local      | First two characters of nickname                                   |
-| .........      | .........     | .........                        | .........                                                          |
-| If also in use | B, BP, P & PB | janin.vandenboele@domain.local   | Use extra character of nickname until full nickname is reached     |
-| If also in use | B, BP, P & PB | janine.vandenboele2@domain.local | If full nickname is reached, append with iterator, starting with 2 |
-
-
-
 ## [Option 1: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption1.js)
+
+| Iteration      | Convention    | Value                                   | Remark                                                 |
+| -------------- | ------------- | --------------------------------------- | ------------------------------------------------------ |
+| First          | B, BP, P & PB | [SMTP:janine.vandenboele@domain.local]  | FamilyName                                             |
+| If in use      | B, BP, P & PB | [SMTP:j.vandenboele@domain.local]       | First character of  nickname                           |
+| If also in use | B, BP, P & PB | [SMTP:ja.vandenboele@domain.local]      | First two characters of nickname                       |
+| .........      | .........     | .........                               | .........                                              |
+| If also in use | B, BP, P & PB | [SMTP:janin.vandenboele@domain.local]   | Use the next character until the full nickname is used |
+| If also in use | B, BP, P & PB | [SMTP:janine.vandenboele2@domain.local] | Full nickname reached, append, starting at 2           |
+
+
+## [Option 2: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption2.js)
 
 | Iteration | Convention | Value                                   | Remark                              |
 | --------- | ---------- | --------------------------------------- | ----------------------------------- |
@@ -31,7 +30,7 @@
 |           | PB         | [SMTP:janine.vandenboele2@domain.local] |                                     |
 
 
-## [Option 2: j.devries@domain.local](./Scripts/generateProxyAddressesOption2.js)
+## [Option 3: j.devries@domain.local](./Scripts/generateProxyAddressesOption3.js)
 
 | Iteration | Convention | Value                                   | Remark                              |
 | --------- | ---------- | --------------------------------------- | ----------------------------------- |
@@ -52,7 +51,7 @@
 |           | P          | [SMTP:janine.devries2@domain.local]     |                                     |
 |           | PB         | [SMTP:janine.devries2@domain.local]     |                                     |
 
-## [Option 3: janine.devries@domain.local](./Scripts/generateProxyAddressesOption3.js)
+## [Option 4: janine.devries@domain.local](./Scripts/generateProxyAddressesOption4.js)
 
 | Iteration | Convention | Value                                   | Remark                                     |
 | --------- | ---------- | --------------------------------------- | ------------------------------------------ |
@@ -78,7 +77,7 @@
 |           | P          | [SMTP:janine.devries2@domain.local]     |                                            |
 |           | PB         | [SMTP:janine.devries2@domain.local]     |                                            |
 
-## [Option 4: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption4.js)
+## [Option 5: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption5.js)
 
 | Iteration | Convention | Value                                  | Remark                                   |
 | --------- | ---------- | -------------------------------------- | ---------------------------------------- |
@@ -100,7 +99,7 @@
 |           | P          | [SMTP:janinevandenboele2@domain.local] |                                          |
 |           | PB         | [SMTP:janinevandenboele2@domain.local] |                                          |
 
-## [Option 5: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption5.js)
+## [Option 6: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption6.js)
 
 | Iteration | Convention | Value                                  | Remark                                   |
 | --------- | ---------- | -------------------------------------- | ---------------------------------------- |
@@ -122,7 +121,7 @@
 |           | P          | [SMTP:janinedevries2@domain.local]     |                                          |
 |           | PB         | [SMTP:janinedevries2@domain.local]     |                                          |
 
-## [Option 6: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption6.js)
+## [Option 7: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption7.js)
 
 | Iteration | Convention | Value                                  | Remark                              |
 | --------- | ---------- | -------------------------------------- | ----------------------------------- |
@@ -143,7 +142,7 @@
 |           | P          | [SMTP:j.vandenboele2@domain.local]     |                                     |
 |           | PB         | [SMTP:j.vandenboele2@domain.local]     |                                     |
 
-## [Option 7: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption7.js)
+## [Option 8: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption8.js)
 
 | Iteration | Convention | Value                                    | Remark                  |
 | --------- | ---------- | ---------------------------------------- | ----------------------- |
@@ -165,7 +164,7 @@
 |           | PB         | [SMTP:janine.vandenboele03@domain.local] |                         |
 
 
-## [Option 8: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption8.js)
+## [Option 9: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption9.js)
 
 | Iteration | Convention | Value                             | Remark                                     |
 | --------- | ---------- | --------------------------------- | ------------------------------------------ |
@@ -186,7 +185,7 @@
 |           | P          | [SMTP:jdevries3@domain.local]     |                                            |
 |           | PB         | [SMTP:jdevries3@domain.local]     |                                            |
 
-## [Option 9: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption9.js)
+## [Option 10: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption10.js)
 
 | Iteration | Convention | Value                                  | Remark                                   |
 | --------- | ---------- | -------------------------------------- | ---------------------------------------- |
@@ -212,7 +211,7 @@
 |           | P          | [SMTP:j.vandenboele2@domain.local]     |                                          |
 |           | PB         | [SMTP:j.vandenboele2@domain.local]     |                                          |
 
-## [Option 10: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption10.js)
+## [Option 11: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption11.js)
 
 | Iteration | Convention | Value                              | Remark                            |
 | --------- | ---------- | ---------------------------------- | --------------------------------- |
@@ -229,7 +228,7 @@
 |           | P          | [SMTP:j.vandenboele2@domain.local] |                                   |
 |           | PB         | [SMTP:j.vandenboele2@domain.local] |                                   |
 
-## [Option 11: hc.vanden.boele@domain.local](./Scripts/generateProxyAddressesOption11.js)
+## [Option 12: hc.vanden.boele@domain.local](./Scripts/generateProxyAddressesOption12.js)
 
 | Iteration | Convention | Value                                         | Remark                                                                    |
 | --------- | ---------- | --------------------------------------------- | ------------------------------------------------------------------------- |

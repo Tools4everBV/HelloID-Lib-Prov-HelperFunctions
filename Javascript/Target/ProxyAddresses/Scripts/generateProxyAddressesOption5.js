@@ -1,25 +1,23 @@
 // generateProxyAddressesOption5.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/ProxyAddresses/Scripts/generateProxyAddressesOption5.js]
 //
 // Mapping logic to generate the ProxyAddresses according to the following convention.
-// First choice	            B	jvandenboele@domain.local
+// Eerste keuze	            B	jvandenboele@domain.local
 // 	                        BP	jvandenboele@domain.local
-// 	                        P	jdevries@domain.local
-// 	                        PB  jdevries@domain.local
-// If in use	            B	javandenboele@domain.local
+// 	                        P	jvandenboele@domain.local
+// 	                        PB  jvandenboele@domain.local
+// Indien in gebruik	    B	javandenboele@domain.local
 // 	                        BP	javandenboele@domain.local
-// 	                        P	jadevries@domain.local
-// 	                        PB	jadevries@domain.local
-// If also in use	        B	janvandenboele@domain.local
+// 	                        P	javandenboele@domain.local
+// 	                        PB	javandenboele@domain.local
+// Indien ook in gebruik	B	janvandenboele@domain.local
 // 	                        BP	janvandenboele@domain.local
-// 	                        P	jandevries@domain.local
-// 	                        PB	jandevries@domain.local
+// 	                        P	janvandenboele@domain.local
+// 	                        PB	janvandenboele@domain.local
 // etc.
 function generateProxyAddresses() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
-    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
-    let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
     let mailNickName = nickName.substring(0, (Iteration + 1));
@@ -27,9 +25,6 @@ function generateProxyAddresses() {
     switch (convention) {
         case "P":
         case "PB":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + middleNamePartner.replace(/ /g, '') }
-            mailNickName = mailNickName + lastNamePartner;
-            break;
         case "B":
         case "BP":
         default:

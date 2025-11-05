@@ -1,62 +1,38 @@
 // generateProxyAddressesOption11.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/ProxyAddresses/Scripts/generateProxyAddressesOption11.js]
 //
 // Mapping logic to generate the ProxyAddresses according to the following convention.
-// First choice	        B	SMTP:hc.vanden.boele@domain.local
-// 	                    BP	SMTP:hc.vanden.boele-de.vries@domain.local
-// 	                    P	SMTP:hc.de.vries@domain.local
-// 	                    PB  SMTP:hc.de.vries-vanden.boele@domain.local
-// If in use	        B	SMTP:hc.vanden.boele2@domain.local
-// 	                    BP	SMTP:hc.vanden.boele-de.vries2@domain.local
-// 	                    P	SMTP:hc.de.vries2@domain.local
-// 	                    PB  SMTP:hc.de.vries-vanden.boele2@domain.local
-// If also in use   	B	SMTP:hc.vanden.boele3@domain.local
-// 	                    BP	SMTP:hc.vanden.boele-de.vries3@domain.local
-// 	                    P	SMTP:hc.de.vriFes3@domain.local
-// 	                    PB  SMTP:hc.de.vries-vanden.boele3@domain.local
+// First choice	        B	j.vandenboele@domain.local
+// 	                    BP	j.vandenboele@domain.local
+// 	                    P	j.vandenboele@domain.local
+// 	                    PB  j.vandenboele@domain.local
+// If in use	        B	j.vandenboele1@domain.local
+// 	                    BP	j.vandenboele1@domain.local
+// 	                    P	j.vandenboele1@domain.local
+// 	                    PB  j.vandenboele1@domain.local
+// If also in use   	B	j.vandenboele2@domain.local
+// 	                    BP	j.vandenboele2@domain.local
+// 	                    P	j.vandenboele2@domain.local
+// 	                    PB  j.vandenboele2@domain.local
 // etc.
 function generateProxyAddresses() {
-    const domain = 'domain.local';
-
-    let initials = Person.Name.Initials;
+    let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
-    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
-    let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
     let mailNickName = '';
-    mailNickName = initials.replace(/\./g, '') + '.';
+    mailNickName = nickName.substring(0, 1) + '.';
 
     switch (convention) {
-        case "BP":
-            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') + '.' }
-            mailNickName = mailNickName + lastName;
-
-            mailNickName = mailNickName + '-';
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + ' ' + middleNamePartner.replace(/ /g, '') + '.' }
-            mailNickName = mailNickName + lastNamePartner;
-
-            break;
-        case "PB":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + ' ' + middleNamePartner.replace(/ /g, '') + '.' }
-            mailNickName = mailNickName + lastNamePartner;
-
-            mailNickName = mailNickName + '-';
-            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') + '.' }
-            mailNickName = mailNickName + lastName;
-
-            break;
         case "P":
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + middleNamePartner.replace(/ /g, '') + '.' }
-            mailNickName = mailNickName + lastNamePartner;
-            break;
+        case "PB":
         case "B":
+        case "BP":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') + '.' }
+            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') }
             mailNickName = mailNickName + lastName;
             break;
     }
-
     // Trim spaces at start and end
     mailNickName = mailNickName.trim();
 
@@ -71,8 +47,9 @@ function generateProxyAddresses() {
 
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
-    let iterationToUse = Iteration + 1
+    let iterationToUse = Iteration
     suffix = Iteration === 0 ? '' : (iterationToUse);
+    const domain = 'domain.local';
     const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 

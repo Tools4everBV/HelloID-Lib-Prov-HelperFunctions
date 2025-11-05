@@ -11,7 +11,7 @@
 
 function generateProxyAddresses() {
     const maxChars = 254 // The maximum length for an Entra ID mail is 254 characters (While the attribute length is 256 characters, a valid SMTP email address within this field can be up to 254 characters to account for the < and > characters)
-    const domain = 'schoutenenzn.nl';
+    const domain = 'domain.local';
 
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
