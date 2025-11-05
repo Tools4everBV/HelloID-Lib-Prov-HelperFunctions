@@ -1,44 +1,37 @@
 // generateProxyAddressesOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/ProxyAddresses/Scripts/generateProxyAddressesOption1.js]
 //
 // Mapping logic to generate the ProxyAddresses according to the following convention.
-// First choice	        B	janine.vandenboele@domain.local
-// 	                    BP	janine.vandenboele@domain.local
-// 	                    P	janine.vandenboele@domain.local
-// 	                    PB  janine.vandenboele@domain.local
-// If in use   	        B	j.vandenboele@domain.local
-// 	                    BP	j.vandenboele@domain.local
-// 	                    P	j.vandenboele@domain.local
-// 	                    PB  j.vandenboele@domain.local
-// If also in use   	B	janine.vandenboele2@domain.local
-// 	                    BP	janine.vandenboele2@domain.local
-// 	                    P	janine.vandenboele2@domain.local
-// 	                    PB  janine.vandenboele2@domain.local
-// etc.
+// First Choice	            B	SMTP:janine.vandenboele@domain.local
+// If in use	            B	SMTP:j.vandenboele@domain.local
+// If also in use	        B	SMTP:ja.vandenboele@domain.local
+// If also in use       	B	SMTP:jan.vandenboele@domain.local
+// If also in use       	B	SMTP:jani.vandenboele@domain.local
+// If also in use       	B	SMTP:janin.vandenboele@domain.local
+// If also in use       	B	SMTP:janine.vandenboele2@domain.local
+
 function generateProxyAddresses() {
+    const maxChars = 254 // The maximum length for an Entra ID mail is 254 characters (While the attribute length is 256 characters, a valid SMTP email address within this field can be up to 254 characters to account for the < and > characters)
+    const domain = 'domain.local';
+
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
-    let convention = Person.Name.Convention;
 
     let mailNickName = '';
+
     if (Iteration === 0) {
         mailNickName = nickName + '.';
     } else if (Iteration === 1) {
         mailNickName = nickName.substring(0, 1) + '.';
+    } else if (Iteration < (nickName.length)) {
+        mailNickName = nickName.substring(0, (Iteration)) + '.';
     } else {
         mailNickName = nickName + '.';
     }
 
-    switch (convention) {
-        case "P":
-        case "PB":
-        case "B":
-        case "BP":
-        default:
-            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') }
-            mailNickName = mailNickName + lastName;
-            break;
-    }
+    if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') }
+    mailNickName = mailNickName + lastName;
+
     // Trim spaces at start and end
     mailNickName = mailNickName.trim();
 
@@ -53,14 +46,15 @@ function generateProxyAddresses() {
 
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
-    let iterationToUse = Iteration - 1 === 0 ? '' : (Iteration)
+    let iterationToUse = Iteration - (nickName.length - 2)
     suffix = Iteration === 0 ? '' : (iterationToUse);
-    const domain = 'domain.local';
-    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
+    const maxAttributeLength = (maxChars - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    mailNickName = mailNickName + suffix;
+    if (Iteration > (nickName.length - 1)) {
+        mailNickName = mailNickName + suffix;
+    }
 
     return [
         'SMTP:' + mailNickName + '@' + domain

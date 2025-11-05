@@ -1,18 +1,22 @@
 // generateProxyAddressesOption7.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/ProxyAddresses/Scripts/generateProxyAddressesOption7.js]
 //
 // Mapping logic to generate the ProxyAddresses according to the following convention.
-// First choice	        B	janine.van.denboele@domain.local
-// 	                    BP	janine.van.denboele@domain.local
-// 	                    P	janine.van.denboele@domain.local
-// 	                    PB  janine.van.denboele@domain.local
-// If in use	        B	janine.van.denboele02@domain.local
-// 	                    BP	janine.van.denboele02@domain.local
-// 	                    P	janine.van.denboele02@domain.local
-// 	                    PB  janine.van.denboele02@domain.local
-// If also in use   	B	janine.van.denboele03@domain.local
-// 	                    BP	janine.van.denboele03@domain.local
-// 	                    P	janine.van.denboele03@domain.local
-// 	                    PB  janine.van.denboele03@domain.local
+// First choice	        B	janine.vandenboele@domain.local
+// 	                    BP	janine.vandenboele@domain.local
+// 	                    P	janine.vandenboele@domain.local
+// 	                    PB  janine.vandenboele@domain.local
+// If in use	        B	janine_vandenboele@domain.local
+// 	                    BP	janine_vandenboele@domain.local
+// 	                    P	janine_vandenboele@domain.local
+// 	                    PB  janine_vandenboele@domain.local
+// If also in use   	B	j.vandenboele@domain.local
+// 	                    BP	j.vandenboele@domain.local
+// 	                    P	j.vandenboele@domain.local
+// 	                    PB  j.vandenboele@domain.local
+// If also in use   	B	j.vandenboele2@domain.local
+// 	                    BP	j.vandenboele2@domain.local
+// 	                    P	j.vandenboele2@domain.local
+// 	                    PB  j.vandenboele2@domain.local
 // etc.
 function generateProxyAddresses() {
     let nickName = Person.Name.NickName;
@@ -20,7 +24,16 @@ function generateProxyAddresses() {
     let lastName = Person.Name.FamilyName;
     let convention = Person.Name.Convention;
 
-    let mailNickName = nickName + '.';
+    let mailNickName = '';
+    if (Iteration === 0) {
+        mailNickName = nickName + '.';
+    } else if (Iteration === 1) {
+        mailNickName = nickName + '_';
+    } else if (Iteration === 2) {
+        mailNickName = nickName.substring(0, 1) + '.';
+    } else {
+        mailNickName = nickName.substring(0, 1) + '.';
+    }
 
     switch (convention) {
         case "P":
@@ -28,7 +41,7 @@ function generateProxyAddresses() {
         case "B":
         case "BP":
         default:
-            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '.') + '.' }
+            if (typeof middleName !== 'undefined' && middleName) { mailNickName = mailNickName + middleName.replace(/ /g, '') }
             mailNickName = mailNickName + lastName;
             break;
     }
@@ -46,13 +59,8 @@ function generateProxyAddresses() {
 
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
-    let iterationToUse = Iteration + 1
-    if (iterationToUse.toString().length <= 1) {
-        suffix = Iteration === 0 ? '' : ('0' + iterationToUse);
-    }
-    else {
-        suffix = Iteration === 0 ? '' : ('' + iterationToUse);
-    }
+    let iterationToUse = Iteration - 1
+    suffix = Iteration === 0 ? '' : (iterationToUse);
     const domain = 'domain.local';
     const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);

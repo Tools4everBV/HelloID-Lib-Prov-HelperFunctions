@@ -1,17 +1,16 @@
-// generateMailOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateMailOption1.js]
+// generateMailNickNameOption1.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/mailNickName/Scripts/generateMailNickNameOption1.js]
 //
-// Mapping logic to generate the Mail according to the following convention.
-// First Choice	            B	janine.vandenboele@domain.local
-// If in use	            B	j.vandenboele@domain.local
-// If also in use	        B	ja.vandenboele@domain.local
-// If also in use       	B	jan.vandenboele@domain.local
-// If also in use       	B	jani.vandenboele@domain.local
-// If also in use       	B	janin.vandenboele@domain.local
-// If also in use       	B	janine.vandenboele2@domain.local
+// Mapping logic to generate the MailNickName according to the following convention.
+// First Choice            B   janine.vandenboele
+// If in use               B   j.vandenboele
+// If also in use          B   ja.vandenboele
+// If also in use          B   jan.vandenboele
+// If also in use          B   jani.vandenboele
+// If also in use          B   janin.vandenboele
+// If also in use          B   janine.vandenboele2
 
-function generateMail() {
-    const maxChars = 254 // The maximum length for an Entra ID mail is 254 characters (While the attribute length is 256 characters, a valid SMTP email address within this field can be up to 254 characters to account for the < and > characters)
-    const domain = 'domain.local';
+function generateMailNickName() {
+    const maxChars = 64 // The maximum length for an Entra ID mailNickname is 64 characters
 
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -48,7 +47,7 @@ function generateMail() {
     let suffix = ''
     let iterationToUse = Iteration - (nickName.length - 2)
     suffix = Iteration === 0 ? '' : (iterationToUse);
-    const maxAttributeLength = (maxChars - suffix.toString().length - domain.toString().length);
+    const maxAttributeLength = (maxChars - suffix.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
@@ -56,7 +55,7 @@ function generateMail() {
         mailNickName = mailNickName + suffix;
     }
 
-    return mailNickName + '@' + domain;
+    return mailNickName;
 }
 
-generateMail();
+generateMailNickName();

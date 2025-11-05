@@ -1,40 +1,35 @@
 // generateMailOption9.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateMailOption9.js]
 //
 // Mapping logic to generate the Mail according to the following convention.
-// Eerste keuze	            B	j.vandenboele@domain.local
-// 	                        BP	j.vandenboele@domain.local
-// 	                        P	j.vandenboele@domain.local
-// 	                        PB  j.vandenboele@domain.local
-// Indien in gebruik	    B	janine.vandenboele@domain.local
-// 	                        BP	janine.vandenboele@domain.local
-// 	                        P	janine.vandenboele@domain.local
-// 	                        PB	janine.vandenboele@domain.local
-// Indien ook in gebruik	B	ja.vandenboele@domain.local
-// 	                        BP	ja.vandenboele@domain.local
-// 	                        P	ja.vandenboele@domain.local
-// 	                        PB	ja.vandenboele@domain.local
+// First choice	        B	jvandenboele@domain.local
+// 	                    BP	jvandenboele@domain.local
+// 	                    P	jdevries@domain.local
+// 	                    PB  jdevries@domain.local
+// If in use	        B	jvandenboele1@domain.local
+// 	                    BP	jvandenboele1@domain.local
+// 	                    P	jdevries1@domain.local
+// 	                    PB  jdevries1@domain.local
+// If also in use   	B	jvandenboele2@domain.local
+// 	                    BP	jvandenboele2@domain.local
+// 	                    P	jdevries2@domain.local
+// 	                    PB  jdevries2@domain.local
 // etc.
 function generateMail() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
+    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
+    let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let mailNickName = '';
-
-    if (Iteration === 0) {
-        mailNickName = nickName.substring(0, 1) + '.';
-    } else if (Iteration === 1) {
-        mailNickName = nickName + '.';
-    } else if (Iteration < (nickName.length)) {
-        mailNickName = nickName.substring(0, (Iteration)) + '.';
-    } else {
-        mailNickName = nickName.substring(0, 1) + '.';
-    }
+    let mailNickName = nickName.substring(0, 1);
 
     switch (convention) {
         case "P":
         case "PB":
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { mailNickName = mailNickName + middleNamePartner.replace(/ /g, '') }
+            mailNickName = mailNickName + lastNamePartner;
+            break;
         case "B":
         case "BP":
         default:
@@ -42,6 +37,7 @@ function generateMail() {
             mailNickName = mailNickName + lastName;
             break;
     }
+
     // Trim spaces at start and end
     mailNickName = mailNickName.trim();
 
@@ -55,17 +51,13 @@ function generateMail() {
     mailNickName = mailNickName.replace(/[^0-9a-zA-Z.\-_]/g, '');
 
     // Shorten string to maxAttributeLength minus iteration length
-    let suffix = ''
-    let iterationToUse = Iteration - (nickName.length - 2)
-    suffix = Iteration === 0 ? '' : (iterationToUse);
+    let suffix = Iteration === 0 ? '' : Iteration;
     const domain = 'domain.local';
     const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
-    if (Iteration > (nickName.length - 1)) {
-        mailNickName = mailNickName + suffix;
-    }
+    mailNickName = mailNickName + suffix;
 
     return mailNickName + '@' + domain;
 }
