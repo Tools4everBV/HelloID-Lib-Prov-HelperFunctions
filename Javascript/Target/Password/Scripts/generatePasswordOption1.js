@@ -8,7 +8,7 @@ function randomizeCharSequence(passwordObject) {
 
 function generatePassword() {
     // Initialize these variables for the algorithm to meet your password complexity rules
-    const passwordLength = 8;
+    const passwordLength = 12;
     const minUpper = 1;
     const maxUpper = 3;
     const minNumeric = 0;
@@ -17,9 +17,9 @@ function generatePassword() {
     const maxSpecial = 1;
 
     // Character sets
-    const upperChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const lowerChars = 'abcdefghijklmnopqrstuvwxyz';
-    const numberChars = '0123456789';
+    const upperChars = 'ABCDEFGHJKMNPQRSTUVWXYZ';
+    const lowerChars = 'abcdefghjkmnpqrstuvwxyz';
+    const numberChars = '23456789';
     const specialChars = '!#$@*?';
 
     // Do not change any code below this line !!!
