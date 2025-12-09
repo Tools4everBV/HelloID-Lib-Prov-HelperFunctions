@@ -6,7 +6,7 @@ function New-GeneratedPassword {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $false)]
-        $MinimumLength = 8,
+        $MinimumLength = 12,
 
         [Parameter(Mandatory = $false)]
         $MaximumLength = 16,
@@ -30,16 +30,16 @@ function New-GeneratedPassword {
         $MaximumSpecialChars,
         
         [Parameter(Mandatory = $false)]
-        $AllowedLowerCaseLetters = "abcdefghiklmnoprstuvwxyz",
+        $AllowedLowerCaseLetters = 'abcdefghjkmnpqrstuvwxyz',
 
         [Parameter(Mandatory = $false)]
-        $AllowedUpperCaseLetters = "ABCDEFGHKLMNOPRSTUVWXYZ",
+        $AllowedUpperCaseLetters = 'ABCDEFGHJKMNPQRSTUVWXYZ',
         
         [Parameter(Mandatory = $false)]
-        $AllowedDigits = "1234567890",
+        $AllowedDigits = '23456789',
 
         [Parameter(Mandatory = $false)]
-        $AllowedSpecialChars = "@#$%^&*-_!+=:?/();"
+        $AllowedSpecialChars = '!#$@*?'
     )
     $lowerCaseLetters = $null
     $upperCaseLetters = $null
@@ -138,7 +138,7 @@ function New-GeneratedPassword {
 }
 
 try {
-    $Password = New-GeneratedPassword -MinimumLength 8 -MaximumLength 10 -MinimumDigits 1
+    $Password = New-GeneratedPassword -MinimumLength 12 -MaximumLength 16 -MinimumDigits 1
     
     $returnObject = @{
         password = $Password
