@@ -68,17 +68,6 @@ De mail informeert beheerders dat een medewerker mogelijk toegang nodig heeft to
 15. Klik op **Opslaan**
 16. Test de notificatie door een testaccount naar de gefilterde afdeling te verplaatsen
 
-## Variabelen
-
-Deze template maakt gebruik van:
-- `{{person.displayName}}`
-- `{{data.samAccountName}}`
-- `{{data.mail}}`
-- `{{person.externalId}}`
-- `{{person.primaryContract.department}}`
-- `{{person.primaryContract.title}}`
-- `{{person.contact.business.email}}`
-
 ## Aandachtspunten
 
 - **Filter is essentieel** - zonder filter wordt deze mail bij elke update verstuurd

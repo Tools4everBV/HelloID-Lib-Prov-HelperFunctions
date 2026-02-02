@@ -75,13 +75,6 @@ De mail herinnert de manager eraan dat het dienstverband van een medewerker binn
 16. Klik op **Opslaan**
 17. Test de notificatie met een testaccount met einddatum in de toekomst
 
-## Variabelen
-
-Deze template maakt gebruik van:
-- `{{person.primaryManager.displayName}}`
-- `{{person.displayName}}`
-- `{{person.primaryContract.endDate}}`
-
 ## Aandachtspunten
 
 - Vereist pre-offboarding configuratie in HelloID

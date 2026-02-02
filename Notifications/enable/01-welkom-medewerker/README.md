@@ -67,13 +67,6 @@ De mail bevat een welkomstbericht met instructies voor het instellen van een wac
 14. Pas eventueel het filter aan per bedrijf of organisatie-eenheid (zie sectie **Filter** bovenaan)
 15. Klik op **Opslaan**
 
-## Variabelen
-
-Deze template maakt gebruik van:
-- `{{person.name.nickName}}`
-- `{{person.name.givenname}}`
-- `{{person.primaryContract.company}}`
-
 ## Aandachtspunten
 
 - Deze mail is bedoeld voor omgevingen met SSPR

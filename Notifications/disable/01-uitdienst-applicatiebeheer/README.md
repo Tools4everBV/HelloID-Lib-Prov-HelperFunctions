@@ -66,18 +66,6 @@ De mail informeert beheerders over het uitdiensttreden en bevat de relevante acc
 14. Pas eventueel het filter aan voor afdelingen met specifieke applicaties (zie sectie **Filter** bovenaan)
 15. Klik op **Opslaan**
 
-## Variabelen
-
-Deze template maakt gebruik van:
-- `{{person.displayName}}`
-- `{{person.primaryContract.endDate}}`
-- `{{data.samAccountName}}`
-- `{{data.mail}}`
-- `{{person.externalId}}`
-- `{{person.primaryContract.department}}`
-- `{{person.primaryContract.title}}`
-- `{{person.contact.business.email}}`
-
 ## Aandachtspunten
 
 - Deze mail wordt verstuurd bij disable, wat meestal op de laatste werkdag gebeurt

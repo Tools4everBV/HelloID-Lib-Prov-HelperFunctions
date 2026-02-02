@@ -72,13 +72,6 @@ Alle overige gegevens staan in de eerste mail.
 14. **Gebruik hetzelfde filter** als bij notificatie `01-manager-account-details`
 15. Klik op **Opslaan**
 
-## Variabelen
-
-Deze template maakt gebruik van:
-- `{{person.displayName}}`
-- `{{person.primaryManager.displayName}}`
-- `{{data.password}}`
-
 ## Aandachtspunten
 
 - Deze notificatie moet **altijd samen** met `01-manager-account-details` worden gebruikt

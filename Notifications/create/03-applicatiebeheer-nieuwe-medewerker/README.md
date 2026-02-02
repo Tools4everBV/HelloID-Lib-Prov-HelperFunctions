@@ -65,19 +65,6 @@ De mail informeert beheerders dat er een nieuwe medewerker start en bevat de rel
 14. Pas het filter aan voor afdelingen die specifieke applicaties nodig hebben (zie sectie **Filter** bovenaan)
 15. Klik op **Opslaan**
 
-## Variabelen
-
-Deze template maakt gebruik van:
-- `{{person.displayName}}`
-- `{{person.primaryContract.startDate}}`
-- `{{person.primaryContract.title}}`
-- `{{data.samAccountName}}`
-- `{{data.mail}}`
-- `{{person.externalId}}`
-- `{{person.primaryContract.department}}`
-- `{{person.primaryContract.endDate}}`
-- `{{person.contact.business.email}}`
-
 ## Aandachtspunten
 
 - Gebruik filters om alleen relevante afdelingen te notificeren

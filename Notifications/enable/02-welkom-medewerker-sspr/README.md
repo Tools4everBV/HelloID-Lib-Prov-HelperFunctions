@@ -71,13 +71,6 @@ De mail bevat:
 14. Pas eventueel het filter aan per bedrijf (zie sectie **Filter** bovenaan)
 15. Klik op **Opslaan**
 
-## Variabelen
-
-Deze template maakt gebruik van:
-- `{{person.name.nickName}}`
-- `{{person.name.givenname}}`
-- `{{person.primaryContract.company}}`
-
 ## Aandachtspunten
 
 - Geschikt voor medewerkers die mogelijk minder technisch zijn
