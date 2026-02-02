@@ -13,12 +13,13 @@ Het wachtwoord wordt in een aparte mail verstuurd (zie `02-manager-account-passw
 
 ### Van
 - `no-reply@helloid.com` of een eigen domein
-- Zie [From adres configureren](#from-adres-configureren) in de algemene README voor meer informatie
+- Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
 
 ### Naar
 - Primaire manager
 - Variabele: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.PrimaryManager.Email || "fallbackemailadres@klantnaam.nl" }}`
-- Er kan ook gebruik gemaakt worden van CC en/of BCC
+- **Let op:** Pas `fallbackemailadres@klantnaam.nl` aan naar een geldig e-mailadres voor jouw organisatie
+- Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
 ### Onderwerp
 - `Nieuwe medewerker – {{person.displayName}}`
@@ -39,23 +40,24 @@ Het wachtwoord wordt in een aparte mail verstuurd (zie `02-manager-account-passw
    - **Event**: Selecteer **Create**
    - **Target System**: Selecteer het primaire doelsysteem (bijv. Active Directory)
    - **Notification System**: Laat staan op **Email** (standaard)
+   - **Let op:** Deze template is gemaakt voor het doelsysteem Microsoft Active Directory. Bij gebruik van een ander doelsysteem moeten de variabelen in de template aangepast worden
 
 ### Template importeren
 
 4. Ga naar het tabblad **Message**
-5. Klik rechts bovenin de toolbar op het **Import MJML** icoon (pijl naar beneden met streepje eronder)
-6. Open het bestand `template.mjml` en kopieer de volledige inhoud
+5. Klik rechts bovenin de toolbar op het **Import MJML** icoon (download icoon)
+6. Open het bestand `template.mjml` uit deze map en kopieer de volledige inhoud
 7. Plak de MJML code in het import scherm
-8. Vervang in de code `customer.helloid.training` door de URL van je eigen HelloID portal
+8. Vervang in de code de URL `https://customer.helloid.training` (in de `mj-image src`) door de URL van je eigen HelloID portal
 9. Klik op **Import**
 
 ### Configuratie invullen
 
 10. Ga naar het tabblad **Configuration**
-11. Vul de volgende velden in:
-    - **Onderwerp**: `Nieuwe medewerker – {{person.displayName}}`
-    - **Afzender**: `no-reply@helloid.com` (of eigen domein)
-    - **Ontvanger**: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.PrimaryManager.Email || "fallbackemailadres@klantnaam.nl" }}`
+11. Vul de velden in zoals beschreven in de sectie **Configuratie** bovenaan deze README:
+    - **Onderwerp**
+    - **Afzender** (Van)
+    - **Ontvanger** (Naar)
 12. Configureer eventueel CC en/of BCC indien gewenst
 
 ### Afronden

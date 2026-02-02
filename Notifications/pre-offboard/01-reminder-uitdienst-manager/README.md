@@ -14,11 +14,14 @@ De mail herinnert de manager eraan dat het dienstverband van een medewerker binn
 - **Pre-offboard** - X dagen vóór de einddatum (configureerbaar in HelloID)
 
 ### Van
-- `no-reply@helloid.com` (of eigen domein, zie [Set up HelloID](https://docs.helloid.com))
+- `no-reply@helloid.com` of een eigen domein
+- Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
 
 ### Naar
-- Primaire manager (`{{person.primaryManager.displayName}}`)
-- Er kan ook gebruik gemaakt worden van CC en/of BCC (bijvoorbeeld naar HR)
+- Primaire manager
+- Variabele: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.PrimaryManager.Email || "fallbackemailadres@klantnaam.nl" }}`
+- **Let op:** Pas `fallbackemailadres@klantnaam.nl` aan naar een geldig e-mailadres voor jouw organisatie
+- Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
 ### Onderwerp
 - `Herinnering uitdienst medewerker – {{person.displayName}}`
@@ -35,12 +38,42 @@ De mail herinnert de manager eraan dat het dienstverband van een medewerker binn
 
 ## Gebruik
 
-1. Zorg dat pre-offboarding is geconfigureerd in HelloID
-2. Importeer `template.mjml` in HelloID
-3. Configureer het event type op **Pre-offboard**
-4. Stel het aantal dagen vóór einddatum in
-5. Stel de ontvanger in op de primaire manager
-6. Test de notificatie met een testaccount met einddatum in de toekomst
+### Notificatie aanmaken
+
+1. Zorg dat pre-offboarding is geconfigureerd in HelloID (aantal dagen voor einddatum)
+2. Open in HelloID Provisioning de **Notification Configuration**
+3. Klik op **Nieuwe notificatie maken**
+4. Vul de volgende velden in:
+   - **Name**: Geef de notificatie een herkenbare naam (bijv. "Pre-offboard - Reminder manager")
+   - **Event**: Selecteer **Pre-offboard**
+   - **Target System**: Selecteer het primaire doelsysteem (bijv. Active Directory)
+   - **Notification System**: Laat staan op **Email** (standaard)
+   - **Let op:** Deze template is gemaakt voor het doelsysteem Microsoft Active Directory. Bij gebruik van een ander doelsysteem moeten de variabelen in de template aangepast worden
+
+### Template importeren
+
+5. Ga naar het tabblad **Message**
+6. Klik rechts bovenin de toolbar op het **Import MJML** icoon (download icoon)
+7. Open het bestand `template.mjml` uit deze map en kopieer de volledige inhoud
+8. Plak de MJML code in het import scherm
+9. Vervang in de code de URL `https://customer.helloid.training` (in de `mj-image src`) door de URL van je eigen HelloID portal
+10. Klik op **Import**
+
+### Configuratie invullen
+
+11. Ga naar het tabblad **Configuration**
+12. Vul de velden in zoals beschreven in de sectie **Configuratie** bovenaan deze README:
+    - **Onderwerp**
+    - **Afzender** (Van)
+    - **Ontvanger** (Naar)
+13. Configureer eventueel CC en/of BCC indien gewenst (bijvoorbeeld naar HR of P&O)
+
+### Afronden
+
+14. Bekijk het tabblad **Message** opnieuw en pas indien nodig de inhoud verder aan
+15. Eventuele filters kunnen worden ingesteld (zie sectie **Filter** bovenaan)
+16. Klik op **Opslaan**
+17. Test de notificatie met een testaccount met einddatum in de toekomst
 
 ## Variabelen
 
