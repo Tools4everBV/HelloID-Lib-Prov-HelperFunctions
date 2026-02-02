@@ -104,7 +104,7 @@ Voor het configureren van een custom 'from' adres, zie de [HelloID documentatie]
 
 Voor meer informatie over beschikbare variabelen in notificaties, zie de [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html).
 
-### Filters
+### Conditionele notificaties
 
 Voor het instellen van conditional notifications (filters), zie [Custom notification events](https://docs.helloid.com/en/provisioning/notifications--provisioning-/custom-notification-events--conditional-notifications-.html).
 
