@@ -24,23 +24,13 @@
           Beste {{person.primaryManager.displayName||"leidinggevende"}},
           <br/>
           <br/>
-          Op {{person.primaryContract.startDate}} start een nieuwe medewerker in jouw team: {{person.displayName}}.
+          In aanvulling op het eerdere bericht over de nieuwe medewerker {{person.displayName}}, sturen we in deze mail het tijdelijke wachtwoord.
           <br/>
-          <br/>
-          Onderstaand vind je het tijdelijke wachtwoord van de nieuwe medewerker. Dit wachtwoord moet bij de eerste keer inloggen worden aangepast.
-          <br/>
-          <br/>
-          Gebruikersnaam: {{data.samAccountName}}
           <br/>
           Tijdelijk wachtwoord: {{data.password}}
           <br/>
-          E-mailadres: {{data.mail||person.contact.business.email||"onbekend"}}
           <br/>
-          Personeelsnummer: {{person.externalId}}
-          <br/>
-          Afdeling: {{person.primaryContract.department||"onbekend"}}
-          <br/>
-          Functie: {{person.primaryContract.title||"onbekend"}}
+          Dit wachtwoord moet bij de eerste keer inloggen worden aangepast.
           <br/>
           <br/>
           Met vriendelijke groet,
