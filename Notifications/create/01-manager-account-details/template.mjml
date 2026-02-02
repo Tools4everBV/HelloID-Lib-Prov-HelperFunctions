@@ -24,19 +24,18 @@
           Beste {{person.primaryManager.displayName||"leidinggevende"}},
           <br/>
           <br/>
-          Op {{person.primaryContract.startDate||"de startdatum"}} start een nieuwe medewerker in jouw team:
-          {{data.displayName||person.displayName||person.name.nickName||"de medewerker"}}.
+          Op {{person.primaryContract.startDate}} start een nieuwe medewerker in jouw team: {{person.displayName}}.
           <br/>
           <br/>
           Onderstaand de gegevens van de nieuwe medewerker inclusief de gebruikersnaam.
           In een losse mail zal het wachtwoord van de nieuwe medewerker verstuurd worden.
           <br/>
           <br/>
-          Gebruikersnaam: {{data.samAccountName||"onbekend"}}
+          Gebruikersnaam: {{data.samAccountName}}
           <br/>
           E-mailadres: {{data.mail||person.contact.business.email||"onbekend"}}
           <br/>
-          Personeelsnummer: {{person.externalId||"onbekend"}}
+          Personeelsnummer: {{person.externalId}}
           <br/>
           Afdeling: {{person.primaryContract.department||"onbekend"}}
           <br/>

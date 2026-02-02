@@ -18,15 +18,14 @@
     </mj-section>
     <mj-section background-color="#FFFFFF">
       <mj-column>
-        <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">Beste {{person.name.nickName||"medewerker"}},
+        <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">
+          Beste {{person.name.nickName||person.name.givenname||"medewerker"}},
           <br/>
           <br/>
           Van harte welkom bij {{person.primaryContract.company||"onze organisatie"}}.
           <br/>
           <br/>
-          Je account is inmiddels actief. Om te kunnen inloggen moet je eerst zelf
-          een wachtwoord instellen. Dit doe je via de Microsoft-pagina voor
-          wachtwoordherstel.
+          Je account is inmiddels actief. Om te kunnen inloggen moet je eerst zelf een wachtwoord instellen. Dit doe je via de Microsoft-pagina voor wachtwoordherstel.
           <br/>
           <br/>
           Ga naar: https://passwordreset.microsoftonline.com
@@ -35,24 +34,19 @@
           Klik op ‘Wachtwoord vergeten’ en vul je gebruikersnaam in.
           <br/>
           <br/>
-          Daarna zie je een deel van je mobiele nummer op het scherm.
-          Vul hier je volledige mobiele nummer in om te bevestigen
-          dat dit jouw nummer is.
+          Daarna zie je een deel van je mobiele nummer op het scherm. Vul hier je volledige mobiele nummer in om te bevestigen dat dit jouw nummer is.
           <br/>
           <br/>
-          Vervolgens ontvang je een sms met een controlecode.
-          Met deze code kun je een nieuw wachtwoord instellen.
+          Vervolgens ontvang je een sms met een controlecode. Met deze code kun je een nieuw wachtwoord instellen.
           <br/>
           <br/>
-          Nadat je dit hebt gedaan, kun je inloggen op onze systemen
-          met je gebruikersnaam en het nieuwe wachtwoord.
+          Nadat je dit hebt gedaan, kun je inloggen op onze systemen met je gebruikersnaam en het nieuwe wachtwoord.
           <br/>
           <br/>
           In deze e-mail geven we je enkele praktische tips om goed van start te gaan.
           <br/>
           <br/>
-          Lukt het instellen van je wachtwoord niet of heb je vragen?
-          Neem dan gerust contact op met de ICT Servicedesk.
+          Lukt het instellen van je wachtwoord niet of heb je vragen? Neem dan gerust contact op met de ICT Servicedesk.
           <br/>
           <br/>
           Met vriendelijke groet,

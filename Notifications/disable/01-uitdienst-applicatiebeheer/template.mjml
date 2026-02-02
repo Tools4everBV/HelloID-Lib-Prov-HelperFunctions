@@ -22,27 +22,23 @@
           Beste collega,
           <br/>
           <br/>
-          Dit is een geautomatiseerde melding dat een medewerker uit dienst gaat.
-          Met deze gegevens kun je, indien van toepassing, het account
-          deactiveren in de applicatie(s) die jij beheert.
+          Dit is een geautomatiseerde melding dat een medewerker uit dienst gaat. Met deze gegevens kun je, indien van toepassing, het account deactiveren in de applicatie(s) die jij beheert.
           <br/>
           <br/>
-          Het contract van medewerker
-          {{person.displayName||person.name.nickName||"de medewerker"}}
-          eindigt op {{person.primaryContract.endDate||"de einddatum"}}.
+          Het contract van medewerker {{person.displayName}} eindigt op {{person.primaryContract.endDate||"onbepaald"}}.
           <br/>
           <br/>
           Gegevens van de medewerker:
           <br/>
-          Gebruikersnaam: {{data.samAccountName||"onbekend"}}
+          Gebruikersnaam: {{data.samAccountName}}
           <br/>
           E-mailadres: {{data.mail||person.contact.business.email||"onbekend"}}
           <br/>
-          Personeelsnummer: {{person.externalId||person.employeeNumber||"onbekend"}}
+          Personeelsnummer: {{person.externalId}}
           <br/>
-          Afdeling: {{person.primaryContract.department||person.department||"onbekend"}}
+          Afdeling: {{person.primaryContract.department||"onbekend"}}
           <br/>
-          Functie: {{person.primaryContract.title||person.title||"onbekend"}}
+          Functie: {{person.primaryContract.title||"onbekend"}}
           <br/>
           <br/>
           Heb je vragen? Neem dan gerust contact op met de ICT Servicedesk.

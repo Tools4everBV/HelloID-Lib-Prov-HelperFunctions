@@ -19,14 +19,13 @@
     <mj-section background-color="#FFFFFF">
       <mj-column>
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">
-          Beste {{person.name.nickName||"medewerker"}},
+          Beste {{person.name.nickName||person.name.givenname||"medewerker"}},
           <br/>
           <br/>
           Van harte welkom bij {{person.primaryContract.company||"onze organisatie"}}.
           <br/>
           <br/>
-          Je account is inmiddels actief. Om te kunnen inloggen moet je eerst zelf
-          een wachtwoord instellen.
+          Je account is inmiddels actief. Om te kunnen inloggen moet je eerst zelf een wachtwoord instellen.
           <br/>
           <br/>
           Volg hiervoor deze stappen:
@@ -52,8 +51,7 @@
           6. Vul de code in en kies een nieuw wachtwoord.
           <br/>
           <br/>
-          Daarna kun je inloggen met je gebruikersnaam en
-          het nieuwe wachtwoord.
+          Daarna kun je inloggen met je gebruikersnaam en het nieuwe wachtwoord.
           <br/>
           <br/>
           Enkele praktische tips om goed van start te gaan:

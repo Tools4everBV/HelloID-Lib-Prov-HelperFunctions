@@ -23,15 +23,13 @@
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">Beste applicatiebeheerder,
           <br/>
           <br/>
-          Op {{person.primaryContract.startDate||"de startdatum"}} start medewerker
-          {{person.displayName||person.name.nickName||"de medewerker"}}
-          met functie {{person.primaryContract.title||"onbekend"}}.
+          Op {{person.primaryContract.startDate}} start medewerker {{person.displayName}} met functie {{person.primaryContract.title||"onbekend"}}.
           <br/>
           <br/>
           Wil je ervoor zorgen dat deze medewerker een account krijgt in de betreffende applicatie?
           <br/>
           <br/>
-          Gebruikersnaam: {{data.samAccountName||"onbekend"}}
+          Gebruikersnaam: {{data.samAccountName}}
           <br/>
           E-mailadres: {{data.mail||person.contact.business.email||"onbekend"}}
           <br/>
@@ -41,9 +39,9 @@
           <br/>
           Functie: {{person.primaryContract.title||"onbekend"}}
           <br/>
-          Startdatum: {{person.primaryContract.startDate||"onbekend"}}
+          Startdatum: {{person.primaryContract.startDate}}
           <br/>
-          Einddatum: {{person.primaryContract.endDate||"n.v.t."}}
+          Einddatum: {{person.primaryContract.endDate||"onbepaald"}}
           <br/>
           <br/>
           Met vriendelijke groet,

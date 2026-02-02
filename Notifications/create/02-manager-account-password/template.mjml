@@ -12,7 +12,7 @@
       <mj-column width="75%">
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#FFFFFF" padding-top="25px" padding-bottom="25px">
           <b>
-            Nieuwe medewerker – {{data.displayName||person.displayName||"Onbekend"}}
+            Nieuwe medewerker – {{person.displayName||"Onbekend"}}
             <br/>
           </b>
         </mj-text>
@@ -24,25 +24,23 @@
           Beste {{person.primaryManager.displayName||"leidinggevende"}},
           <br/>
           <br/>
-          Op {{person.primaryContract.startDate||"de startdatum"}} start een nieuwe medewerker in jouw team:
-          {{data.displayName||person.displayName||person.name.nickName||"de medewerker"}}.
+          Op {{person.primaryContract.startDate}} start een nieuwe medewerker in jouw team: {{person.displayName}}.
           <br/>
           <br/>
-          Onderstaand vind je het tijdelijke wachtwoord van de nieuwe medewerker.
-          Dit wachtwoord moet bij de eerste keer inloggen worden aangepast.
+          Onderstaand vind je het tijdelijke wachtwoord van de nieuwe medewerker. Dit wachtwoord moet bij de eerste keer inloggen worden aangepast.
           <br/>
           <br/>
-          Gebruikersnaam: {{data.samAccountName||"onbekend"}}
+          Gebruikersnaam: {{data.samAccountName}}
           <br/>
-          Tijdelijk wachtwoord: {{data.password||"niet beschikbaar"}}
+          Tijdelijk wachtwoord: {{data.password}}
           <br/>
           E-mailadres: {{data.mail||person.contact.business.email||"onbekend"}}
           <br/>
-          Personeelsnummer: {{person.externalId||person.employeeNumber||"onbekend"}}
+          Personeelsnummer: {{person.externalId}}
           <br/>
-          Afdeling: {{person.primaryContract.department||person.department||"onbekend"}}
+          Afdeling: {{person.primaryContract.department||"onbekend"}}
           <br/>
-          Functie: {{person.primaryContract.title||person.title||"onbekend"}}
+          Functie: {{person.primaryContract.title||"onbekend"}}
           <br/>
           <br/>
           Met vriendelijke groet,

@@ -22,26 +22,23 @@
           Beste collega,
           <br/>
           <br/>
-          Medewerker {{person.displayName||person.name.nickName||"de medewerker"}}
-          is van afdeling gewijzigd en heeft mogelijk toegang nodig tot een applicatie
-          die door jou wordt beheerd.
+          Medewerker {{person.displayName}} is van afdeling gewijzigd en heeft mogelijk toegang nodig tot een applicatie die door jou wordt beheerd.
           <br/>
           <br/>
           Gegevens van de medewerker:
           <br/>
-          Gebruikersnaam: {{data.samAccountName||"onbekend"}}
+          Gebruikersnaam: {{data.samAccountName}}
           <br/>
           E-mailadres: {{data.mail||person.contact.business.email||"onbekend"}}
           <br/>
-          Personeelsnummer: {{person.externalId||person.employeeNumber||"onbekend"}}
+          Personeelsnummer: {{person.externalId}}
           <br/>
-          Afdeling: {{person.primaryContract.department||person.department||"onbekend"}}
+          Afdeling: {{person.primaryContract.department||"onbekend"}}
           <br/>
-          Functie: {{person.primaryContract.title||person.title||"onbekend"}}
+          Functie: {{person.primaryContract.title||"onbekend"}}
           <br/>
           <br/>
-          Wil je controleren of deze medewerker toegang nodig heeft tot de
-          bijbehorende applicatie en dit indien nodig inrichten?
+          Wil je controleren of deze medewerker toegang nodig heeft tot de bijbehorende applicatie en dit indien nodig inrichten?
           <br/>
           <br/>
           Met vriendelijke groet,
