@@ -77,8 +77,20 @@ De mail herinnert de manager eraan dat het dienstverband van een medewerker binn
 
 ## Aandachtspunten
 
-- Vereist pre-offboarding configuratie in HelloID
-- Bepaal zorgvuldig het aantal dagen vooraf (niet te vroeg, niet te laat)
+### Pre-offboard configuratie
+
+Pre-offboard notificaties vereisen een speciale configuratie in HelloID:
+
+1. **Person Lifecycle inschakelen** - Pre-offboarding moet worden geconfigureerd in de person lifecycle settings van HelloID
+2. **Aantal dagen instellen** - Configureer hoeveel dagen vóór de einddatum de notificatie moet worden verstuurd
+3. **Timing overwegen** - Kies een periode die voldoende tijd geeft voor overdracht en afronding van werkzaamheden
+   - Aanbeveling: 7-14 dagen voor einddatum
+   - Te vroeg: manager kan het vergeten
+   - Te laat: te weinig tijd voor goede overdracht
+
+Voor meer informatie over het configureren van pre-offboarding, zie [Pre-offboarding notification event](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notification-events--provisioning-.html#pre-offboarding-notification-event).
+
+### Overige aandachtspunten
+
 - Overweeg CC naar HR of P&O voor administratieve afhandeling
 - Deze mail is informatief, de verdere afhandeling loopt via HR-procedures
-- Test met verschillende einddata om timing te verifiëren
