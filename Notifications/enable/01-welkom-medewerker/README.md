@@ -19,7 +19,7 @@ De mail bevat een welkomstbericht met instructies voor het instellen van een wac
 
 ### Naar
 - Zakelijke e-mail van de nieuwe medewerker
-- Variabele: `{{ data.mail }}` of `{{ person.contact.business.email }}`
+- Variabele: `{{ data.mail }}`
 - Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
 ### Onderwerp

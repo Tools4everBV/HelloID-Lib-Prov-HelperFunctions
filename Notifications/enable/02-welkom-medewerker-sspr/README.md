@@ -22,8 +22,10 @@ De mail bevat:
 - Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
 
 ### Naar
-- Zakelijke e-mail van de nieuwe medewerker
-- Variabele: `{{ data.mail }}` of `{{ person.contact.business.email }}`
+- Privé e-mail van de nieuwe medewerker
+- Variabele: `{{ Person.Contact.Personal.Email || "fallbackemailadres@domein.nl" }}`
+- **Let op:** Pas `fallbackemailadres@domein.nl` aan naar het juiste helpdesk e-mailadres voor jouw organisatie
+- De mail gaat naar het privé adres zodat de medewerker toegang heeft vóór de eerste werkdag
 - Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
 ### Onderwerp
