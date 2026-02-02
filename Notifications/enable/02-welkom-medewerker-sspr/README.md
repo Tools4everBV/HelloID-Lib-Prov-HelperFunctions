@@ -1,0 +1,1 @@
+Template - Activeren account – Welkomstbericht (SSPR, met nummerbevestiging)
