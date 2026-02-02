@@ -42,40 +42,40 @@ De nummering (`01-`, `02-`, …) maakt de volgorde en onderlinge samenhang expli
 ### Create
 Notificaties die worden verstuurd bij het aanmaken van een account.
 
-- **01-manager-account-details**  
+- **[01-manager-account-details](create/01-manager-account-details)**  
   Informeert de manager over de accountgegevens van een nieuwe medewerker (zonder wachtwoord)
   
-- **02-manager-account-password**  
+- **[02-manager-account-password](create/02-manager-account-password)**  
   Stuurt het tijdelijke wachtwoord in een aparte mail naar de manager (voor security)
   
-- **03-applicatiebeheer-nieuwe-medewerker**  
+- **[03-applicatiebeheer-nieuwe-medewerker](create/03-applicatiebeheer-nieuwe-medewerker)**  
   Notificatie naar applicatiebeheer over nieuwe medewerker voor handmatige toegangsverlening
 
 ### Enable
 Notificaties die worden verstuurd wanneer een account actief wordt.
 
-- **01-welkom-medewerker**  
+- **[01-welkom-medewerker](enable/01-welkom-medewerker)**  
   Welkomstmail naar nieuwe medewerker met instructies voor wachtwoord instellen via SSPR
   
-- **02-welkom-medewerker-sspr**  
+- **[02-welkom-medewerker-sspr](enable/02-welkom-medewerker-sspr)**  
   Uitgebreide variant met gedetailleerde SSPR instructies (helpt supportvragen te verminderen)
 
 ### Update
 Notificaties bij wijzigingen in bestaande accounts.
 
-- **01-afdelingswijziging-applicatiebeheer**  
+- **[01-afdelingswijziging-applicatiebeheer](update/01-afdelingswijziging-applicatiebeheer)**  
   Notificatie naar applicatiebeheer bij afdelingswijziging voor toegangsbeheer
 
 ### Pre-offboard
 Notificaties voorafgaand aan uitdienst.
 
-- **01-reminder-uitdienst-manager**  
+- **[01-reminder-uitdienst-manager](pre-offboard/01-reminder-uitdienst-manager)**  
   Herinnert manager X dagen voor einddatum aan uitdienst voor tijdige overdracht  
 
 ### Disable
 Notificaties bij het deactiveren van accounts.
 
-- **01-uitdienst-applicatiebeheer**  
+- **[01-uitdienst-applicatiebeheer](disable/01-uitdienst-applicatiebeheer)**  
   Informeert applicatiebeheer over uitdiensttreding voor handmatige account deactivering
 
 ---
