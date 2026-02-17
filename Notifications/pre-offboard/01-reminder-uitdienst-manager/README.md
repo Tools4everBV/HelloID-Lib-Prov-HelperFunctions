@@ -19,7 +19,7 @@ De mail herinnert de manager eraan dat het dienstverband van een medewerker binn
 
 ### Naar
 - Primaire manager
-- Variabele: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.PrimaryManager.Email || "fallbackemailadres@domein.nl" }}`
+- Variabele: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.Email || "fallbackemailadres@domein.nl" }}`
 - **Let op:** Pas `fallbackemailadres@domein.nl` aan naar een geldig e-mailadres voor jouw organisatie
 - Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
