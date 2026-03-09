@@ -1,0 +1,51 @@
+<mjml>
+  <mj-body background-color="#E7E7E7">
+    <mj-section>
+      <mj-column>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#4a8fca" padding-top="0" padding-bottom="0">
+      <mj-column width="25%">
+        <mj-image src="https://customer.helloid.training/appearance/companyicon" width="50px" height="50px">
+        </mj-image>
+      </mj-column>
+      <mj-column width="75%">
+        <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#FFFFFF" padding-top="25px" padding-bottom="25px">
+          Herinnering uitdienst medewerker
+          <br/>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF">
+      <mj-column>
+        <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">
+          Beste {{person.primaryManager.displayName||"leidinggevende"}},
+          <br/>
+          <br/>
+          Dit is een herinnering dat het dienstverband van {{person.displayName}} binnenkort eindigt.
+          <br/>
+          <br/>
+          Einddatum dienstverband: {{person.primaryContract.endDate||"onbepaald"}}
+          <br/>
+          <br/>
+          We adviseren om vóór deze datum eventuele werkzaamheden, overdracht en afspraken af te ronden.
+          <br/>
+          <br/>
+          Dit bericht is ter informatie. De verdere afhandeling van het uitdienstproces verloopt via de gebruikelijke HR-procedures.
+          <br/>
+          <br/>
+          Met vriendelijke groet,
+          <br/>
+          ICT Servicedesk
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column>
+        <mj-text align="center" font-family="Arial, Helvetica, sans-serif" font-size="12px" color="#999999">
+          Dit is een automatisch gegenereerd bericht.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
