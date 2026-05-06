@@ -1,67 +1,69 @@
-# Aanmaken account – Gegevens nieuwe medewerker naar leidinggevende
+# Create Account – Employee Details to Manager
 
-## Omschrijving
+## Description
 
-Deze notificatie kan gebruikt worden om de leidinggevende te informeren wanneer een nieuw account wordt aangemaakt. De mail bevat de accountgegevens van de nieuwe medewerker (gebruikersnaam, e-mail, personeelsnummer, etc.), maar **geen wachtwoord** vanwege security.
+This notification informs the manager when a new account is created. The email contains the account details of the new employee (username, email, employee number, etc.), but **no password** for security reasons.
 
-Het wachtwoord wordt in een aparte mail verstuurd (zie `02-manager-account-password`).
+The password is sent in a separate email (see `02-manager-account-password`).
 
-## Configuratie
+## Configuration
 
 ### Event
-- **Create** - Bij het aanmaken van een account
+- **Create** - When an account is created
 
-### Van
-- `no-reply@helloid.com` of een eigen domein
-- Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
+### From
+- `no-reply@helloid.com` or a custom domain
+- See [Configure a custom 'from' address for emails](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) for more information
 
-### Naar
-- Primaire manager
-- Variabele: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.Email || "fallbackemailadres@domein.nl" }}`
-- **Let op:** Pas `fallbackemailadres@domein.nl` aan naar een geldig e-mailadres voor jouw organisatie
-- Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
+### To
+- Primary manager
+- Variable: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.Email || "fallbackemailadres@domain.com" }}`
+- **Note:** Update `fallbackemailadres@domain.com` to a valid email address for your organization
+- For more information about variables, see [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
-### Onderwerp
-- `Nieuwe medewerker – {{person.displayName}}`
+### Subject
+- `New employee – {{person.displayName}}`
 
-### Filter (optioneel)
-- Filteren op specifieke afdelingen, werkgevers of andere criteria kan via custom notification events
-- Voorbeeld: Alleen voor afdeling A, B en C van het primaire contract
-- Zie [Custom notification events](https://docs.helloid.com/en/provisioning/notifications--provisioning-/custom-notification-events--conditional-notifications-.html) voor meer informatie
+### Filter (optional)
+- Filter on specific departments, employers, or other criteria via custom notification events
+- Example: Only for departments A, B, and C of the primary contract
+- See [Custom notification events](https://docs.helloid.com/en/provisioning/notifications--provisioning-/custom-notification-events--conditional-notifications-.html) for more information
 
-## Gebruik
+## Usage
 
-### Notificatie aanmaken
+### Create Notification
 
-1. Open in HelloID Provisioning de **Notification Configuration**
-2. Klik op **Nieuwe notificatie maken**
-3. Vul de volgende velden in:
-   - **Name**: Geef de notificatie een herkenbare naam (bijv. "Create - Gegevens naar manager")
-   - **Event**: Selecteer **Create**
-   - **Target System**: Selecteer het primaire doelsysteem (bijv. Active Directory)
-   - **Notification System**: Laat staan op **Email** (standaard)
-   - **Let op:** Deze template is gemaakt voor het doelsysteem Microsoft Active Directory. Bij gebruik van een ander doelsysteem moeten de variabelen in de template aangepast worden
+1. Open **Notification Configuration** in HelloID Provisioning
+2. Click **Create New Notification**
+3. Fill in the following fields:
+   - **Name**: Give the notification a recognizable name (e.g., "Create - Employee Details to Manager")
+   - **Event**: Select **Create**
+   - **Target System**: Select the primary target system (e.g., Active Directory)
+   - **Notification System**: Leave as **Email** (default)
+   - **Note:** This template is created for Microsoft Active Directory. If using a different target system, the variables in the template must be adjusted
 
-### Template importeren
+### Import Template
 
-4. Ga naar het tabblad **Message**
-5. Klik rechts bovenin de toolbar op het **Import MJML** icoon (download icoon)
-6. Open het bestand `template.mjml` uit deze map en kopieer de volledige inhoud
-7. Plak de MJML code in het import scherm
-8. Vervang in de code de URL `https://customer.helloid.training` (in de `mj-image src`) door de URL van je eigen HelloID portal
-9. Klik op **Import**
+4. Go to the **Message** tab
+5. Click the **Import MJML** icon (download icon) in the toolbar on the right
+6. Open one of the template files from this folder and copy the full content:
+   - [template_nl.mjml](template_nl.mjml) - Dutch version
+   - [template_en.mjml](template_en.mjml) - English version
+7. Paste the MJML code into the import screen
+8. Replace the URL `https://customer.helloid.com` in the code with your own HelloID portal URL if needed
+9. Click **Import**
 
-### Configuratie invullen
+### Configure Settings
 
-10. Ga naar het tabblad **Configuration**
-11. Vul de velden in zoals beschreven in de sectie **Configuratie** bovenaan deze README:
-    - **Onderwerp**
-    - **Afzender** (Van)
-    - **Ontvanger** (Naar)
-12. Configureer eventueel CC en/of BCC indien gewenst
+10. Go to the **Configuration** tab
+11. Fill in the fields as described in the **Configuration** section above:
+    - **Subject**
+    - **From** (From address)
+    - **To** (Recipient)
+12. Configure CC and/or BCC if desired
 
-### Afronden
+### Finalize
 
-13. Bekijk het tabblad **Message** opnieuw en pas indien nodig de inhoud verder aan
-14. Eventuele filters kunnen worden ingesteld via [custom notification events](https://docs.helloid.com/en/provisioning/notifications--provisioning-/custom-notification-events--conditional-notifications-.html)
-15. Klik op **Opslaan**
+13. Review the **Message** tab again and adjust the content if needed
+14. Optional filters can be set via [custom notification events](https://docs.helloid.com/en/provisioning/notifications--provisioning-/custom-notification-events--conditional-notifications-.html)
+15. Click **Save**

@@ -6,7 +6,7 @@
     </mj-section>
     <mj-section background-color="#4a8fca" padding-top="0" padding-bottom="0">
       <mj-column width="25%">
-        <mj-image src="https://customer.helloid.training/appearance/companyicon" width="50px" height="50px">
+        <mj-image src="https://customer.helloid.com/appearance/companyicon" width="50px" height="50px">
         </mj-image>
       </mj-column>
       <mj-column width="75%">
@@ -25,44 +25,31 @@
           Van harte welkom bij {{person.primaryContract.company||"onze organisatie"}}.
           <br/>
           <br/>
-          Je account is inmiddels actief. Om te kunnen inloggen moet je eerst zelf een wachtwoord instellen.
+          Je account is inmiddels actief. Om te kunnen inloggen moet je eerst zelf een wachtwoord instellen. Dit doe je via de Microsoft-pagina voor wachtwoordherstel.
           <br/>
           <br/>
-          Volg hiervoor deze stappen:
+          Ga naar: https://passwordreset.microsoftonline.com
           <br/>
           <br/>
-          1. Ga naar https://passwordreset.microsoftonline.com
+          Klik op 'Wachtwoord vergeten' en vul je gebruikersnaam in.
           <br/>
           <br/>
-          2. Klik op ‘Wachtwoord vergeten’.
+          Daarna zie je een deel van je mobiele nummer op het scherm. Vul hier je volledige mobiele nummer in om te bevestigen dat dit jouw nummer is.
           <br/>
           <br/>
-          3. Vul je gebruikersnaam in.
+          Vervolgens ontvang je een sms met een controlecode. Met deze code kun je een nieuw wachtwoord instellen.
           <br/>
           <br/>
-          4. Je ziet een deel van je mobiele nummer op het scherm.
-          <br/>
-          Vul hier je volledige mobiele nummer in.
+          Nadat je dit hebt gedaan, kun je inloggen op onze systemen met je gebruikersnaam en het nieuwe wachtwoord.
           <br/>
           <br/>
-          5. Je ontvangt een sms met een controlecode.
+          Hier zijn nog enkele praktische tips om goed van start te gaan:
           <br/>
           <br/>
-          6. Vul de code in en kies een nieuw wachtwoord.
+          [AANPASSEN: Voeg hier uw onboardinginformatie in]
           <br/>
           <br/>
-          Daarna kun je inloggen met je gebruikersnaam en het nieuwe wachtwoord.
-          <br/>
-          <br/>
-          Enkele praktische tips om goed van start te gaan:
-          <br/>
-          - Gebruik bij het inloggen altijd je zakelijke gebruikersnaam.
-          <br/>
-          - Bewaar je wachtwoord op een veilige plek en deel dit niet met anderen.
-          <br/>
-          - Lukt het inloggen niet? Probeer het rustig nog een keer.
-          <br/>
-          - Kom je er niet uit, neem dan contact op met de ICT Servicedesk.
+          Lukt het instellen van je wachtwoord niet of heb je vragen? Neem dan gerust contact op met de ICT Servicedesk.
           <br/>
           <br/>
           Met vriendelijke groet,

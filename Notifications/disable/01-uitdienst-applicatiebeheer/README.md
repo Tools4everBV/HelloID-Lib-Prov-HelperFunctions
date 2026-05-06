@@ -1,74 +1,76 @@
-# Deactiveren account – Notificatie naar applicatiebeheer
+# Disable Account – Notification to Application Management
 
-## Omschrijving
+## Description
 
-Deze notificatie wordt verstuurd naar applicatiebeheerders wanneer een account wordt gedeactiveerd omdat een medewerker uit dienst gaat.
+This notification is sent to application managers when an account is disabled because an employee is leaving.
 
-De mail informeert beheerders over het uitdiensttreden en bevat de relevante accountgegevens en einddatum, zodat zij waar nodig het account kunnen deactiveren in applicaties die niet via HelloID worden beheerd.
+The email informs managers about the employee's departure and contains relevant account details and end date, so they can deactivate the account in applications not managed via HelloID.
 
-## Configuratie
+## Configuration
 
 ### Event
-- **Disable** - Bij het deactiveren van een account
+- **Disable** - When an account is disabled
 
-### Van
-- `no-reply@helloid.com` of een eigen domein
-- Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
+### From
+- `no-reply@helloid.com` or a custom domain
+- See [Configure a custom 'from' address for emails](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) for more information
 
-### Naar
-- Applicatiebeheer (vast e-mailadres, bijvoorbeeld `applicatiebeheer@domein.nl`)
-- **Let op:** Pas het e-mailadres aan naar het juiste adres voor jouw organisatie
-- Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
+### To
+- Application management (fixed email address, e.g., `appmanagement@domain.com`)
+- **Note:** Update the email address to the correct one for your organization
+- For more information about variables, see [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
-### Onderwerp
-- `Medewerker uit dienst – {{person.displayName}}`
-- Of specifieker: `Afmelden applicatie X – {{person.displayName}}`
+### Subject
+- `Employee exit – {{person.displayName}}`
+- Or more specific: `Deactivate application X – {{person.displayName}}`
 
-### Filter (optioneel)
-- Filteren kan op gegevens die op het account van het primaire doelsysteem (bijv. AD) worden geschreven
-- Voorbeeld: Alleen voor afdeling A, B en C waar specifieke applicaties worden gebruikt
-- Let op: Dit zijn primaire contractgegevens
+### Filter (optional)
+- Filter on data written to the account of the primary target system (e.g., AD)
+- Example: Only for departments A, B, and C where specific applications are used
+- Note: These are primary contract data
 
-## Gebruik
+## Usage
 
-### Notificatie aanmaken
+### Create Notification
 
-1. Open in HelloID Provisioning de **Notification Configuration**
-2. Klik op **Nieuwe notificatie maken**
-3. Vul de volgende velden in:
-   - **Name**: Geef de notificatie een herkenbare naam (bijv. "Disable - Uitdienst applicatiebeheer")
-   - **Event**: Selecteer **Disable**
-   - **Target System**: Selecteer het primaire doelsysteem (bijv. Active Directory)
-   - **Notification System**: Laat staan op **Email** (standaard)
-   - **Let op:** Deze template is gemaakt voor het doelsysteem Microsoft Active Directory. Bij gebruik van een ander doelsysteem moeten de variabelen in de template aangepast worden
+1. Open **Notification Configuration** in HelloID Provisioning
+2. Click **Create New Notification**
+3. Fill in the following fields:
+   - **Name**: Give the notification a recognizable name (e.g., "Disable - Employee Exit Application Management")
+   - **Event**: Select **Disable**
+   - **Target System**: Select the primary target system (e.g., Active Directory)
+   - **Notification System**: Leave as **Email** (default)
+   - **Note:** This template is created for Microsoft Active Directory. If using a different target system, the variables in the template must be adjusted
 
-### Template importeren
+### Import Template
 
-4. Ga naar het tabblad **Message**
-5. Klik rechts bovenin de toolbar op het **Import MJML** icoon (download icoon)
-6. Open het bestand `template.mjml` uit deze map en kopieer de volledige inhoud
-7. Plak de MJML code in het import scherm
-8. Vervang in de code de URL `https://customer.helloid.training` (in de `mj-image src`) door de URL van je eigen HelloID portal
-9. Klik op **Import**
+4. Go to the **Message** tab
+5. Click the **Import MJML** icon (download icon) in the toolbar on the right
+6. Open one of the template files from this folder and copy the full content:
+   - [template_nl.mjml](template_nl.mjml) - Dutch version
+   - [template_en.mjml](template_en.mjml) - English version
+7. Paste the MJML code into the import screen
+8. Replace the URL `https://customer.helloid.com` in the code with your own HelloID portal URL if needed
+9. Click **Import**
 
-### Configuratie invullen
+### Configure Settings
 
-10. Ga naar het tabblad **Configuration**
-11. Vul de velden in zoals beschreven in de sectie **Configuratie** bovenaan deze README:
-    - **Onderwerp**
-    - **Afzender** (Van)
-    - **Ontvanger** (Naar)
-12. Configureer eventueel CC en/of BCC indien gewenst
+10. Go to the **Configuration** tab
+11. Fill in the fields as described in the **Configuration** section above:
+    - **Subject**
+    - **From** (From address)
+    - **To** (Recipient)
+12. Configure CC and/or BCC if desired
 
-### Afronden
+### Finalize
 
-13. Bekijk het tabblad **Message** opnieuw en pas indien nodig de inhoud verder aan
-14. Pas eventueel het filter aan voor afdelingen met specifieke applicaties (zie sectie **Filter** bovenaan)
-15. Klik op **Opslaan**
+13. Review the **Message** tab again and adjust the content if needed
+14. Adjust the filter if needed for departments with specific applications (see **Filter** section above)
+15. Click **Save**
 
-## Aandachtspunten
+## Important Notes
 
-- Deze mail wordt verstuurd bij disable, wat meestal op de laatste werkdag gebeurt
-- Overweeg `pre-offboard` notificaties voor tijdige vooraankondiging
-- Gebruik filters om alleen relevante afdelingen te notificeren
-- De einddatum kan gebruikt worden voor planningsoverwegingen
+- This email is sent on disable, which typically occurs on the last working day
+- Consider `pre-offboard` notifications for timely advance notice
+- Use filters to notify only relevant departments
+- The end date can be used for planning purposes

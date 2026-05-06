@@ -1,19 +1,19 @@
 # HelloID Provisioning – Notification Templates
 
-Deze map bevat herbruikbare MJML-templates voor notificaties binnen HelloID Provisioning.
+This folder contains reusable MJML templates for notifications in HelloID Provisioning.
 
-De notificaties zijn gebaseerd op:
-- de standaard HelloID notificatie-templates
-- praktijkervaring bij klantimplementaties
-- een bewuste afbakening om mailoverload te voorkomen
+The notifications are based on:
+- Standard HelloID notification templates
+- Practical experience from customer implementations
+- Deliberate scope to prevent email overload
 
-De templates zijn bedoeld als startpunt. Ze kunnen per klant worden geïmporteerd in HelloID en daar verder worden afgestemd, bijvoorbeeld ontvangers, filters of onderwerp.
+The templates are intended as a starting point. They can be imported into HelloID per customer and customized there, for example for recipients, filters, or subject.
 
 ---
 
-## Structuur
+## Structure
 
-De notificaties zijn ingedeeld per provisioning event:
+Notifications are organized by provisioning event:
 
 ```
 notifications/
@@ -24,79 +24,82 @@ notifications/
   pre-offboard/
 ```
 
-Binnen elk event staan één of meerdere varianten.  
-Elke variant heeft een eigen map met:
+Within each event there are one or more variants.  
+Each variant has its own folder with:
 
-- `template.mjml`  
-  De volledige MJML-template die direct in HelloID kan worden geïmporteerd.
+- `template_en.mjml`  
+  The complete MJML template that can be imported directly into HelloID (English version).
+
+- `template_nl.mjml`  
+  The complete MJML template that can be imported directly into HelloID (Dutch version).
 
 - `README.md`  
-  Toelichting op doel, ontvanger, gebruik en aandachtspunten van de notificatie.
+  Explanation of purpose, recipient, usage and important notes for the notification.
 
-De nummering (`01-`, `02-`, …) maakt de volgorde en onderlinge samenhang expliciet en zorgt ervoor dat uitbreidingen later eenvoudig kunnen worden toegevoegd.
+The numbering (`01-`, `02-`, …) makes the sequence and relationships explicit and ensures that extensions can be added easily later.
 
 ---
 
-## Overzicht notificaties
+## Notification Overview
 
 ### Create
-Notificaties die worden verstuurd bij het aanmaken van een account.
+Notifications sent when an account is created.
 
 - **[01-manager-account-details](create/01-manager-account-details)**  
-  Informeert de manager over de accountgegevens van een nieuwe medewerker (zonder wachtwoord)
+  Informs the manager about the account details of a new employee (without password)
   
 - **[02-manager-account-password](create/02-manager-account-password)**  
-  Stuurt het tijdelijke wachtwoord in een aparte mail naar de manager (voor security)
+  Sends the temporary password in a separate email to the manager (for security)
   
 - **[03-applicatiebeheer-nieuwe-medewerker](create/03-applicatiebeheer-nieuwe-medewerker)**  
-  Notificatie naar applicatiebeheer over nieuwe medewerker voor handmatige toegangsverlening
+  Notification to application management about new employee for manual access provisioning
 
 ### Enable
-Notificaties die worden verstuurd wanneer een account actief wordt.
+Notifications sent when an account is activated.
 
 - **[01-welkom-medewerker](enable/01-welkom-medewerker)**  
-  Welkomstmail naar nieuwe medewerker met instructies voor wachtwoord instellen via SSPR
+  Welcome email to new employee with instructions to set password via SSPR
   
 - **[02-welkom-medewerker-sspr](enable/02-welkom-medewerker-sspr)**  
-  Uitgebreide variant met gedetailleerde SSPR instructies (helpt supportvragen te verminderen)
+  Extended variant with detailed SSPR instructions (helps reduce support questions)
 
 ### Update
-Notificaties bij wijzigingen in bestaande accounts.
+Notifications for changes to existing accounts.
 
 - **[01-afdelingswijziging-applicatiebeheer](update/01-afdelingswijziging-applicatiebeheer)**  
-  Notificatie naar applicatiebeheer bij afdelingswijziging voor toegangsbeheer
+  Notification to application management on department change for access management
 
 ### Pre-offboard
-Notificaties voorafgaand aan uitdienst.
+Notifications prior to employee exit.
 
 - **[01-reminder-uitdienst-manager](pre-offboard/01-reminder-uitdienst-manager)**  
-  Herinnert manager X dagen voor einddatum aan uitdienst voor tijdige overdracht  
+  Reminds manager X days before end date of employee exit for timely handover  
 
 ### Disable
-Notificaties bij het deactiveren van accounts.
+Notifications when accounts are disabled.
 
 - **[01-uitdienst-applicatiebeheer](disable/01-uitdienst-applicatiebeheer)**  
-  Informeert applicatiebeheer over uitdiensttreding voor handmatige account deactivering
+  Informs application management of employee exit for manual account deactivation
 
 ---
 
-## Gebruik
+## Usage
 
-### Algemeen
+### General
 
-Elke notificatie heeft een eigen README met gedetailleerde instructies. De algemene stappen zijn:
+Each notification has its own README with detailed instructions. The general steps are:
 
-1. Open in HelloID Provisioning de **Notification Configuration**
-2. Klik op **Nieuwe notificatie maken**
-3. Vul de basisvelden in (Name, Event, Target System)
-4. Importeer de `template.mjml` via het **Import MJML** icoon (download icoon)
-5. Vervang de URL `https://customer.helloid.training` door je eigen HelloID portal URL
-6. Configureer ontvanger(s), onderwerp en eventuele filters
-7. Test de notificatie grondig voordat je deze in productie neemt
+1. Open **Notification Configuration** in HelloID Provisioning
+2. Click **Create New Notification**
+3. Fill in the basic fields (Name, Event, Target System)
+4. Import the `template_en.mjml` (English) or `template_nl.mjml` (Dutch) via the **Import MJML** icon (download icon)
+5. Replace the URL `https://customer.helloid.com` with your own HelloID portal URL if needed
+6. Configure recipient(s), subject and any filters
+7. Thoroughly test the notification before deploying to production
 
-**Let op:** Alle templates zijn gemaakt voor het doelsysteem **Microsoft Active Directory**. Bij gebruik van een ander doelsysteem moeten de variabelen in de templates aangepast worden.
+**Note:** All templates are created for the **Microsoft Active Directory** target system. If using a different target system, the variables in the templates must be adjusted.
 
-### From adres configureren
+### Configure From Address
 
 Voor het configureren van een custom 'from' adres, zie de [HelloID documentatie](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails).
 

@@ -6,12 +6,12 @@
     </mj-section>
     <mj-section background-color="#4a8fca" padding-top="0" padding-bottom="0">
       <mj-column width="25%">
-        <mj-image src="https://customer.helloid.training/appearance/companyicon" width="50px" height="50px">
+        <mj-image src="https://customer.helloid.com/appearance/companyicon" width="50px" height="50px">
         </mj-image>
       </mj-column>
       <mj-column width="75%">
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#FFFFFF" padding-top="25px" padding-bottom="25px">
-          Accountwijziging medewerker
+          Account update for employee
           <br/>
         </mj-text>
       </mj-column>
@@ -19,38 +19,38 @@
     <mj-section background-color="#FFFFFF">
       <mj-column>
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">
-          Beste collega,
+          Dear colleague,
           <br/>
           <br/>
-          Medewerker {{person.displayName}} is van afdeling gewijzigd en heeft mogelijk toegang nodig tot een applicatie die door jou wordt beheerd.
+          Employee {{person.displayName}} has changed departments and may require access to an application that you manage.
           <br/>
           <br/>
-          Gegevens van de medewerker:
+          Employee details:
           <br/>
-          Gebruikersnaam: {{data.samAccountName}}
+          Username: {{data.samAccountName}}
           <br/>
-          E-mailadres: {{data.mail||person.contact.business.email||"onbekend"}}
+          Email address: {{data.mail||person.contact.business.email||"unknown"}}
           <br/>
-          Personeelsnummer: {{person.externalId}}
+          Personnel number: {{person.externalId}}
           <br/>
-          Afdeling: {{person.primaryContract.department||"onbekend"}}
+          Department: {{person.primaryContract.department||"unknown"}}
           <br/>
-          Functie: {{person.primaryContract.title||"onbekend"}}
-          <br/>
-          <br/>
-          Wil je controleren of deze medewerker toegang nodig heeft tot de bijbehorende applicatie en dit indien nodig inrichten?
+          Position: {{person.primaryContract.title||"unknown"}}
           <br/>
           <br/>
-          Met vriendelijke groet,
+          Could you please check if this employee needs access to your application and set it up if necessary?
           <br/>
-          ICT Servicedesk
+          <br/>
+          Kind regards,
+          <br/>
+          ICT Helpdesk
         </mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff">
-      <mj-column>
+      <mj-column width="100%">
         <mj-text align="center" font-family="Arial, Helvetica, sans-serif" font-size="12px" color="#999999">
-          Dit is een automatisch gegenereerd bericht.
+          This is an automatically generated message.
         </mj-text>
       </mj-column>
     </mj-section>

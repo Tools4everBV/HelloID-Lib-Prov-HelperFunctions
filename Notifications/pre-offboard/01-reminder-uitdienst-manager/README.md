@@ -1,96 +1,98 @@
-# Pre-offboarding – Herinnering uitdienst naar manager
+# Pre-offboard – Employee Exit Reminder to Manager
 
-## Omschrijving
+## Description
 
-Deze notificatie wordt verstuurd naar de leidinggevende vóór de einddatum van een medewerker (pre-offboarding).
+This notification is sent to the manager before an employee's end date (pre-offboarding).
 
-De mail herinnert de manager eraan dat het dienstverband van een medewerker binnenkort eindigt en adviseert om tijdig werkzaamheden, overdracht en afspraken af te ronden.
+The email reminds the manager that an employee's employment contract will end soon and advises completing work tasks, handover, and arrangements in a timely manner.
 
-**Let op:** Deze notificatie vereist pre-offboarding configuratie in HelloID (aantal dagen voor einddatum).
+**Note:** This notification requires pre-offboarding configuration in HelloID (number of days before end date).
 
-## Configuratie
+## Configuration
 
 ### Event
-- **Pre-offboard** - X dagen vóór de einddatum (configureerbaar in HelloID)
+- **Pre-offboard** - X days before the end date (configurable in HelloID)
 
-### Van
-- `no-reply@helloid.com` of een eigen domein
-- Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
+### From
+- `no-reply@helloid.com` or a custom domain
+- See [Configure a custom 'from' address for emails](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) for more information
 
-### Naar
-- Primaire manager
-- Variabele: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.Email || "fallbackemailadres@domein.nl" }}`
-- **Let op:** Pas `fallbackemailadres@domein.nl` aan naar een geldig e-mailadres voor jouw organisatie
-- Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
+### To
+- Primary manager
+- Variable: `{{ Manager.Accounts.MicrosoftActiveDirectory.mail || Manager.Email || "fallbackemailadres@domain.com" }}`
+- **Note:** Update `fallbackemailadres@domain.com` to a valid email address for your organization
+- For more information about variables, see [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
-### Onderwerp
-- `Herinnering uitdienst medewerker – {{person.displayName}}`
-- Of: `Binnenkort uit dienst – {{person.displayName}}`
+### Subject
+- `Employee exit reminder – {{person.displayName}}`
+- Or: `Upcoming departure – {{person.displayName}}`
 
-### Filter (optioneel)
-- Filteren kan op gegevens die op het account van het primaire doelsysteem (bijv. AD) worden geschreven
-- Voorbeeld: Alleen voor specifieke afdelingen of bedrijven
-- Let op: Dit zijn primaire contractgegevens
+### Filter (optional)
+- Filter on data written to the account of the primary target system (e.g., AD)
+- Example: Only for specific departments or companies
+- Note: These are primary contract data
 
-### Pre-offboard timing
-- Configureer in HelloID hoeveel dagen vóór de einddatum deze notificatie moet worden verstuurd
-- Aanbeveling: 7-14 dagen voor einddatum
+### Pre-offboard Timing
+- Configure in HelloID how many days before the end date this notification should be sent
+- Recommendation: 7-14 days before end date
 
-## Gebruik
+## Usage
 
-### Notificatie aanmaken
+### Create Notification
 
-1. Zorg dat pre-offboarding is geconfigureerd in HelloID (aantal dagen voor einddatum)
-2. Open in HelloID Provisioning de **Notification Configuration**
-3. Klik op **Nieuwe notificatie maken**
-4. Vul de volgende velden in:
-   - **Name**: Geef de notificatie een herkenbare naam (bijv. "Pre-offboard - Reminder manager")
-   - **Event**: Selecteer **Pre-offboard**
-   - **Target System**: Selecteer het primaire doelsysteem (bijv. Active Directory)
-   - **Notification System**: Laat staan op **Email** (standaard)
-   - **Let op:** Deze template is gemaakt voor het doelsysteem Microsoft Active Directory. Bij gebruik van een ander doelsysteem moeten de variabelen in de template aangepast worden
+1. Ensure pre-offboarding is configured in HelloID (number of days before end date)
+2. Open **Notification Configuration** in HelloID Provisioning
+3. Click **Create New Notification**
+4. Fill in the following fields:
+   - **Name**: Give the notification a recognizable name (e.g., "Pre-offboard - Manager Reminder")
+   - **Event**: Select **Pre-offboard**
+   - **Target System**: Select the primary target system (e.g., Active Directory)
+   - **Notification System**: Leave as **Email** (default)
+   - **Note:** This template is created for Microsoft Active Directory. If using a different target system, the variables in the template must be adjusted
 
-### Template importeren
+### Import Template
 
-5. Ga naar het tabblad **Message**
-6. Klik rechts bovenin de toolbar op het **Import MJML** icoon (download icoon)
-7. Open het bestand `template.mjml` uit deze map en kopieer de volledige inhoud
-8. Plak de MJML code in het import scherm
-9. Vervang in de code de URL `https://customer.helloid.training` (in de `mj-image src`) door de URL van je eigen HelloID portal
-10. Klik op **Import**
+5. Go to the **Message** tab
+6. Click the **Import MJML** icon (download icon) in the toolbar on the right
+7. Open one of the template files from this folder and copy the full content:
+   - [template_nl.mjml](template_nl.mjml) - Dutch version
+   - [template_en.mjml](template_en.mjml) - English version
+8. Paste the MJML code into the import screen
+9. Replace the URL `https://customer.helloid.com` in the code with your own HelloID portal URL if needed
+10. Click **Import**
 
-### Configuratie invullen
+### Configure Settings
 
-11. Ga naar het tabblad **Configuration**
-12. Vul de velden in zoals beschreven in de sectie **Configuratie** bovenaan deze README:
-    - **Onderwerp**
-    - **Afzender** (Van)
-    - **Ontvanger** (Naar)
-13. Configureer eventueel CC en/of BCC indien gewenst (bijvoorbeeld naar HR of P&O)
+11. Go to the **Configuration** tab
+12. Fill in the fields as described in the **Configuration** section above:
+    - **Subject**
+    - **From** (From address)
+    - **To** (Recipient)
+13. Configure CC and/or BCC if desired (e.g., to HR or P&O)
 
-### Afronden
+### Finalize
 
-14. Bekijk het tabblad **Message** opnieuw en pas indien nodig de inhoud verder aan
-15. Eventuele filters kunnen worden ingesteld (zie sectie **Filter** bovenaan)
-16. Klik op **Opslaan**
-17. Test de notificatie met een testaccount met einddatum in de toekomst
+14. Review the **Message** tab again and adjust the content if needed
+15. Configure optional filters (see **Filter** section above)
+16. Click **Save**
+17. Test the notification with a test account with an end date in the future
 
-## Aandachtspunten
+## Important Notes
 
-### Pre-offboard configuratie
+### Pre-offboard Configuration
 
-Pre-offboard notificaties vereisen een speciale configuratie in HelloID:
+Pre-offboard notifications require special configuration in HelloID:
 
-1. **Person Lifecycle inschakelen** - Pre-offboarding moet worden geconfigureerd in de person lifecycle settings van HelloID
-2. **Aantal dagen instellen** - Configureer hoeveel dagen vóór de einddatum de notificatie moet worden verstuurd
-3. **Timing overwegen** - Kies een periode die voldoende tijd geeft voor overdracht en afronding van werkzaamheden
-   - Aanbeveling: 7-14 dagen voor einddatum
-   - Te vroeg: manager kan het vergeten
-   - Te laat: te weinig tijd voor goede overdracht
+1. **Enable Person Lifecycle** - Pre-offboarding must be configured in the person lifecycle settings of HelloID
+2. **Set Number of Days** - Configure how many days before the end date the notification should be sent
+3. **Consider Timing** - Choose a period that gives enough time for handover and completion of work
+   - Recommendation: 7-14 days before end date
+   - Too early: manager might forget
+   - Too late: not enough time for proper handover
 
-Voor meer informatie over het configureren van pre-offboarding, zie [Pre-offboarding notification event](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notification-events--provisioning-.html#pre-offboarding-notification-event).
+For more information on configuring pre-offboarding, see [Pre-offboarding notification event](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notification-events--provisioning-.html#pre-offboarding-notification-event).
 
-### Overige aandachtspunten
+### Other Important Notes
 
-- Overweeg CC naar HR of P&O voor administratieve afhandeling
-- Deze mail is informatief, de verdere afhandeling loopt via HR-procedures
+- Consider CC to HR or P&O for administrative handling
+- This email is informational; further handling follows HR procedures

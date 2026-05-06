@@ -1,77 +1,78 @@
-# Bijwerken account – Afdelingswijziging naar applicatiebeheer
+# Update Account – Department Change to Application Management
 
-## Omschrijving
+## Description
 
-Deze notificatie wordt verstuurd naar applicatiebeheerders wanneer een medewerker van afdeling wijzigt.
+This notification is sent to application managers when an employee changes departments.
 
-De mail informeert beheerders dat een medewerker mogelijk toegang nodig heeft tot een applicatie die door hen wordt beheerd, zodat zij dit kunnen controleren en waar nodig kunnen inrichten.
+The email informs managers that an employee may need access to an application they manage, so they can check and set up access if needed.
 
-## Configuratie
+## Configuration
 
 ### Event
-- **Update** - Bij wijziging van accountgegevens
+- **Update** - When account details are changed
 
-### Van
-- `no-reply@helloid.com` of een eigen domein
-- Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
+### From
+- `no-reply@helloid.com` or a custom domain
+- See [Configure a custom 'from' address for emails](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) for more information
 
-### Naar
-- Applicatiebeheer (vast e-mailadres, bijvoorbeeld `applicatiebeheer@domein.nl`)
-- **Let op:** Pas het e-mailadres aan naar het juiste adres voor jouw organisatie
-- Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
+### To
+- Application management (fixed email address, e.g., `appmanagement@domain.com`)
+- **Note:** Update the email address to the correct one for your organization
+- For more information about variables, see [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
-### Onderwerp
-- `Aanmelden applicatie X` (pas aan naar specifieke applicatie)
-- Of algemener: `Accountwijziging medewerker`
+### Subject
+- `Activate application X` (adjust to specific application)
+- Or more general: `Account update for employee`
 
-### Filter (verplicht)
-- **Filteren op de nieuwe afdeling** is essentieel voor deze notificatie
-- Voorbeeld: Alleen wanneer iemand de primaire afdeling X krijgt
-- Let op: Filteren kan op gegevens van het primaire doelsysteem (bijv. AD)
-- Dit zijn primaire contractgegevens
+### Filter (required)
+- **Filtering on the new department** is essential for this notification
+- Example: Only when someone gets the primary department X
+- Note: Filtering can be done on data from the primary target system (e.g., AD)
+- These are primary contract data
 
-## Gebruik
+## Usage
 
-### Notificatie aanmaken
+### Create Notification
 
-1. Open in HelloID Provisioning de **Notification Configuration**
-2. Klik op **Nieuwe notificatie maken**
-3. Vul de volgende velden in:
-   - **Name**: Geef de notificatie een herkenbare naam (bijv. "Update - Afdelingswijziging applicatiebeheer")
-   - **Event**: Selecteer **Update**
-   - **Target System**: Selecteer het primaire doelsysteem (bijv. Active Directory)
-   - **Notification System**: Laat staan op **Email** (standaard)
-   - **Let op:** Deze template is gemaakt voor het doelsysteem Microsoft Active Directory. Bij gebruik van een ander doelsysteem moeten de variabelen in de template aangepast worden
+1. Open **Notification Configuration** in HelloID Provisioning
+2. Click **Create New Notification**
+3. Fill in the following fields:
+   - **Name**: Give the notification a recognizable name (e.g., "Update - Department Change Application Management")
+   - **Event**: Select **Update**
+   - **Target System**: Select the primary target system (e.g., Active Directory)
+   - **Notification System**: Leave as **Email** (default)
+   - **Note:** This template is created for Microsoft Active Directory. If using a different target system, the variables in the template must be adjusted
 
-### Template importeren
+### Import Template
 
-4. Ga naar het tabblad **Message**
-5. Klik rechts bovenin de toolbar op het **Import MJML** icoon (download icoon)
-6. Open het bestand `template.mjml` uit deze map en kopieer de volledige inhoud
-7. Plak de MJML code in het import scherm
-8. Vervang in de code de URL `https://customer.helloid.training` (in de `mj-image src`) door de URL van je eigen HelloID portal
-9. Klik op **Import**
+4. Go to the **Message** tab
+5. Click the **Import MJML** icon (download icon) in the toolbar on the right
+6. Open one of the template files from this folder and copy the full content:
+   - [template_nl.mjml](template_nl.mjml) - Dutch version
+   - [template_en.mjml](template_en.mjml) - English version
+7. Paste the MJML code into the import screen
+8. Replace the URL `https://customer.helloid.com` in the code with your own HelloID portal URL if needed
+9. Click **Import**
 
-### Configuratie invullen
+### Configure Settings
 
-10. Ga naar het tabblad **Configuration**
-11. Vul de velden in zoals beschreven in de sectie **Configuratie** bovenaan deze README:
-    - **Onderwerp** (pas aan naar de specifieke applicatie)
-    - **Afzender** (Van)
-    - **Ontvanger** (Naar)
-12. Configureer eventueel CC en/of BCC indien gewenst
+10. Go to the **Configuration** tab
+11. Fill in the fields as described in the **Configuration** section above:
+    - **Subject** (adjust to the specific application)
+    - **From** (From address)
+    - **To** (Recipient)
+12. Configure CC and/or BCC if desired
 
-### Afronden
+### Finalize
 
-13. Bekijk het tabblad **Message** opnieuw en pas indien nodig de inhoud verder aan
-14. **Verplicht:** Configureer een filter op de specifieke afdeling(en) (zie sectie **Filter** bovenaan)
-15. Klik op **Opslaan**
-16. Test de notificatie door een testaccount naar de gefilterde afdeling te verplaatsen
+13. Review the **Message** tab again and adjust the content if needed
+14. **Required:** Configure a filter on the specific department(s) (see **Filter** section above)
+15. Click **Save**
+16. Test the notification by moving a test account to the filtered department
 
-## Aandachtspunten
+## Important Notes
 
-- **Filter is essentieel** - zonder filter wordt deze mail bij elke update verstuurd
-- Overweeg aparte notificaties per afdeling/applicatie
-- Pas het onderwerp aan zodat duidelijk is voor welke applicatie het gaat
-- Deze notificatie triggert op wijzigingen, niet op nieuwe accounts
-
+- **Filter is essential** - without a filter, this email will be sent on every update
+- Consider separate notifications per department/application
+- Adjust the subject so it's clear which application this is for
+- This notification triggers on changes, not on new accounts

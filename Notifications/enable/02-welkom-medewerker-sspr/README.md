@@ -1,81 +1,83 @@
-# Activeren account – Welkomstbericht SSPR (uitgebreid)
+# Enable Account – Welcome Message SSPR (Extended)
 
-## Omschrijving
+## Description
 
-Deze notificatie is een uitgebreidere variant van `01-welkom-medewerker` en wordt verstuurd naar de nieuwe medewerker wanneer het account wordt geactiveerd.
+This notification is an extended variant of `01-welkom-medewerker` and is sent to the new employee when the account is activated.
 
-De mail bevat:
-- Welkomstbericht
-- Gedetailleerde stap-voor-stap instructies voor SSPR
-- Expliciete uitleg over mobiel nummer verificatie
-- Praktische tips voor eerste keer inloggen
+The email contains:
+- Welcome message
+- Detailed step-by-step SSPR instructions
+- Explicit explanation of mobile number verification
+- Practical tips for first login
 
-**Verschil met variant 01:** Deze versie legt expliciet uit hoe het bevestigen van het mobiele nummer werkt, wat helpt om supportvragen te verminderen.
+**Difference from variant 01:** This version explicitly explains how mobile number verification works, helping to reduce support questions.
 
-## Configuratie
+## Configuration
 
 ### Event
-- **Enable** - Bij het activeren van een account
+- **Enable** - When an account is activated
 
-### Van
-- `no-reply@helloid.com` of een eigen domein
-- Zie [From adres configureren](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) voor meer informatie
+### From
+- `no-reply@helloid.com` or a custom domain
+- See [Configure a custom 'from' address for emails](https://docs.helloid.com/en/set-up-helloid.html#configure-a-custom--from--address-for-emails) for more information
 
-### Naar
-- Privé e-mail van de nieuwe medewerker
-- Variabele: `{{ Person.Contact.Personal.Email || "fallbackemailadres@domein.nl" }}`
-- **Let op:** Pas `fallbackemailadres@domein.nl` aan naar het juiste helpdesk e-mailadres voor jouw organisatie
-- De mail gaat naar het privé adres zodat de medewerker toegang heeft vóór de eerste werkdag
-- Voor meer informatie over variabelen, zie [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
+### To
+- Personal email of the new employee
+- Variable: `{{ Person.Contact.Personal.Email || "fallbackemailadres@domain.com" }}`
+- **Note:** Update `fallbackemailadres@domain.com` to the correct helpdesk email address for your organization
+- The email goes to the personal address so the employee has access before the first working day
+- For more information about variables, see [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
-### Onderwerp
-- `Welkom bij {{person.primaryContract.company}}`
+### Subject
+- `Welcome to {{person.primaryContract.company}}`
 
-### Filter (optioneel)
-- Filteren kan op gegevens die op het account van het primaire doelsysteem (bijv. AD) worden geschreven
-- Voorbeeld: Filter op bedrijfsnaam (AD veld `Company`) om per bedrijf een aangepast welkomstbericht te sturen
-- Let op: Dit zijn primaire contractgegevens
+### Filter (optional)
+- Filter on data written to the account of the primary target system (e.g., AD)
+- Example: Filter on company name (AD field `Company`) to send a customized welcome message per company
+- Note: These are primary contract data
 
-## Gebruik
+## Usage
 
-### Notificatie aanmaken
+### Create Notification
 
-1. Open in HelloID Provisioning de **Notification Configuration**
-2. Klik op **Nieuwe notificatie maken**
-3. Vul de volgende velden in:
-   - **Name**: Geef de notificatie een herkenbare naam (bijv. "Enable - Welkom medewerker SSPR")
-   - **Event**: Selecteer **Enable**
-   - **Target System**: Selecteer het primaire doelsysteem (bijv. Active Directory)
-   - **Notification System**: Laat staan op **Email** (standaard)
-   - **Let op:** Deze template is gemaakt voor het doelsysteem Microsoft Active Directory. Bij gebruik van een ander doelsysteem moeten de variabelen in de template aangepast worden
+1. Open **Notification Configuration** in HelloID Provisioning
+2. Click **Create New Notification**
+3. Fill in the following fields:
+   - **Name**: Give the notification a recognizable name (e.g., "Enable - Welcome Employee SSPR")
+   - **Event**: Select **Enable**
+   - **Target System**: Select the primary target system (e.g., Active Directory)
+   - **Notification System**: Leave as **Email** (default)
+   - **Note:** This template is created for Microsoft Active Directory. If using a different target system, the variables in the template must be adjusted
 
-### Template importeren
+### Import Template
 
-4. Ga naar het tabblad **Message**
-5. Klik rechts bovenin de toolbar op het **Import MJML** icoon (download icoon)
-6. Open het bestand `template.mjml` uit deze map en kopieer de volledige inhoud
-7. Plak de MJML code in het import scherm
-8. Vervang in de code de URL `https://customer.helloid.training` (in de `mj-image src`) door de URL van je eigen HelloID portal
-9. Klik op **Import**
+4. Go to the **Message** tab
+5. Click the **Import MJML** icon (download icon) in the toolbar on the right
+6. Open one of the template files from this folder and copy the full content:
+   - [template_nl.mjml](template_nl.mjml) - Dutch version
+   - [template_en.mjml](template_en.mjml) - English version
+7. Paste the MJML code into the import screen
+8. Replace the URL `https://customer.helloid.com` in the code with your own HelloID portal URL if needed
+9. Click **Import**
 
-### Configuratie invullen
+### Configure Settings
 
-10. Ga naar het tabblad **Configuration**
-11. Vul de velden in zoals beschreven in de sectie **Configuratie** bovenaan deze README:
-    - **Onderwerp**
-    - **Afzender** (Van)
-    - **Ontvanger** (Naar)
-12. Configureer eventueel CC en/of BCC indien gewenst
+10. Go to the **Configuration** tab
+11. Fill in the fields as described in the **Configuration** section above:
+    - **Subject**
+    - **From** (From address)
+    - **To** (Recipient)
+12. Configure CC and/or BCC if desired
 
-### Afronden
+### Finalize
 
-13. Bekijk het tabblad **Message** opnieuw en pas indien nodig de inhoud verder aan
-14. Pas eventueel het filter aan per bedrijf (zie sectie **Filter** bovenaan)
-15. Klik op **Opslaan**
+13. Review the **Message** tab again and adjust the content if needed
+14. Adjust the filter if needed per company (see **Filter** section above)
+15. Click **Save**
 
-## Aandachtspunten
+## Important Notes
 
-- Geschikt voor medewerkers die mogelijk minder technisch zijn
-- Helpt om supportvragen over SSPR te verminderen
-- De medewerker moet een mobiel nummer geregistreerd hebben
-- Uitgebreidere instructies maken de mail wel langer
+- Suitable for less technically-inclined employees
+- Helps reduce support questions about SSPR
+- The employee must have a mobile number registered in the system
+- More detailed instructions make the email longer
