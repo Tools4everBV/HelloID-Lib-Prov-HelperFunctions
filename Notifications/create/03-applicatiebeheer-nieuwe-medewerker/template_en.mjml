@@ -1,0 +1,61 @@
+<mjml>
+  <mj-body background-color="#E7E7E7">
+    <mj-section>
+      <mj-column>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#4a8fca" padding-top="0" padding-bottom="0">
+      <mj-column width="25%">
+        <mj-image src="https://customer.helloid.com/appearance/companyicon" width="50px" height="50px">
+        </mj-image>
+      </mj-column>
+      <mj-column width="75%">
+        <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#FFFFFF" padding-top="25px" padding-bottom="25px">
+          <b>
+            New employee – {{person.displayName||"Unknown"}}
+            <br/>
+          </b>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF">
+      <mj-column width="100%">
+        <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">Dear application manager,
+          <br/>
+          <br/>
+          Employee {{person.displayName}} will start on {{person.primaryContract.startDate}} in the position {{person.primaryContract.title||"unknown"}}.
+          <br/>
+          <br/>
+          Please ensure that this employee receives an account in the relevant application.
+          <br/>
+          <br/>
+          Username: {{data.samAccountName}}
+          <br/>
+          Email address: {{data.mail||person.contact.business.email||"unknown"}}
+          <br/>
+          Personnel number: {{person.externalId}}
+          <br/>
+          Department: {{person.primaryContract.department||"unknown"}}
+          <br/>
+          Position: {{person.primaryContract.title||"unknown"}}
+          <br/>
+          Start date: {{person.primaryContract.startDate}}
+          <br/>
+          End date: {{person.primaryContract.endDate||"undefined"}}
+          <br/>
+          <br/>
+          Kind regards,
+          <br/>
+          ICT Helpdesk
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff">
+      <mj-column width="100%">
+        <mj-text align="center" font-family="Arial, Helvetica, sans-serif" font-size="12px" color="#999999">
+          This is an automatically generated message.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
