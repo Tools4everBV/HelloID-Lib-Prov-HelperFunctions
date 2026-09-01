@@ -15,10 +15,10 @@
 // 	                        PB	janvandenboele@domain.local
 // etc.
 function generateUserPrincipalName() {
-    let nickName = Person.Name.NickName;
-    let middleName = Person.Name.FamilyNamePrefix;
-    let lastName = Person.Name.FamilyName;
-    let convention = Person.Name.Convention;
+    let nickName = (Person.Name.NickName || '').trim();
+    let middleName = (Person.Name.FamilyNamePrefix || '').trim();
+    let lastName = (Person.Name.FamilyName || '').trim();
+    let convention = (Person.Name.Convention || '').trim();
 
     let mailNickName = nickName.substring(0, (Iteration + 1));
 

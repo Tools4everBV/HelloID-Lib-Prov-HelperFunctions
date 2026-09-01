@@ -14,4 +14,4 @@ function formatInitials(initials) {
     return formattedInitials;
 }
 
-formatInitials(Person.Name.Initials);
+formatInitials((Person.Name.Initials || '').trim());

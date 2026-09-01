@@ -12,9 +12,9 @@
 function generateMailNickName() {
     const maxChars = 64 // The maximum length for an Entra ID mailNickname is 64 characters
 
-    let nickName = Person.Name.NickName;
-    let middleName = Person.Name.FamilyNamePrefix;
-    let lastName = Person.Name.FamilyName;
+    let nickName = (Person.Name.NickName || '').trim();
+    let middleName = (Person.Name.FamilyNamePrefix || '').trim();
+    let lastName = (Person.Name.FamilyName || '').trim();
 
     let mailNickName = '';
 

@@ -20,10 +20,10 @@
 // 	                                    PB  janinevandenboele2
 // etc.
 function generateSamAccountName() {
-    let nickName = Person.Name.NickName;
-    let middleName = Person.Name.FamilyNamePrefix;
-    let lastName = Person.Name.FamilyName;
-    let convention = Person.Name.Convention;
+    let nickName = (Person.Name.NickName || '').trim();
+    let middleName = (Person.Name.FamilyNamePrefix || '').trim();
+    let lastName = (Person.Name.FamilyName || '').trim();
+    let convention = (Person.Name.Convention || '').trim();
 
     let samAccountName = nickName.substring(0, (Iteration + 1));
 

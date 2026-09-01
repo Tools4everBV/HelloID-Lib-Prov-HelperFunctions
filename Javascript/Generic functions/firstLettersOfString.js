@@ -6,4 +6,4 @@ function generateFirstLetters(myString) {
     return firstLettersString;
 }
 
-generateFirstLetters(Person.Name.FamilyName)
+generateFirstLetters((Person.Name.FamilyName || '').trim())

@@ -15,8 +15,8 @@
 // 	                    PB  hboel3
 // etc.
 function generateSamAccountName() {
-    let initials = Person.Name.Initials;
-    let lastName = Person.Name.FamilyName.padEnd(4, '0');
+    let initials = (Person.Name.Initials || '').trim();
+    let lastName = (Person.Name.FamilyName || '').trim().padEnd(4, '0');
 
     let samAccountName = initials.substring(0, 1);
 

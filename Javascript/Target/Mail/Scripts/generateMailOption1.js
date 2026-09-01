@@ -13,9 +13,9 @@ function generateMail() {
     const maxChars = 254 // The maximum length for an Entra ID mail is 254 characters (While the attribute length is 256 characters, a valid SMTP email address within this field can be up to 254 characters to account for the < and > characters)
     const domain = 'domain.local';
 
-    let nickName = Person.Name.NickName;
-    let middleName = Person.Name.FamilyNamePrefix;
-    let lastName = Person.Name.FamilyName;
+    let nickName = (Person.Name.NickName || '').trim();
+    let middleName = (Person.Name.FamilyNamePrefix || '').trim();
+    let lastName = (Person.Name.FamilyName || '').trim();
 
     let mailNickName = '';
 

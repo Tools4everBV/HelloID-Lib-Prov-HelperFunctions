@@ -13,9 +13,9 @@ function generateUserPrincipalName() {
     const maxChars = 64 // The maximum length for an Entra ID UserprincipalName prefix is 64 characters (While the attribute length is 113 characters, a valid SMTP email address within this field can be up to 113 characters. it is split between characters 64 characters before the '@' and 48 characters after)
     const domain = 'domain.local';
 
-    let nickName = Person.Name.NickName;
-    let middleName = Person.Name.FamilyNamePrefix;
-    let lastName = Person.Name.FamilyName;
+    let nickName = (Person.Name.NickName || '').trim();
+    let middleName = (Person.Name.FamilyNamePrefix || '').trim();
+    let lastName = (Person.Name.FamilyName || '').trim();
 
     let mailNickName = '';
 

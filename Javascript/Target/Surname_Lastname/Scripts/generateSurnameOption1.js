@@ -6,12 +6,12 @@
 // P	de Vries
 // PB   de Vries – van den Boele
 function generateSurname() {
-    let nickName = Person.Name.NickName;
-    let middleName = Person.Name.FamilyNamePrefix;
-    let lastName = Person.Name.FamilyName;
-    let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
-    let lastNamePartner = Person.Name.FamilyNamePartner;
-    let convention = Person.Name.Convention;
+    let nickName = (Person.Name.NickName || '').trim();
+    let middleName = (Person.Name.FamilyNamePrefix || '').trim();
+    let lastName = (Person.Name.FamilyName || '').trim();
+    let middleNamePartner = (Person.Name.FamilyNamePartnerPrefix || '').trim();
+    let lastNamePartner = (Person.Name.FamilyNamePartner || '').trim();
+    let convention = (Person.Name.Convention || '').trim();
 
     let surName = '';
     switch (convention) {
