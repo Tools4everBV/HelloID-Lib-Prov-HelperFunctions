@@ -17,3 +17,5 @@
 ## [Initials](./Initials)
 
 ## [Password](./Password)
+
+## [InCondition Example](./inConditionExample.js)
