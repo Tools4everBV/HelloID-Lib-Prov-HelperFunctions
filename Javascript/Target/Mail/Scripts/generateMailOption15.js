@@ -1,4 +1,4 @@
-// generateMailOption15.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateMailOption7.js]
+// generateMailOption15.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateMailOption15.js]
 //
 // Mapping logic to generate the Mail according to the following convention.
 // First choice	        B	j.van.den.boele@domain.local
@@ -51,8 +51,7 @@ function generateMail() {
 
             case 1:
                 // Iteration 1: initials with dots (letters only)
-                mailNickName = initials
-                    .replace(/[^a-zA-Z]/g, '') // keep letters only
+                mailNickName = initialsWithoutDots
                     .split('')
                     .join('.') + '.';
                 break;
@@ -96,33 +95,33 @@ function generateMail() {
     switch (convention) {
         case "BP":
             if (typeof middleName !== 'undefined' && middleName) {
-                mailNickName = mailNickName + middleName.replace(/ /g, '.') + '.';
+                mailNickName = mailNickName + middleName + '.';
             }
             mailNickName = mailNickName + lastName;
 
             mailNickName = mailNickName + '-';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) {
-                mailNickName = mailNickName + ' ' + middleNamePartner.replace(/ /g, '.') + '.';
+                mailNickName = mailNickName + middleNamePartner + '.';
             }
             mailNickName = mailNickName + lastNamePartner;
             break;
 
         case "PB":
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) {
-                mailNickName = mailNickName + ' ' + middleNamePartner.replace(/ /g, '.') + '.';
+                mailNickName = mailNickName + middleNamePartner + '.';
             }
             mailNickName = mailNickName + lastNamePartner;
 
             mailNickName = mailNickName + '-';
             if (typeof middleName !== 'undefined' && middleName) {
-                mailNickName = mailNickName + middleName.replace(/ /g, '.') + '.';
+                mailNickName = mailNickName + middleName + '.';
             }
             mailNickName = mailNickName + lastName;
             break;
 
         case "P":
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) {
-                mailNickName = mailNickName + middleNamePartner.replace(/ /g, '.') + '.';
+                mailNickName = mailNickName + middleNamePartner + '.';
             }
             mailNickName = mailNickName + lastNamePartner;
             break;
@@ -130,7 +129,7 @@ function generateMail() {
         case "B":
         default:
             if (typeof middleName !== 'undefined' && middleName) {
-                mailNickName = mailNickName + middleName.replace(/ /g, '.') + '.';
+                mailNickName = mailNickName + middleName + '.';
             }
             mailNickName = mailNickName + lastName;
             break;
@@ -157,7 +156,7 @@ function generateMail() {
         .replace(/^\.|\.$/g, '');
 
     // Truncate local-part so suffix + "@domain" still fits within limits
-    const maxAttributeLength = (256 - suffix.length - domain.length);
+    const maxAttributeLength = (256 - suffix.length - domain.length - 1);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Append suffix (if any) and domain
