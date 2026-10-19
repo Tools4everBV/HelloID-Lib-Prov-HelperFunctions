@@ -282,3 +282,28 @@
 |           | BP         | hc.vanden.boele-de.vries3@domain.local |                                                                           |
 |           | P          | hc.de.vries3@domain.local              |                                                                           |
 |           | PB         | hc.de.vries-vanden.boele3@domain.local |                                                                           |
+
+## [Option 15: j.van.den.boele@domain.local](./Scripts/generateMailOption15.js)
+
+| Iteration | Convention | Value                                       | Remark                          |
+| --------- | ---------- | ------------------------------------------- | ------------------------------- |
+| First     | B          | j.van.den.boele@domain.local                | First character of the nickname |
+|           | BP         | j.van.den.boele-de.vries@domain.local       |                                 |
+|           | P          | j.de.vries@domain.local                     |                                 |
+|           | PB         | j.de.vries-van.den.boele@domain.local       |                                 |
+| Second    | B          | h.c.van.den.boele@domain.local              | Initials, separated by dots     |
+|           | BP         | h.c.van.den.boele-de.vries@domain.local     |                                 |
+|           | P          | h.c.de.vries@domain.local                   |                                 |
+|           | PB         | h.c.de.vries-van.den.boele@domain.local     |                                 |
+| Third     | B          | janine.van.den.boele@domain.local           | Full nickname                   |
+|           | BP         | janine.van.den.boele-de.vries@domain.local  |                                 |
+|           | P          | janine.de.vries@domain.local                |                                 |
+|           | PB         | janine.de.vries-van.den.boele@domain.local  |                                 |
+| Fourth    | B          | j.van.den.boele1@domain.local               | Numeric suffix, starting at 1   |
+|           | BP         | j.van.den.boele-de.vries1@domain.local      |                                 |
+|           | P          | j.de.vries1@domain.local                    |                                 |
+|           | PB         | j.de.vries-van.den.boele1@domain.local      |                                 |
+| Fifth     | B          | j.van.den.boele2@domain.local               |                                 |
+|           | BP         | j.van.den.boele-de.vries2@domain.local      |                                 |
+|           | P          | j.de.vries2@domain.local                    |                                 |
+|           | PB         | j.de.vries-van.den.boele2@domain.local      |                                 |
