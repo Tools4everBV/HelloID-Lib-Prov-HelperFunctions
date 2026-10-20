@@ -20,7 +20,7 @@ function generateDisplayName() {
         case "BP":
             displayName = displayName + lastName;
 
-            displayName = displayName + '-';
+            displayName = displayName + '–';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
             displayName = displayName + lastNamePartner;
 
@@ -34,7 +34,7 @@ function generateDisplayName() {
         case "PB":
             displayName = displayName + lastNamePartner;
 
-            displayName = displayName + '-';
+            displayName = displayName + '–';
             if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
             displayName = displayName + lastName;
 

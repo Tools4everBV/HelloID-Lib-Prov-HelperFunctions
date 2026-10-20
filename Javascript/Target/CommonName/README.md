@@ -1,9 +1,9 @@
 # HelloID Provisioning Target generate CommonName
 
-## [Option 1: Janine van den Boele - de Vries](./Scripts/generateCommonNameOption1.js)
+## [Option 1: Janine van den Boele – de Vries](./Scripts/generateCommonNameOption1.js)
 
 | Iteration | Convention | Value                              | Remark                           |
-| --------- | ---------- | ---------------------------------- | -------------------------------- |
+|-----------|------------|------------------------------------|----------------------------------|
 | First     | B          | Janine van den Boele               | FamilyName                       |
 |           | BP         | Janine van den Boele – de Vries    | FamilyName and FamilyNamePartner |
 |           | P          | Janine de Vries                    | FamilyNamePartner                |
@@ -20,7 +20,7 @@
 ## [Option 2: Boele – de Vries, Janine van den](./Scripts/generateCommonNameOption2.js)
 
 | Iteration | Convention | Value                                 | Remark                           |
-| --------- | ---------- | ------------------------------------- | -------------------------------- |
+|-----------|------------|---------------------------------------|----------------------------------|
 | First     | B          | Boele, Janine van den                 | FamilyName                       |
 |           | BP         | Boele – de Vries, Janine van den      | FamilyName and FamilyNamePartner |
 |           | P          | Vries, Janine de                      | FamilyNamePartner                |
@@ -36,17 +36,17 @@
 
 ## [Option 3: Boele–de Vries H.C. van den (Janine)](./Scripts/generateCommonNameOption3.js)
 
-| Iteration | Convention | Value                                   | Remark                           |
-| --------- | ---------- | --------------------------------------- | -------------------------------- |
-| First     | B          | Boele H.C. van den (Janine)             | FamilyName                       |
-|           | BP         | Boele–de Vries H.C. van den (Janine)    | FamilyName and FamilyNamePartner |
-|           | P          | Vries H.C. de (Janine)                  | FamilyNamePartner                |
-|           | PB         | Vries–van den Boele, H.C. de (Janine)   | FamilyNamePartner and FamilyName |
-| Second    | B          | Boele H.C. van den (Janine) 2           | Note: No commas are used         |
-|           | BP         | Boele–de Vries H.C. van den (Janine) 2  |                                  |
-|           | P          | Vries H.C. de (Janine) 2                |                                  |
-|           | PB         | Vries–van den Boele, H.C. de (Janine) 2 |                                  |
-| Third     | B          | Boele H.C. van den (Janine) 3           |                                  |
-|           | BP         | Boele–de Vries H.C. van den (Janine) 3  |                                  |
-|           | P          | Vries H.C. de (Janine) 3                |                                  |
-|           | PB         | Vries–van den Boele, H.C. de (Janine) 3 |                                  |
+| Iteration | Convention | Value                                  | Remark                           |
+|-----------|------------|----------------------------------------|----------------------------------|
+| First     | B          | Boele H.C. van den (Janine)            | FamilyName                       |
+|           | BP         | Boele–de Vries H.C. van den (Janine)   | FamilyName and FamilyNamePartner |
+|           | P          | Vries H.C. de (Janine)                 | FamilyNamePartner                |
+|           | PB         | Vries–van den Boele H.C. de (Janine)   | FamilyNamePartner and FamilyName |
+| Second    | B          | Boele H.C. van den (Janine) 2          | Note: No commas are used         |
+|           | BP         | Boele–de Vries H.C. van den (Janine) 2 |                                  |
+|           | P          | Vries H.C. de (Janine) 2               |                                  |
+|           | PB         | Vries–van den Boele H.C. de (Janine) 2 |                                  |
+| Third     | B          | Boele H.C. van den (Janine) 3          |                                  |
+|           | BP         | Boele–de Vries H.C. van den (Janine) 3 |                                  |
+|           | P          | Vries H.C. de (Janine) 3               |                                  |
+|           | PB         | Vries–van den Boele H.C. de (Janine) 3 |                                  |

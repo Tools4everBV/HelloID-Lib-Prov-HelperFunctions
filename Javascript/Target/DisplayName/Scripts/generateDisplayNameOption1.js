@@ -20,7 +20,7 @@ function generateDisplayName() {
             if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
             displayName = displayName + lastName;
 
-            displayName = displayName + ' - ';
+            displayName = displayName + ' – ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
             displayName = displayName + lastNamePartner;
             break;
@@ -29,7 +29,7 @@ function generateDisplayName() {
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
             displayName = displayName + lastNamePartner;
 
-            displayName = displayName + ' - ';
+            displayName = displayName + ' – ';
             if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
             displayName = displayName + lastName;
             break;
