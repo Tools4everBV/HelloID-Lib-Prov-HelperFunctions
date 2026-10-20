@@ -6,7 +6,9 @@
 
 ## [Mail](./Mail)
 
-## [SamAccountName](./SamAccountName)
+## [sAMAccountName](./sAMAccountName)
+
+## [mailNickName](./mailNickName)
 
 ## [Surname/Lastname](./Surname_Lastname)
 
