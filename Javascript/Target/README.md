@@ -6,7 +6,9 @@
 
 ## [Mail](./Mail)
 
-## [SamAccountName](./SamAccountName)
+## [sAMAccountName](./sAMAccountName)
+
+## [mailNickName](./mailNickName)
 
 ## [Surname/Lastname](./Surname_Lastname)
 
@@ -17,3 +19,5 @@
 ## [Initials](./Initials)
 
 ## [Password](./Password)
+
+## [InCondition Example](./inConditionExample.js)

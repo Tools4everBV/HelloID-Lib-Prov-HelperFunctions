@@ -12,11 +12,11 @@
 // If also in use   	B	ja.vandenboele@domain.local
 // 	                    BP	ja.vandenboele@domain.local
 // 	                    P	ja.devries@domain.local
-// 	                    PB  ja.devries@domain.loca
+// 	                    PB  ja.devries@domain.local
 // If also in use   	B	jan.vandenboele@domain.local
 // 	                    BP	jan.vandenboele@domain.local
 // 	                    P	jan.devries@domain.local
-// 	                    PB  jan.devries@domain.loca
+// 	                    PB  jan.devries@domain.local
 // etc.
 // If full name used, use iterator  	B	janine.vandenboele2@domain.local
 // 	                                    BP	janine.vandenboele2@domain.local
@@ -69,10 +69,10 @@ function generateMail() {
  
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
-    let iterationToUse = Iteration - (nickName.length - 1) <= 1 ? '' : (Iteration - (nickName.length - 1))
+    let iterationToUse = Iteration < nickName.length ? '' : (Iteration - (nickName.length - 2))
     suffix = Iteration === 0 ? '' : (iterationToUse);
 
-    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
+    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length - 1);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
  
     // Use the iterator if needed

@@ -46,7 +46,7 @@ function generateMailNickName() {
     // Shorten string to maxAttributeLength minus iteration length
     let suffix = ''
     let iterationToUse = Iteration - (nickName.length - 2)
-    suffix = Iteration === 0 ? '' : (iterationToUse);
+    suffix = Iteration > (nickName.length - 1) ? iterationToUse : '';
     const maxAttributeLength = (maxChars - suffix.toString().length);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 

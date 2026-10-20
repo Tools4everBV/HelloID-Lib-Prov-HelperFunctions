@@ -3,7 +3,7 @@
 ## [Option 1: janine.vandenboele@domain.local](./Scripts/generateMailOption1.js)
 
 | Iteration      | Convention    | Value                            | Remark                                                             |
-| -------------- | ------------- | -------------------------------- | ------------------------------------------------------------------ |
+|----------------|---------------|----------------------------------|--------------------------------------------------------------------|
 | First          | B, BP, P & PB | janine.vandenboele@domain.local  | FamilyName                                                         |
 | If in use      | B, BP, P & PB | j.vandenboele@domain.local       | First character of  nickname                                       |
 | If also in use | B, BP, P & PB | ja.vandenboele@domain.local      | First two characters of nickname                                   |
@@ -15,7 +15,7 @@
 ## [Option 2: janine.vandenboele@domain.local](./Scripts/generateMailOption2.js)
 
 | Iteration | Convention | Value                            | Remark                              |
-| --------- | ---------- | -------------------------------- | ----------------------------------- |
+|-----------|------------|----------------------------------|-------------------------------------|
 | First     | B          | janine.vandenboele@domain.local  | FamilyName                          |
 |           | BP         | janine.vandenboele@domain.local  |                                     |
 |           | P          | janine.vandenboele@domain.local  |                                     |
@@ -33,7 +33,7 @@
 ## [Option 3: j.devries@domain.local](./Scripts/generateMailOption3.js)
 
 | Iteration | Convention | Value                            | Remark                              |
-| --------- | ---------- | -------------------------------- | ----------------------------------- |
+|-----------|------------|----------------------------------|-------------------------------------|
 | First     | B          | j.vandenboele@domain.local       | The first character of the nickname |
 |           | BP         | j.vandenboele@domain.local       | FamilyName                          |
 |           | P          | j.devries@domain.local           | FamilyNamePartner                   |
@@ -54,7 +54,7 @@
 ## [Option 4: janine.devries@domain.local](./Scripts/generateMailOption4.js)
 
 | Iteration | Convention | Value                            | Remark                                     |
-| --------- | ---------- | -------------------------------- | ------------------------------------------ |
+|-----------|------------|----------------------------------|--------------------------------------------|
 | First     | B          | janine.vandenboele@domain.local  | FamilyName                                 |
 |           | BP         | janine.vandenboele@domain.local  |                                            |
 |           | P          | janine.devries@domain.local      | FamilyNamePartner                          |
@@ -68,7 +68,7 @@
 |           | P          | j.devries@domain.local           |                                            |
 |           | PB         | j.devries@domain.local           |                                            |
 | ......... | .........  | .........                        | .........                                  |
-| Seventh   | B          | janin.vandenboele@domain.local   | The first seven characters of the nickname |
+| Seventh   | B          | janin.vandenboele@domain.local   | The first five characters of the nickname  |
 |           | BP         | janin.vandenboele@domain.local   |                                            |
 |           | P          | janin.devries@domain.local       |                                            |
 |           | PB         | janin.devries@domain.local       |                                            |
@@ -80,7 +80,7 @@
 ## [Option 5: jvandenboele@domain.local](./Scripts/generateMailOption5.js)
 
 | Iteration | Convention | Value                           | Remark                                   |
-| --------- | ---------- | ------------------------------- | ---------------------------------------- |
+|-----------|------------|---------------------------------|------------------------------------------|
 | First     | B          | jvandenboele@domain.local       | The first character of the nickname      |
 |           | BP         | jvandenboele@domain.local       | FamilyName                               |
 |           | P          | jvandenboele@domain.local       |                                          |
@@ -90,11 +90,11 @@
 |           | P          | javandenboele@domain.local      |                                          |
 |           | PB         | javandenboele@domain.local      |                                          |
 | ......... | .........  | .........                       | .........                                |
-| Seventh   | B          | janinevandenboele@domain.local  |                                          |
+| Sixth     | B          | janinevandenboele@domain.local  |                                          |
 |           | BP         | janinevandenboele@domain.local  |                                          |
 |           | P          | janinevandenboele@domain.local  |                                          |
 |           | PB         | janinevandenboele@domain.local  |                                          |
-| Eighth    | B          | janinevandenboele2@domain.local |                                          |
+| Seventh   | B          | janinevandenboele2@domain.local |                                          |
 |           | BP         | janinevandenboele2@domain.local |                                          |
 |           | P          | janinevandenboele2@domain.local |                                          |
 |           | PB         | janinevandenboele2@domain.local |                                          |
@@ -102,7 +102,7 @@
 ## [Option 6: jvandenboele@domain.local](./Scripts/generateMailOption6.js)
 
 | Iteration | Convention | Value                           | Remark                                   |
-| --------- | ---------- | ------------------------------- | ---------------------------------------- |
+|-----------|------------|---------------------------------|------------------------------------------|
 | First     | B          | jvandenboele@domain.local       | The first character of the nickname      |
 |           | BP         | jvandenboele@domain.local       | FamilyName                               |
 |           | P          | jdevries@domain.local           | FamilyNamePartner                        |
@@ -112,11 +112,11 @@
 |           | P          | jadevries@domain.local          |                                          |
 |           | PB         | jadevries@domain.local          |                                          |
 | ......... | .........  | .........                       | .........                                |
-| Seventh   | B          | janinevandenboele@domain.local  |                                          |
+| Sixth     | B          | janinevandenboele@domain.local  |                                          |
 |           | BP         | janinevandenboele@domain.local  |                                          |
 |           | P          | janinedevries@domain.local      |                                          |
 |           | PB         | janinedevries@domain.local      |                                          |
-| Eighth    | B          | janinevandenboele2@domain.local |                                          |
+| Seventh   | B          | janinevandenboele2@domain.local |                                          |
 |           | BP         | janinevandenboele2@domain.local |                                          |
 |           | P          | janinedevries2@domain.local     |                                          |
 |           | PB         | janinedevries2@domain.local     |                                          |
@@ -124,7 +124,7 @@
 ## [Option 7: janine.vandenboele@domain.local](./Scripts/generateMailOption7.js)
 
 | Iteration | Convention | Value                           | Remark                              |
-| --------- | ---------- | ------------------------------- | ----------------------------------- |
+|-----------|------------|---------------------------------|-------------------------------------|
 | First     | B          | janine.vandenboele@domain.local | FamilyName                          |
 |           | BP         | janine.vandenboele@domain.local |                                     |
 |           | P          | janine.vandenboele@domain.local |                                     |
@@ -145,7 +145,7 @@
 ## [Option 8: janine.vandenboele@domain.local](./Scripts/generateMailOption8.js)
 
 | Iteration | Convention | Value                             | Remark                  |
-| --------- | ---------- | --------------------------------- | ----------------------- |
+|-----------|------------|-----------------------------------|-------------------------|
 | First     | B          | janine.vandenboele@domain.local   | FamilyName              |
 |           | BP         | janine.vandenboele@domain.local   |                         |
 |           | P          | janine.vandenboele@domain.local   |                         |
@@ -166,7 +166,7 @@
 ## [Option 9: jvandenboele@domain.local](./Scripts/generateMailOption9.js)
 
 | Iteration | Convention | Value                      | Remark                                     |
-| --------- | ---------- | -------------------------- | ------------------------------------------ |
+|-----------|------------|----------------------------|--------------------------------------------|
 | First     | B          | jvandenboele@domain.local  | FamilyName or partnername, no combinations |
 |           | BP         | jvandenboele@domain.local  |                                            |
 |           | P          | jdevries@domain.local      |                                            |
@@ -187,7 +187,7 @@
 ## [Option 10: j.vandenboele@domain.local](./Scripts/generateMailOption10.js)
 
 | Iteration | Convention | Value                           | Remark                                   |
-| --------- | ---------- | ------------------------------- | ---------------------------------------- |
+|-----------|------------|---------------------------------|------------------------------------------|
 | First     | B          | j.vandenboele@domain.local      | The first character of the nickname      |
 |           | BP         | j.vandenboele@domain.local      | FamilyName                               |
 |           | P          | j.vandenboele@domain.local      |                                          |
@@ -201,19 +201,19 @@
 |           | P          | ja.vandenboele@domain.local     |                                          |
 |           | PB         | ja.vandenboele@domain.local     |                                          |
 | ......... | .........  | .........                       | .........                                |
-| Seventh   | B          | janin.vandenboele@domain.local  |                                          |
+| Sixth     | B          | janin.vandenboele@domain.local  |                                          |
 |           | BP         | janin.vandenboele@domain.local  |                                          |
 |           | P          | janin.vandenboele@domain.local  |                                          |
 |           | PB         | janin.vandenboele@domain.local  |                                          |
-| Eighth    | B          | j.vandenboele2@domain.local     |                                          |
+| Seventh   | B          | j.vandenboele2@domain.local     |                                          |
 |           | BP         | j.vandenboele2@domain.local     |                                          |
 |           | P          | j.vandenboele2@domain.local     |                                          |
 |           | PB         | j.vandenboele2@domain.local     |                                          |
 
-## [Option 11 j.vandenboele@domain.local](./Scripts/generateMailOption11js)
+## [Option 11 j.vandenboele@domain.local](./Scripts/generateMailOption11.js)
 
 | Iteration | Convention | Value                              | Remark                                  |
-| --------- | ---------- | ---------------------------------- | --------------------------------------- |
+|-----------|------------|------------------------------------|-----------------------------------------|
 | First     | B          | janine.van.den.boele@domain.local  | Full nickname                           |
 |           | BP         | janine.van.den.boele@domain.local  | FamilyName prefix, spaces replaced by . |
 |           | P          | janine.de.vries@domain.local       | FamilyName                              |
@@ -230,7 +230,7 @@
 ## [Option 12 j.vandenboele@domain.local](./Scripts/generateMailOption12.js)
 
 | Iteration | Convention | Value                           | Remark                                   |
-| --------- | ---------- | ------------------------------- | ---------------------------------------- |
+|-----------|------------|---------------------------------|------------------------------------------|
 | First     | B          | janine.vandenboele@domain.local | The full nickname                        |
 |           | BP         | janine.vandenboele@domain.local | FamilyName                               |
 |           | P          | janine.devries@domain.local     | FamilyNamePartner                        |
@@ -252,7 +252,7 @@
 ## [Option 13: j.vandenboele@domain.local](./Scripts/generateMailOption13.js)
 
 | Iteration | Convention | Value                       | Remark                            |
-| --------- | ---------- | --------------------------- | --------------------------------- |
+|-----------|------------|-----------------------------|-----------------------------------|
 | First     | B          | j.vandenboele@domain.local  | The first character of nickname   |
 |           | BP         | j.vandenboele@domain.local  | FamilyName prefix, spaces removed |
 |           | P          | j.vandenboele@domain.local  | FamilyName                        |
@@ -269,7 +269,7 @@
 ## [Option 14: hc.vanden.boele@domain.local](./Scripts/generateMailOption14.js)
 
 | Iteration | Convention | Value                                  | Remark                                                                    |
-| --------- | ---------- | -------------------------------------- | ------------------------------------------------------------------------- |
+|-----------|------------|----------------------------------------|---------------------------------------------------------------------------|
 | First     | B          | hc.vanden.boele@domain.local           | Initials, dots removed                                                    |
 |           | BP         | hc.vanden.boele-de.vries@domain.local  | FamilyName and or partnername prefix based on convention , spaces removed |
 |           | P          | hc.de.vries@domain.local               | FamilyName and or partnername based on convention                         |
@@ -282,3 +282,28 @@
 |           | BP         | hc.vanden.boele-de.vries3@domain.local |                                                                           |
 |           | P          | hc.de.vries3@domain.local              |                                                                           |
 |           | PB         | hc.de.vries-vanden.boele3@domain.local |                                                                           |
+
+## [Option 15: j.van.den.boele@domain.local](./Scripts/generateMailOption15.js)
+
+| Iteration | Convention | Value                                      | Remark                          |
+|-----------|------------|--------------------------------------------|---------------------------------|
+| First     | B          | j.van.den.boele@domain.local               | First character of the nickname |
+|           | BP         | j.van.den.boele-de.vries@domain.local      |                                 |
+|           | P          | j.de.vries@domain.local                    |                                 |
+|           | PB         | j.de.vries-van.den.boele@domain.local      |                                 |
+| Second    | B          | h.c.van.den.boele@domain.local             | Initials, separated by dots     |
+|           | BP         | h.c.van.den.boele-de.vries@domain.local    |                                 |
+|           | P          | h.c.de.vries@domain.local                  |                                 |
+|           | PB         | h.c.de.vries-van.den.boele@domain.local    |                                 |
+| Third     | B          | janine.van.den.boele@domain.local          | Full nickname                   |
+|           | BP         | janine.van.den.boele-de.vries@domain.local |                                 |
+|           | P          | janine.de.vries@domain.local               |                                 |
+|           | PB         | janine.de.vries-van.den.boele@domain.local |                                 |
+| Fourth    | B          | j.van.den.boele1@domain.local              | Numeric suffix, starting at 1   |
+|           | BP         | j.van.den.boele-de.vries1@domain.local     |                                 |
+|           | P          | j.de.vries1@domain.local                   |                                 |
+|           | PB         | j.de.vries-van.den.boele1@domain.local     |                                 |
+| Fifth     | B          | j.van.den.boele2@domain.local              |                                 |
+|           | BP         | j.van.den.boele-de.vries2@domain.local     |                                 |
+|           | P          | j.de.vries2@domain.local                   |                                 |
+|           | PB         | j.de.vries-van.den.boele2@domain.local     |                                 |
