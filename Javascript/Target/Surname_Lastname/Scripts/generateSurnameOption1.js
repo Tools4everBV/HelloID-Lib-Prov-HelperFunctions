@@ -19,7 +19,7 @@ function generateSurname() {
             if (typeof middleName !== 'undefined' && middleName) { surName = surName + middleName + ' ' }
             surName = surName + lastName;
 
-            surName = surName + ' - ';
+            surName = surName + ' – ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + middleNamePartner + ' ' }
             surName = surName + lastNamePartner;
             break;
@@ -27,7 +27,7 @@ function generateSurname() {
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + middleNamePartner + ' ' }
             surName = surName + lastNamePartner;
 
-            surName = surName + ' - ';
+            surName = surName + ' – ';
             if (typeof middleName !== 'undefined' && middleName) { surName = surName + middleName + ' ' }
             surName = surName + lastName;
             break;

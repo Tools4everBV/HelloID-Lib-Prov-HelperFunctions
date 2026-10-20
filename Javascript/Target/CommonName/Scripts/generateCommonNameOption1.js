@@ -29,7 +29,7 @@ function generateCommonName() {
             if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
             commonName = commonName + lastName;
 
-            commonName = commonName + ' - ';
+            commonName = commonName + ' – ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
             commonName = commonName + lastNamePartner;
             break;
@@ -38,7 +38,7 @@ function generateCommonName() {
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
             commonName = commonName + lastNamePartner;
 
-            commonName = commonName + ' - ';
+            commonName = commonName + ' – ';
             if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
             commonName = commonName + lastName;
             break;

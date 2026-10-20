@@ -27,7 +27,7 @@ function generateCommonName() {
         case "BP":
             commonName = commonName + lastName;
 
-            commonName = commonName + ' - ';
+            commonName = commonName + ' – ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
             commonName = commonName + lastNamePartner;
 
@@ -38,7 +38,7 @@ function generateCommonName() {
         case "PB":
             commonName = commonName + lastNamePartner;
 
-            commonName = commonName + ' - ';
+            commonName = commonName + ' – ';
             if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
             commonName = commonName + lastName;
 
