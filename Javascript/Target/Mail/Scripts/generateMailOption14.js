@@ -11,7 +11,7 @@
 // 	                    PB  hc.de.vries-vanden.boele2@domain.local
 // If also in use   	B	hc.vanden.boele3@domain.local
 // 	                    BP	hc.vanden.boele-de.vries3@domain.local
-// 	                    P	hc.de.vriFes3@domain.local
+// 	                    P	hc.de.vries3@domain.local
 // 	                    PB  hc.de.vries-vanden.boele3@domain.local
 // etc.
 function generateMail() {
@@ -73,7 +73,7 @@ function generateMail() {
     let suffix = ''
     let iterationToUse = Iteration + 1
     suffix = Iteration === 0 ? '' : (iterationToUse);
-    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
+    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length - 1);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed

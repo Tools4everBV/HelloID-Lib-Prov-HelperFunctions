@@ -39,7 +39,7 @@ function generateMail() {
     }
 
     // If person has no or one initial, skip to next iteration (values must be unique every iteration)
-    if (initialsWithoutDots.length <= 1) {
+    if (initialsWithoutDots.length <= 1 && Iteration > 0) {
         Iteration = Iteration + 1
     }
 
@@ -83,7 +83,7 @@ function generateMail() {
     let iterationToUse = Iteration - (nickName.length - 1) <= 1 ? '' : (Iteration - (nickName.length - 1))
     suffix = Iteration === 0 ? '' : (iterationToUse);
     const domain = 'domain.local';
-    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
+    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length - 1);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed

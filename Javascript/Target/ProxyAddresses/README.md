@@ -3,7 +3,7 @@
 ## [Option 1: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption1.js)
 
 | Iteration      | Convention    | Value                                   | Remark                                                 |
-| -------------- | ------------- | --------------------------------------- | ------------------------------------------------------ |
+|----------------|---------------|-----------------------------------------|--------------------------------------------------------|
 | First          | B, BP, P & PB | [SMTP:janine.vandenboele@domain.local]  | FamilyName                                             |
 | If in use      | B, BP, P & PB | [SMTP:j.vandenboele@domain.local]       | First character of  nickname                           |
 | If also in use | B, BP, P & PB | [SMTP:ja.vandenboele@domain.local]      | First two characters of nickname                       |
@@ -15,7 +15,7 @@
 ## [Option 2: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption2.js)
 
 | Iteration | Convention | Value                                   | Remark                              |
-| --------- | ---------- | --------------------------------------- | ----------------------------------- |
+|-----------|------------|-----------------------------------------|-------------------------------------|
 | First     | B          | [SMTP:janine.vandenboele@domain.local]  | FamilyName                          |
 |           | BP         | [SMTP:janine.vandenboele@domain.local]  |                                     |
 |           | P          | [SMTP:janine.vandenboele@domain.local]  |                                     |
@@ -33,7 +33,7 @@
 ## [Option 3: j.devries@domain.local](./Scripts/generateProxyAddressesOption3.js)
 
 | Iteration | Convention | Value                                   | Remark                              |
-| --------- | ---------- | --------------------------------------- | ----------------------------------- |
+|-----------|------------|-----------------------------------------|-------------------------------------|
 | First     | B          | [SMTP:j.vandenboele@domain.local]       | The first character of the nickname |
 |           | BP         | [SMTP:j.vandenboele@domain.local]       | FamilyName                          |
 |           | P          | [SMTP:j.devries@domain.local]           | FamilyNamePartner                   |
@@ -54,7 +54,7 @@
 ## [Option 4: janine.devries@domain.local](./Scripts/generateProxyAddressesOption4.js)
 
 | Iteration | Convention | Value                                   | Remark                                     |
-| --------- | ---------- | --------------------------------------- | ------------------------------------------ |
+|-----------|------------|-----------------------------------------|--------------------------------------------|
 | First     | B          | [SMTP:janine.vandenboele@domain.local]  | FamilyName                                 |
 |           | BP         | [SMTP:janine.vandenboele@domain.local]  |                                            |
 |           | P          | [SMTP:janine.devries@domain.local]      | FamilyNamePartner                          |
@@ -68,7 +68,7 @@
 |           | P          | [SMTP:j.devries@domain.local]           |                                            |
 |           | PB         | [SMTP:j.devries@domain.local]           |                                            |
 | ......... | .........  | .........                               | .........                                  |
-| Seventh   | B          | [SMTP:janin.vandenboele@domain.local]   | The first seven characters of the nickname |
+| Seventh   | B          | [SMTP:janin.vandenboele@domain.local]   | The first five characters of the nickname  |
 |           | BP         | [SMTP:janin.vandenboele@domain.local]   |                                            |
 |           | P          | [SMTP:janin.devries@domain.local]       |                                            |
 |           | PB         | [SMTP:janin.devries@domain.local]       |                                            |
@@ -80,7 +80,7 @@
 ## [Option 5: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption5.js)
 
 | Iteration | Convention | Value                                  | Remark                                   |
-| --------- | ---------- | -------------------------------------- | ---------------------------------------- |
+|-----------|------------|----------------------------------------|------------------------------------------|
 | First     | B          | [SMTP:jvandenboele@domain.local]       | The first character of the nickname      |
 |           | BP         | [SMTP:jvandenboele@domain.local]       | FamilyName                               |
 |           | P          | [SMTP:jvandenboele@domain.local]       |                                          |
@@ -90,11 +90,11 @@
 |           | P          | [SMTP:javandenboele@domain.local]      |                                          |
 |           | PB         | [SMTP:javandenboele@domain.local]      |                                          |
 | ......... | .........  | .........                              | .........                                |
-| Seventh   | B          | [SMTP:janinevandenboele@domain.local]  |                                          |
+| Sixth     | B          | [SMTP:janinevandenboele@domain.local]  |                                          |
 |           | BP         | [SMTP:janinevandenboele@domain.local]  |                                          |
 |           | P          | [SMTP:janinevandenboele@domain.local]  |                                          |
 |           | PB         | [SMTP:janinevandenboele@domain.local]  |                                          |
-| Eighth    | B          | [SMTP:janinevandenboele2@domain.local] |                                          |
+| Seventh   | B          | [SMTP:janinevandenboele2@domain.local] |                                          |
 |           | BP         | [SMTP:janinevandenboele2@domain.local] |                                          |
 |           | P          | [SMTP:janinevandenboele2@domain.local] |                                          |
 |           | PB         | [SMTP:janinevandenboele2@domain.local] |                                          |
@@ -102,7 +102,7 @@
 ## [Option 6: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption6.js)
 
 | Iteration | Convention | Value                                  | Remark                                   |
-| --------- | ---------- | -------------------------------------- | ---------------------------------------- |
+|-----------|------------|----------------------------------------|------------------------------------------|
 | First     | B          | [SMTP:jvandenboele@domain.local]       | The first character of the nickname      |
 |           | BP         | [SMTP:jvandenboele@domain.local]       | FamilyName                               |
 |           | P          | [SMTP:jdevries@domain.local]           | FamilyNamePartner                        |
@@ -112,11 +112,11 @@
 |           | P          | [SMTP:jadevries@domain.local]          |                                          |
 |           | PB         | [SMTP:jadevries@domain.local]          |                                          |
 | ......... | .........  | .........                              | .........                                |
-| Seventh   | B          | [SMTP:janinevandenboele@domain.local]  |                                          |
+| Sixth     | B          | [SMTP:janinevandenboele@domain.local]  |                                          |
 |           | BP         | [SMTP:janinevandenboele@domain.local]  |                                          |
 |           | P          | [SMTP:janinedevries@domain.local]      |                                          |
 |           | PB         | [SMTP:janinedevries@domain.local]      |                                          |
-| Eighth    | B          | [SMTP:janinevandenboele2@domain.local] |                                          |
+| Seventh   | B          | [SMTP:janinevandenboele2@domain.local] |                                          |
 |           | BP         | [SMTP:janinevandenboele2@domain.local] |                                          |
 |           | P          | [SMTP:janinedevries2@domain.local]     |                                          |
 |           | PB         | [SMTP:janinedevries2@domain.local]     |                                          |
@@ -124,7 +124,7 @@
 ## [Option 7: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption7.js)
 
 | Iteration | Convention | Value                                  | Remark                              |
-| --------- | ---------- | -------------------------------------- | ----------------------------------- |
+|-----------|------------|----------------------------------------|-------------------------------------|
 | First     | B          | [SMTP:janine.vandenboele@domain.local] | FamilyName                          |
 |           | BP         | [SMTP:janine.vandenboele@domain.local] |                                     |
 |           | P          | [SMTP:janine.vandenboele@domain.local] |                                     |
@@ -145,7 +145,7 @@
 ## [Option 8: janine.vandenboele@domain.local](./Scripts/generateProxyAddressesOption8.js)
 
 | Iteration | Convention | Value                                    | Remark                  |
-| --------- | ---------- | ---------------------------------------- | ----------------------- |
+|-----------|------------|------------------------------------------|-------------------------|
 | First     | B          | [SMTP:janine.vandenboele@domain.local]   | FamilyName              |
 |           | BP         | [SMTP:janine.vandenboele@domain.local]   |                         |
 |           | P          | [SMTP:janine.vandenboele@domain.local]   |                         |
@@ -167,7 +167,7 @@
 ## [Option 9: jvandenboele@domain.local](./Scripts/generateProxyAddressesOption9.js)
 
 | Iteration | Convention | Value                             | Remark                                     |
-| --------- | ---------- | --------------------------------- | ------------------------------------------ |
+|-----------|------------|-----------------------------------|--------------------------------------------|
 | First     | B          | [SMTP:jvandenboele@domain.local]  | FamilyName or partnername, no combinations |
 |           | BP         | [SMTP:jvandenboele@domain.local]  |                                            |
 |           | P          | [SMTP:jdevries@domain.local]      |                                            |
@@ -188,7 +188,7 @@
 ## [Option 10: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption10.js)
 
 | Iteration | Convention | Value                                  | Remark                                   |
-| --------- | ---------- | -------------------------------------- | ---------------------------------------- |
+|-----------|------------|----------------------------------------|------------------------------------------|
 | First     | B          | [SMTP:j.vandenboele@domain.local]      | The first character of the nickname      |
 |           | BP         | [SMTP:j.vandenboele@domain.local]      | FamilyName                               |
 |           | P          | [SMTP:j.vandenboele@domain.local]      |                                          |
@@ -202,11 +202,11 @@
 |           | P          | [SMTP:ja.vandenboele@domain.local]     |                                          |
 |           | PB         | [SMTP:ja.vandenboele@domain.local]     |                                          |
 | ......... | .........  | .........                              | .........                                |
-| Seventh   | B          | [SMTP:janin.vandenboele@domain.local]  |                                          |
+| Sixth     | B          | [SMTP:janin.vandenboele@domain.local]  |                                          |
 |           | BP         | [SMTP:janin.vandenboele@domain.local]  |                                          |
 |           | P          | [SMTP:janin.vandenboele@domain.local]  |                                          |
 |           | PB         | [SMTP:janin.vandenboele@domain.local]  |                                          |
-| Eighth    | B          | [SMTP:j.vandenboele2@domain.local]     |                                          |
+| Seventh   | B          | [SMTP:j.vandenboele2@domain.local]     |                                          |
 |           | BP         | [SMTP:j.vandenboele2@domain.local]     |                                          |
 |           | P          | [SMTP:j.vandenboele2@domain.local]     |                                          |
 |           | PB         | [SMTP:j.vandenboele2@domain.local]     |                                          |
@@ -214,7 +214,7 @@
 ## [Option 11: j.vandenboele@domain.local](./Scripts/generateProxyAddressesOption11.js)
 
 | Iteration | Convention | Value                              | Remark                            |
-| --------- | ---------- | ---------------------------------- | --------------------------------- |
+|-----------|------------|------------------------------------|-----------------------------------|
 | First     | B          | [SMTP:j.vandenboele@domain.local]  | The first character of nickname   |
 |           | BP         | [SMTP:j.vandenboele@domain.local]  | FamilyName prefix, spaces removed |
 |           | P          | [SMTP:j.vandenboele@domain.local]  | FamilyName                        |
@@ -231,7 +231,7 @@
 ## [Option 12: hc.vanden.boele@domain.local](./Scripts/generateProxyAddressesOption12.js)
 
 | Iteration | Convention | Value                                         | Remark                                                                    |
-| --------- | ---------- | --------------------------------------------- | ------------------------------------------------------------------------- |
+|-----------|------------|-----------------------------------------------|---------------------------------------------------------------------------|
 | First     | B          | [SMTP:hc.vanden.boele@domain.local]           | Initials, dots removed                                                    |
 |           | BP         | [SMTP:hc.vanden.boele-de.vries@domain.local]  | FamilyName and or partnername prefix based on convention , spaces removed |
 |           | P          | [SMTP:hc.de.vries@domain.local]               | FamilyName and or partnername based on convention                         |
