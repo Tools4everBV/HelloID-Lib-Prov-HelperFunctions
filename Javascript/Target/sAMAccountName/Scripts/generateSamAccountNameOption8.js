@@ -25,7 +25,7 @@ function generateSamAccountName() {
     if (Iteration === 0) {
         samAccountName = samAccountName + lastName.substring(0, 4);
     } else {
-        samAccountName = samAccountName + lastName.substring(0, (4 - iterationToUse.toString().length));
+        samAccountName = samAccountName + lastName.substring(0, (5 - iterationToUse.toString().length));
     }
 
     // Trim spaces at start and end

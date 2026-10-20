@@ -3,7 +3,7 @@
 ## [Option 1: jvandenboele](./Scripts/generateSamAccountNameOption1.js)
 
 | Iteration | Convention | Value              | Remark                                   |
-| --------- | ---------- | ------------------ | ---------------------------------------- |
+|-----------|------------|--------------------|------------------------------------------|
 | First     | B          | jvandenboele       | The first character of the nickname      |
 |           | BP         | jvandenboele       | FamilyName                               |
 |           | P          | jvandenboele       |                                          |
@@ -25,7 +25,7 @@
 ## [Option 2: janine.van.den.boele](./Scripts/generateSamAccountNameOption2.js)
 
 | Iteration | Convention | Value                | Remark                                      |
-| --------- | ---------- | -------------------- | ------------------------------------------- |
+|-----------|------------|----------------------|---------------------------------------------|
 | First     | B          | janine.van.den.boele | FamilyName                                  |
 |           | BP         | janine.van.den.boele |                                             |
 |           | P          | janine.van.den.boele |                                             |
@@ -42,24 +42,24 @@
 ## [Option 3: janine.van.den.boele](./Scripts/generateSamAccountNameOption3.js)
 
 | Iteration | Convention | Value                | Remark                              |
-| --------- | ---------- | -------------------- | ----------------------------------- |
+|-----------|------------|----------------------|-------------------------------------|
 | First     | B          | janine.van.den.boele | FamilyName                          |
 |           | BP         | janine.van.den.boele |                                     |
 |           | P          | janine.van.den.boele |                                     |
 |           | PB         | janine.van.den.boele |                                     |
-| Second    | B          | j.van.den.boel       | The first character of the nickname |
-|           | BP         | j.van.den.boel       |                                     |
-|           | P          | j.van.den.boel       |                                     |
-|           | PB         | j.van.den.boel       |                                     |
-| Third     | B          | j.van.den.boel2      |                                     |
-|           | BP         | j.van.den.boel2      |                                     |
-|           | P          | j.van.den.boel2      |                                     |
-|           | PB         | j.van.den.boel2      |                                     |
+| Second    | B          | j.van.den.boele      | The first character of the nickname |
+|           | BP         | j.van.den.boele      |                                     |
+|           | P          | j.van.den.boele      |                                     |
+|           | PB         | j.van.den.boele      |                                     |
+| Third     | B          | j.van.den.boele2     |                                     |
+|           | BP         | j.van.den.boele2     |                                     |
+|           | P          | j.van.den.boele2     |                                     |
+|           | PB         | j.van.den.boele2     |                                     |
 
 ## [Option 4: janine.vandenboele](./Scripts/generateSamAccountNameOption4.js)
 
 | Iteration | Convention | Value              | Remark                              |
-| --------- | ---------- | ------------------ | ----------------------------------- |
+|-----------|------------|--------------------|-------------------------------------|
 | First     | B          | janine.vandenboele | FamilyName                          |
 |           | BP         | janine.vandenboele |                                     |
 |           | P          | janine.vandenboele |                                     |
@@ -80,7 +80,7 @@
 ## [Option 5: jdevries](./Scripts/generateSamAccountNameOption5.js)
 
 | Iteration | Convention | Value              | Remark                                   |
-| --------- | ---------- | ------------------ | ---------------------------------------- |
+|-----------|------------|--------------------|------------------------------------------|
 | First     | B          | jvandenboele       | The first character of the nickname      |
 |           | BP         | jvandenboele       | FamilyName                               |
 |           | P          | jdevries           | FamilyNamePartner                        |
@@ -101,29 +101,29 @@
 
 ## [Option 6: jvandenboele](./Scripts/generateSamAccountNameOption6.js)
 
-| Iteration | Convention | Value         | Remark                                     |
-| --------- | ---------- | ------------- | ------------------------------------------ |
-| First     | B          | jvandenboele  | FamilyName or partnername, no combinations |
-|           | BP         | jvandenboele  |                                            |
-|           | P          | jvandenboele  |                                            |
-|           | PB         | jvandenboele  |                                            |
-| Second    | B          | jvandenboele1 | Iterate, starting at 1                     |
-|           | BP         | jvandenboele1 |                                            |
-|           | P          | jvandenboele1 |                                            |
-|           | PB         | jvandenboele1 |                                            |
-| Third     | B          | jvandenboele2 |                                            |
-|           | BP         | jvandenboele2 |                                            |
-|           | P          | jvandenboele2 |                                            |
-|           | PB         | jvandenboele2 |                                            |
-| Fourth    | B          | jvandenboele3 |                                            |
-|           | BP         | jvandenboele3 |                                            |
-|           | P          | jvandenboele3 |                                            |
-|           | PB         | jvandenboele3 |                                            |
+| Iteration | Convention | Value         | Remark                               |
+|-----------|------------|---------------|--------------------------------------|
+| First     | B          | jvandenboele  | Always FamilyName, never partnername |
+|           | BP         | jvandenboele  |                                      |
+|           | P          | jvandenboele  |                                      |
+|           | PB         | jvandenboele  |                                      |
+| Second    | B          | jvandenboele1 | Iterate, starting at 1               |
+|           | BP         | jvandenboele1 |                                      |
+|           | P          | jvandenboele1 |                                      |
+|           | PB         | jvandenboele1 |                                      |
+| Third     | B          | jvandenboele2 |                                      |
+|           | BP         | jvandenboele2 |                                      |
+|           | P          | jvandenboele2 |                                      |
+|           | PB         | jvandenboele2 |                                      |
+| Fourth    | B          | jvandenboele3 |                                      |
+|           | BP         | jvandenboele3 |                                      |
+|           | P          | jvandenboele3 |                                      |
+|           | PB         | jvandenboele3 |                                      |
 
 ## [Option 7: j.vandenboele](./Scripts/generateSamAccountNameOption7.js)
 
 | Iteration | Convention | Value              | Remark                                   |
-| --------- | ---------- | ------------------ | ---------------------------------------- |
+|-----------|------------|--------------------|------------------------------------------|
 | First     | B          | j.vandenboele      | The first character of the nickname      |
 |           | BP         | j.vandenboele      | FamilyName                               |
 |           | P          | j.vandenboele      |                                          |
@@ -137,37 +137,37 @@
 |           | P          | ja.vandenboele     |                                          |
 |           | PB         | ja.vandenboele     |                                          |
 | ......... | .........  | .........          | .........                                |
-| Seventh   | B          | janin.vandenboele  |                                          |
+| Sixth     | B          | janin.vandenboele  |                                          |
 |           | BP         | janin.vandenboele  |                                          |
 |           | P          | janin.vandenboele  |                                          |
 |           | PB         | janin.vandenboele  |                                          |
-| Eighth    | B          | j.vandenboele2     |                                          |
+| Seventh   | B          | j.vandenboele2     |                                          |
 |           | BP         | j.vandenboele2     |                                          |
 |           | P          | j.vandenboele2     |                                          |
 |           | PB         | j.vandenboele2     |                                          |
 
-## [Option 8: j.vandenboele](./Scripts/generateSamAccountNameOption8.js)
+## [Option 8: hboel](./Scripts/generateSamAccountNameOption8.js)
 
-| Iteration | Convention | Value     | Remark                                   |
-| --------- | ---------- | --------- | ---------------------------------------- |
-| First     | B          | hboel     | The first character of the initials      |
-|           | BP         | hboel     | FamilyName                               |
-|           | P          | hboel     |                                          |
-|           | PB         | hboel     |                                          |
-| Second    | B          | hboel2    | Start with the full nickname             |
-|           | BP         | hboel2    |                                          |
-|           | P          | hboel2    |                                          |
-|           | PB         | hboel2    |                                          |
-| Third     | B          | hboel3    | The first two characters of the nickname |
-|           | BP         | hboel3    |                                          |
-|           | P          | hboel3    |                                          |
-|           | PB         | hboel3    |                                          |
-| ......... | .........  | ......... | .........                                |
-| Tenth     | B          | hboe10    |                                          |
-|           | BP         | hboe10    |                                          |
-|           | P          | hboe10    |                                          |
-|           | PB         | hboe10    |                                          |
-| Eleventh  | B          | hboe11    |                                          |
-|           | BP         | hboe11    |                                          |
-|           | P          | hboe11    |                                          |
-|           | PB         | hboe11    |                                          |
+| Iteration | Convention | Value     | Remark                              |
+|-----------|------------|-----------|-------------------------------------|
+| First     | B          | hboel     | The first character of the initials |
+|           | BP         | hboel     | FamilyName                          |
+|           | P          | hboel     |                                     |
+|           | PB         | hboel     |                                     |
+| Second    | B          | hboel2    | Keep the first initial; append 2    |
+|           | BP         | hboel2    |                                     |
+|           | P          | hboel2    |                                     |
+|           | PB         | hboel2    |                                     |
+| Third     | B          | hboel3    | Keep the first initial; append 3    |
+|           | BP         | hboel3    |                                     |
+|           | P          | hboel3    |                                     |
+|           | PB         | hboel3    |                                     |
+| ......... | .........  | ......... | .........                           |
+| Tenth     | B          | hboe10    |                                     |
+|           | BP         | hboe10    |                                     |
+|           | P          | hboe10    |                                     |
+|           | PB         | hboe10    |                                     |
+| Eleventh  | B          | hboe11    |                                     |
+|           | BP         | hboe11    |                                     |
+|           | P          | hboe11    |                                     |
+|           | PB         | hboe11    |                                     |
