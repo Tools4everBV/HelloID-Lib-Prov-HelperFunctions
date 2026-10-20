@@ -50,7 +50,7 @@ function generateProxyAddresses() {
     let iterationToUse = Iteration
     suffix = Iteration === 0 ? '' : (iterationToUse);
     const domain = 'domain.local';
-    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length);
+    const maxAttributeLength = (256 - suffix.toString().length - domain.toString().length - 1);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
 
     // Use the iterator if needed
