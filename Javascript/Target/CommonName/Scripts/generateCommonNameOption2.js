@@ -2,17 +2,17 @@
 //
 // Mapping logic to generate the CommonName according to the following convention.
 // First choice	        B	Boele, Janine van den
-// 	                    BP	Boele – de Vries, Janine van den
+// 	                    BP	Boele - de Vries, Janine van den
 // 	                    P	Vries, Janine de
-// 	                    PB  Vries – van den Boele, Janine de
+// 	                    PB  Vries - van den Boele, Janine de
 // If in use	        B	Boele, Janine van den (02)
-// 	                    BP	Boele – de Vries, Janine van den (02)
+// 	                    BP	Boele - de Vries, Janine van den (02)
 // 	                    P	Vries, Janine de (02)
-// 	                    PB  Vries – van den Boele, Janine de (02)
+// 	                    PB  Vries - van den Boele, Janine de (02)
 // If also in use   	B	Boele, Janine van den (03)
-// 	                    BP	Boele – de Vries, Janine van den (03)
+// 	                    BP	Boele - de Vries, Janine van den (03)
 // 	                    P	Vries, Janine de (03)
-// 	                    PB  Vries – van den Boele, Janine de (03)
+// 	                    PB  Vries - van den Boele, Janine de (03)
 // etc.
 function generateCommonName() {
     let nickName = Person.Name.NickName;
@@ -27,7 +27,7 @@ function generateCommonName() {
         case "BP":
             commonName = commonName + lastName;
 
-            commonName = commonName + ' – ';
+            commonName = commonName + ' - ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
             commonName = commonName + lastNamePartner;
 
@@ -38,7 +38,7 @@ function generateCommonName() {
         case "PB":
             commonName = commonName + lastNamePartner;
 
-            commonName = commonName + ' – ';
+            commonName = commonName + ' - ';
             if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
             commonName = commonName + lastName;
 

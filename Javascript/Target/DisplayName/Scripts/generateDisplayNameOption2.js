@@ -2,9 +2,9 @@
 //
 // Mapping logic to generate the DisplayName according to the following convention.
 // B    Boele, Janine van den
-// BP	Boele – de Vries, Janine van den
+// BP	Boele - de Vries, Janine van den
 // P	Vries, Janine de
-// PB	Vries – van den Boele, Janine de
+// PB	Vries - van den Boele, Janine de
 function generateDisplayName() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -18,7 +18,7 @@ function generateDisplayName() {
         case "BP":
             displayName = displayName + lastName;
 
-            displayName = displayName + ' – ';
+            displayName = displayName + ' - ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { displayName = displayName + middleNamePartner + ' ' }
             displayName = displayName + lastNamePartner;
 
@@ -29,7 +29,7 @@ function generateDisplayName() {
         case "PB":
             displayName = displayName + lastNamePartner;
 
-            displayName = displayName + ' – ';
+            displayName = displayName + ' - ';
             if (typeof middleName !== 'undefined' && middleName) { displayName = displayName + middleName + ' ' }
             displayName = displayName + lastName;
 

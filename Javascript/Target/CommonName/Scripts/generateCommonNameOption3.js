@@ -2,17 +2,17 @@
 // Note: there are no commas used
 // Mapping logic to generate the CommonName according to the following convention.
 // First choice	        B	Boele H.C. van den (Janine)
-// 	                    BP	Boele–de Vries H.C. van den (Janine)
+// 	                    BP	Boele-de Vries H.C. van den (Janine)
 // 	                    P	Vries H.C. de (Janine)
-// 	                    PB  Vries–van den Boele H.C. de (Janine)
+// 	                    PB  Vries-van den Boele H.C. de (Janine)
 // If in use	        B	Boele H.C. van den (Janine) 2
-// 	                    BP	Boele–de Vries H.C. van den (Janine) 2
+// 	                    BP	Boele-de Vries H.C. van den (Janine) 2
 // 	                    P	Vries H.C. de (Janine) 2
-// 	                    PB  Vries–van den Boele H.C. de (Janine) 2
+// 	                    PB  Vries-van den Boele H.C. de (Janine) 2
 // If also in use   	B	Boele H.C. van den (Janine) 3
-// 	                    BP	Boele–de Vries H.C. van den (Janine) 3
+// 	                    BP	Boele-de Vries H.C. van den (Janine) 3
 // 	                    P	Vries H.C. de (Janine) 3
-// 	                    PB  Vries–van den Boele H.C. de (Janine) 3
+// 	                    PB  Vries-van den Boele H.C. de (Janine) 3
 // etc.
 function generateCommonName() {
     let initials = Person.Name.Initials;
@@ -28,7 +28,7 @@ function generateCommonName() {
         case "BP":
             commonName = commonName + lastName;
 
-            commonName = commonName + '–';
+            commonName = commonName + '-';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { commonName = commonName + middleNamePartner + ' ' }
             commonName = commonName + lastNamePartner;
 
@@ -42,7 +42,7 @@ function generateCommonName() {
         case "PB":
             commonName = commonName + lastNamePartner;
 
-            commonName = commonName + '–';
+            commonName = commonName + '-';
             if (typeof middleName !== 'undefined' && middleName) { commonName = commonName + middleName + ' ' }
             commonName = commonName + lastName;
 

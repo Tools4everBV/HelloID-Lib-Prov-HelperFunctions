@@ -2,9 +2,9 @@
 //
 // Mapping logic to generate the Surname according to the following convention.
 // B	van den Boele
-// BP	van den Boele – de Vries
+// BP	van den Boele - de Vries
 // P	de Vries
-// PB   de Vries – van den Boele
+// PB   de Vries - van den Boele
 function generateSurname() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -19,7 +19,7 @@ function generateSurname() {
             if (typeof middleName !== 'undefined' && middleName) { surName = surName + middleName + ' ' }
             surName = surName + lastName;
 
-            surName = surName + ' – ';
+            surName = surName + ' - ';
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + middleNamePartner + ' ' }
             surName = surName + lastNamePartner;
             break;
@@ -27,7 +27,7 @@ function generateSurname() {
             if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + middleNamePartner + ' ' }
             surName = surName + lastNamePartner;
 
-            surName = surName + ' – ';
+            surName = surName + ' - ';
             if (typeof middleName !== 'undefined' && middleName) { surName = surName + middleName + ' ' }
             surName = surName + lastName;
             break;
