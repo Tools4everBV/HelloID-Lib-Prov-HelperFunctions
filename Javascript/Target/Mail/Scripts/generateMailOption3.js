@@ -18,6 +18,8 @@
 // 	                    P	janine.devries2@domain.local
 // 	                    PB  janine.devries2@domain.local
 // etc.
+//
+// Nicknames of one or two characters: identical prefixes are skipped, so every iteration gives a new value.
 function generateMail() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -26,14 +28,9 @@ function generateMail() {
     let lastNamePartner = Person.Name.FamilyNamePartner;
     let convention = Person.Name.Convention;
 
-    let mailNickName = '';
-    if (Iteration === 0) {
-        mailNickName = nickName.substring(0, 1) + '.';
-    } else if (Iteration === 1) {
-        mailNickName = nickName.substring(0, 2) + '.';
-    } else {
-        mailNickName = nickName + '.';
-    }
+    // Distinct prefixes in order: first letter, first two letters, full nickname (a nickname of one or two characters would otherwise repeat a value)
+    let prefixes = [nickName.substring(0, 1), nickName.substring(0, 2), nickName].filter(function (value, index, all) { return all.indexOf(value) === index; });
+    let mailNickName = (Iteration < prefixes.length ? prefixes[Iteration] : prefixes[prefixes.length - 1]) + '.';
 
     switch (convention) {
         case "P":
@@ -61,7 +58,7 @@ function generateMail() {
     mailNickName = mailNickName.replace(/[^0-9a-zA-Z.\-_]/g, '');
 
     // Shorten string to maxAttributeLength minus iteration length
-    let suffix = Iteration < 3 ? '' : (Iteration - 1).toString();
+    let suffix = Iteration < prefixes.length ? '' : (Iteration - prefixes.length + 2).toString();
     const domain = 'domain.local';
     const maxAttributeLength = (256 - suffix.length - domain.length - 1);
     mailNickName = mailNickName.substring(0, maxAttributeLength);
