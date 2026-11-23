@@ -17,3 +17,7 @@
 ## [Initials](./Initials)
 
 ## [Password](./Password)
+
+## [InCondition Example](./inConditionExample.js)
+
+Returns the titles of all contracts that are in condition (comma separated). Note: InCondition is always false in Preview.
