@@ -307,3 +307,5 @@
 |           | BP         | j.van.den.boele-de.vries2@domain.local      |                                 |
 |           | P          | j.de.vries2@domain.local                    |                                 |
 |           | PB         | j.de.vries-van.den.boele2@domain.local      |                                 |
+
+> If the initials equal the first letter of the nickname (e.g. initials "J" and nickname "Janine"), the second iteration is the full nickname and the numeric suffix starts at the third iteration. Example: `j.van.den.boele@domain.local` → `janine.van.den.boele@domain.local` → `j.van.den.boele1@domain.local` → `j.van.den.boele2@domain.local`.
