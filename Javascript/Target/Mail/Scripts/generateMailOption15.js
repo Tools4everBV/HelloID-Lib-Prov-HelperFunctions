@@ -18,12 +18,16 @@
 // 	                    P	j.de.vries1@domain.local
 // 	                    PB  j.de.vries-van.den.boele1@domain.local
 // etc.
+//
+// If the initials equal the first letter of the nickname (e.g. initials "J" and nickname "Janine"), the second
+// iteration is the full nickname (janine.van.den.boele@domain.local) and the numeric suffix starts at the third
+// iteration (j.van.den.boele1@domain.local).
 
 function generateMail() {
     const domain = 'domain.local';
 
     let initials = Person.Name.Initials;
-    let nickName = Person.Name.NickName;
+    let nickName = Person.Name.NickName || '';
     let middleName = Person.Name.FamilyNamePrefix;
     let lastName = Person.Name.FamilyName;
     let middleNamePartner = Person.Name.FamilyNamePartnerPrefix;
@@ -67,7 +71,7 @@ function generateMail() {
                 break;
         }
     } else {
-        // Build numeric suffix for Iteration >= 3: 1,2... (variation without initials)
+        // Build numeric suffix for Iteration >= 2: 1,2... (variation without initials)
         if (Iteration >= 2) {
             suffix = (Iteration - 1).toString();
         }
@@ -80,12 +84,12 @@ function generateMail() {
                 break;
 
             case 1:
-                // Iteration 2: full first name
+                // Iteration 1: full first name
                 mailNickName = nickName + '.';
                 break;
 
             default:
-                // Iteration >= 3: fallback to first letter of first name
+                // Iteration >= 2: fallback to first letter of first name (with numeric suffix)
                 mailNickName = nickName.substring(0, 1) + '.';
                 break;
         }
@@ -150,10 +154,10 @@ function generateMail() {
     // Remove characters outside the allowed set
     mailNickName = mailNickName.replace(/[^0-9a-zA-Z.\-_]/g, '');
 
-    // Normalize dots: no "..", no leading/trailing "."
+    // Normalize dots: no "..", no leading/trailing "." or "-" (e.g. when the partner name is empty)
     mailNickName = mailNickName
         .replace(/\.{2,}/g, '.')
-        .replace(/^\.|\.$/g, '');
+        .replace(/^[.\-]+|[.\-]+$/g, '');
 
     // Truncate local-part so suffix + "@domain" still fits within limits
     const maxAttributeLength = (256 - suffix.length - domain.length - 1);
