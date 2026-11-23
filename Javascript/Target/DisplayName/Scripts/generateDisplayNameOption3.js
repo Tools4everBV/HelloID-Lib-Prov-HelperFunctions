@@ -2,9 +2,9 @@
 // Note: there are no comma's used
 // Mapping logic to generate the DisplayName according to the following convention.
 // B	Boele H.C. van den (Janine)
-// BP	Boele–de Vries H.C. van den (Janine)
+// BP	Boele-de Vries H.C. van den (Janine)
 // P	Vries H.C. de (Janine)
-// PB  Vries–van den Boele H.C. de (Janine)
+// PB  Vries-van den Boele H.C. de (Janine)
 
 function generateDisplayName() {
     let initials = Person.Name.Initials;

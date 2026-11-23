@@ -2,9 +2,9 @@
 //
 // Mapping logic to generate the DisplayName according to the following convention.
 // B    Boele, Janine van den
-// BP	Boele – de Vries, Janine van den
+// BP	Boele - de Vries, Janine van den
 // P	Vries, Janine de
-// PB	Vries – van den Boele, Janine de
+// PB	Vries - van den Boele, Janine de
 function generateDisplayName() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;

@@ -2,17 +2,17 @@
 //
 // Mapping logic to generate the CommonName according to the following convention.
 // First choice	        B	Janine van den Boele
-// 	                    BP	Janine van den Boele – de Vries
+// 	                    BP	Janine van den Boele - de Vries
 // 	                    P	Janine de Vries
-// 	                    PB  Janine de Vries – van den Boele
+// 	                    PB  Janine de Vries - van den Boele
 // If in use	        B	Janine van den Boele 02
-// 	                    BP	Janine van den Boele – de Vries 02
+// 	                    BP	Janine van den Boele - de Vries 02
 // 	                    P	Janine de Vries 02 
-// 	                    PB  Janine de Vries – van den Boele 02
+// 	                    PB  Janine de Vries - van den Boele 02
 // If also in use   	B	Janine van den Boele 03
-// 	                    BP	Janine van den Boele – de Vries 03
+// 	                    BP	Janine van den Boele - de Vries 03
 // 	                    P	Janine de Vries 03
-// 	                    PB  Janine de Vries – van den Boele 03
+// 	                    PB  Janine de Vries - van den Boele 03
 // etc.
 function generateCommonName() {
     let nickName = Person.Name.NickName;

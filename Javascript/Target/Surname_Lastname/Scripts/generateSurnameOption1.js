@@ -2,9 +2,9 @@
 //
 // Mapping logic to generate the Surname according to the following convention.
 // B	van den Boele
-// BP	van den Boele – de Vries
+// BP	van den Boele - de Vries
 // P	de Vries
-// PB   de Vries – van den Boele
+// PB   de Vries - van den Boele
 function generateSurname() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;

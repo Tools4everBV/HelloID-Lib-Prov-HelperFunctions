@@ -1,6 +1,6 @@
-// generateSamAccountNameOption6.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Mail/Scripts/generateSamAccountNameOption6.js]
+// generateSamAccountNameOption6.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/sAMAccountName/Scripts/generateSamAccountNameOption6.js]
 //
-// Mapping logic to generate the Mail according to the following convention.
+// Mapping logic to generate the SamAccountName according to the following convention.
 // First choice	        B	jvandenboele
 // 	                    BP	jvandenboele
 // 	                    P	jvandenboele

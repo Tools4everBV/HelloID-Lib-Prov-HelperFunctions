@@ -1,10 +1,10 @@
-// generateSurnameOption2.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Surname_Lastname/README.md]
+// generateSurnameOption2.js [https://github.com/Tools4everBV/HelloID-Lib-Prov-HelperFunctions/blob/master/Javascript/Target/Surname_Lastname/Scripts/generateSurnameOption2.js]
 //
 // Mapping logic to generate the Surname according to the following convention.
 // B	Boele, van den
-// BP	Boele – De Vries, van den
+// BP	Boele - De Vries, van den
 // P	Vries, de
-// PB	Vries – van den Boele, de
+// PB	Vries - van den Boele, de
 function generateSurname() {
     let nickName = Person.Name.NickName;
     let middleName = Person.Name.FamilyNamePrefix;
@@ -19,7 +19,7 @@ function generateSurname() {
             surName = surName + lastName;
 
             surName = surName + ' - ';
-            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + middleNamePartner + ' ' }
+            if (typeof middleNamePartner !== 'undefined' && middleNamePartner) { surName = surName + middleNamePartner.charAt(0).toUpperCase() + middleNamePartner.slice(1) + ' ' }
             surName = surName + lastNamePartner;
 
             if (typeof middleName !== 'undefined' && middleName) { surName = surName + ', ' + middleName }

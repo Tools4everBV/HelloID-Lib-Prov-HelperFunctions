@@ -3,7 +3,7 @@
 ## [Option 1: generate random password](./Scripts/generatePasswordOption1.js)
 
 This function generates a random password based on specified complexity rules. It ensures that the password meets the following criteria:
-- Length: The password length is set to 8 characters.
+- Length: The password length is set to 12 characters.
 - Character Types:
   - At least 1 uppercase letter (A-Z).
   - Up to 3 uppercase letters (A-Z).
