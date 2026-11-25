@@ -33,9 +33,9 @@
           <br/>
           Personeelsnummer: {{person.externalId}}
           <br/>
-          Afdeling: {{person.primaryContract.department||"onbekend"}}
+          Afdeling: {{person.primaryContract.department.displayName||"onbekend"}}
           <br/>
-          Functie: {{person.primaryContract.title||"onbekend"}}
+          Functie: {{person.primaryContract.title.name||"onbekend"}}
           <br/>
           <br/>
           Wil je controleren of deze medewerker toegang nodig heeft tot de bijbehorende applicatie en dit indien nodig inrichten?

@@ -11,7 +11,7 @@
       <mj-column width="75%">
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#FFFFFF" padding-top="25px" padding-bottom="25px">
           <b>
-            Welcome to {{person.primaryContract.company||"our organization"}}!
+            Welcome to {{person.primaryContract.employer.name||"our organization"}}!
             <br/>
           </b>
         </mj-text>
@@ -23,7 +23,7 @@
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">
           Dear {{person.name.nickName||"employee"}},
           <br/><br/>
-          Welcome to {{person.primaryContract.company||"our organization"}}!
+          Welcome to {{person.primaryContract.employer.name||"our organization"}}!
           <br/><br/>
           Your account is now active. You have received your login credentials
           and a temporary password from your manager. You can use these to log in to our systems.

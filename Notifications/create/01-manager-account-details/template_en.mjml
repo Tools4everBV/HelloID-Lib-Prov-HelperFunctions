@@ -37,9 +37,9 @@
           <br/>
           Personnel number: {{person.externalId}}
           <br/>
-          Department: {{person.primaryContract.department||"unknown"}}
+          Department: {{person.primaryContract.department.displayName||"unknown"}}
           <br/>
-          Position: {{person.primaryContract.title||"unknown"}}
+          Position: {{person.primaryContract.title.name||"unknown"}}
           <br/>
           <br/>
           Kind regards,
