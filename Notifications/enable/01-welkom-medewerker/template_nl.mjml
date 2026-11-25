@@ -11,7 +11,7 @@
       <mj-column width="75%">
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#FFFFFF" padding-top="25px" padding-bottom="25px">
           <b>
-            Welkom bij {{person.primaryContract.company||"onze organisatie"}}!
+            Welkom bij {{person.primaryContract.employer.name||"onze organisatie"}}!
             <br/>
           </b>
         </mj-text>
@@ -23,7 +23,7 @@
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">
           Beste {{person.name.nickName||"medewerker"}},
           <br/><br/>
-          Van harte welkom bij {{person.primaryContract.company||"onze organisatie"}}!
+          Van harte welkom bij {{person.primaryContract.employer.name||"onze organisatie"}}!
           <br/><br/>
           Je account is inmiddels actief. Van je leidinggevende heb je je inloggegevens
           en een tijdelijk wachtwoord ontvangen. Hiermee kun je inloggen op onze systemen.

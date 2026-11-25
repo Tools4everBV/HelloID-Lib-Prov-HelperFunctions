@@ -33,9 +33,9 @@
           <br/>
           Personnel number: {{person.externalId}}
           <br/>
-          Department: {{person.primaryContract.department||"unknown"}}
+          Department: {{person.primaryContract.department.displayName||"unknown"}}
           <br/>
-          Position: {{person.primaryContract.title||"unknown"}}
+          Position: {{person.primaryContract.title.name||"unknown"}}
           <br/>
           <br/>
           Could you please check if this employee needs access to your application and set it up if necessary?

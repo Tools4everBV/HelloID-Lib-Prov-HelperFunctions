@@ -23,7 +23,7 @@
         <mj-text font-family="Arial, Helvetica, sans-serif" font-size="14px" color="#111111">Dear application manager,
           <br/>
           <br/>
-          Employee {{person.displayName}} will start on {{person.primaryContract.startDate}} in the position {{person.primaryContract.title||"unknown"}}.
+          Employee {{person.displayName}} will start on {{person.primaryContract.startDate}} in the position {{person.primaryContract.title.name||"unknown"}}.
           <br/>
           <br/>
           Please ensure that this employee receives an account in the relevant application.
@@ -35,9 +35,9 @@
           <br/>
           Personnel number: {{person.externalId}}
           <br/>
-          Department: {{person.primaryContract.department||"unknown"}}
+          Department: {{person.primaryContract.department.displayName||"unknown"}}
           <br/>
-          Position: {{person.primaryContract.title||"unknown"}}
+          Position: {{person.primaryContract.title.name||"unknown"}}
           <br/>
           Start date: {{person.primaryContract.startDate}}
           <br/>

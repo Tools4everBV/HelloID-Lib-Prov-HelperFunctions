@@ -36,9 +36,9 @@
           <br/>
           Personeelsnummer: {{person.externalId}}
           <br/>
-          Afdeling: {{person.primaryContract.department||"onbekend"}}
+          Afdeling: {{person.primaryContract.department.displayName||"onbekend"}}
           <br/>
-          Functie: {{person.primaryContract.title||"onbekend"}}
+          Functie: {{person.primaryContract.title.name||"onbekend"}}
           <br/>
           <br/>
           Heb je vragen? Neem dan gerust contact op met de ICT Servicedesk.

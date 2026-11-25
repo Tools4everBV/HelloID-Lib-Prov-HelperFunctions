@@ -23,7 +23,8 @@ The email contains a welcome message with instructions for setting a password vi
 - For more information about variables, see [Notifications variable reference](https://docs.helloid.com/en/provisioning/notifications--provisioning-/notifications-variable-reference--provisioning-.html)
 
 ### Subject
-- `Welcome to {{person.primaryContract.company}}`
+- `Welcome to {{person.primaryContract.employer.name}}`
+- **Note:** Depending on the source system, the company name is stored in `person.primaryContract.employer.name` or `person.primaryContract.organization.name`. The templates use `employer` by default; replace it with `organization` in the subject and template if your source system fills that field instead
 
 ### Filter (optional)
 - Filter on data written to the account of the primary target system (e.g., AD)
